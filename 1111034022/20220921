@@ -7,27 +7,17 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(void) {
-	int integer1 = 0;
-	int integer2 = 0;
-	int integer3 = 0;
-	printf("物體速度:");
-	scanf_s("%d", &integer1);
-
-	printf("加速度:");
-	scanf_s("%d", &integer2);
-
-	printf("經過時間:");
-	scanf_s("%d", &integer3);
-
-	int sum = 0;
-	sum = integer1 + integer2 ;
-	sum = sum  *integer3;
-	printf("最後速度:")& sum;
-
-
-	int sum1 = 0;
-	sum1 = integer2 * integer3 + (1 / 2) * integer2 * integer3 * integer3;
-	printf("移動速度:") & sum1;
+	int v, a, e, s;
 	
-
+	printf("物體速度\n");
+	scanf_s("%d",&v);
+	printf("加速度\n");
+	scanf_s("%d",&a);
+	printf("經過時間\n");
+	scanf_s("%d",&e);
+	
+	v  = v +a * e;
+	printf("最後速度 %d\n" ,v);
+	s = v＊ｅ　+ 0.5 * a * e;
+	printf("距離: %d\n" , s);
 }
