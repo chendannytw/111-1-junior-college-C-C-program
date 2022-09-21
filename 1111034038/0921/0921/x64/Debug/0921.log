@@ -1,0 +1,7 @@
+﻿  2.17.cpp
+C:\Users\User\source\repos\0921\0921\2.17.cpp(9,2): error C3861: 'printf': 找不到識別項
+C:\Users\User\source\repos\0921\0921\2.17.cpp(10,2): error C3861: 'scanf_s': 找不到識別項
+C:\Users\User\source\repos\0921\0921\2.17.cpp(11,2): error C3861: 'printf': 找不到識別項
+C:\Users\User\source\repos\0921\0921\2.17.cpp(12,2): error C3861: 'scanf_s': 找不到識別項
+C:\Users\User\source\repos\0921\0921\2.17.cpp(13,2): error C3861: 'printf': 找不到識別項
+C:\Users\User\source\repos\0921\0921\2.17.cpp(14,2): error C3861: 'scanf_s': 找不到識別項
