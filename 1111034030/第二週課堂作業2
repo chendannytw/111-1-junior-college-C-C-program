@@ -1,0 +1,19 @@
+int main(void)
+{
+	int v, a, e, s;
+
+	printf("v\n");
+	scanf_s("%d", &v);
+
+	printf("a\n");
+	scanf_s("%d", &a);
+
+	printf("e\n");
+	scanf_s("%d", &e);
+
+	v = v + a * e;
+	printf("%d\n", v);
+
+	s = v * e + 0.5 * a * e;
+	printf("%d\n", s);
+}
