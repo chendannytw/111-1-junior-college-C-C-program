@@ -1,0 +1,30 @@
+//fig02_04.C
+//A first progarm in C.
+#include <stdio.h>
+
+int main(void)
+{
+    int integer1 = 0;
+    int integer2 = 0;
+    printf("Enter first integer: ");
+    scanf("%d", &integer1);
+    printf("Enter second integer: ");
+    scanf("%d", &integer2);
+    int sum = 0;
+    sum = integer1 + integer2;
+    printf("Sum is %d\n", sum);
+    int x = 0;
+    x = integer1 - integer2;
+    printf("Sum is %d\n", x);
+    int y = 0;
+    y = integer1 * integer2;
+    printf("Sum is %d\n", y);
+    int z = 0;
+    z = integer1 / integer2;
+    printf("Sum is %d\n", z);
+    int b = 0;
+    b = integer1 % integer2;
+    printf("Sum is %d\n", b);
+	}
+
+    
