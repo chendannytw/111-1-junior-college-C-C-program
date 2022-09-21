@@ -18,7 +18,7 @@ int main(void)
 	sum1 = integer1 + integer2;
 	sum2 = integer1 - integer2;
 	sum3 = integer1 * integer2;
-	sum4 = integer1 / integer2;
+	sum4 = integer1 % integer2;
 	printf("sum is %d\n", sum1);
 	printf("sum is %d\n", sum2);
 	printf("sum is %d\n", sum3);
