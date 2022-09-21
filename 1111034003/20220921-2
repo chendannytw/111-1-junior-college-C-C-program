@@ -1,0 +1,33 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+
+//function main begins program execution
+int main ( void )
+{
+	int v;
+	int a;
+	int e;
+	int s;
+
+	
+	printf("輸入速度\n");
+	scanf("%d",&v);
+	
+	printf("輸入加速度\n");
+	scanf("%d",&a);
+	
+	printf("輸入經過時間\n");
+	scanf("%d",&e);
+	
+	v=v+a*e;
+	s=v*e+0.5*a*e;
+
+	
+	printf("v=v+a*e %d\n",v);
+	printf("s=v*e+0.5*a*e %d\n",s);
+   
+
+}
