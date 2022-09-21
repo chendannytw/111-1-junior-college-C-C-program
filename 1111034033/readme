@@ -1,1 +1,43 @@
 
+	int integerV = 0;
+	int integerA = 0;
+	int integerE = 0;
+	
+	printf("輸入速度");
+	scanf("%d", &integerV);
+
+	printf("輸入加速度");
+	scanf("%d", &integerA);
+	
+	printf("輸入時間");
+	scanf("%d", &integerE);
+
+	int sum = 0;
+	sum = integerV + integerA * integerE ;
+
+	printf("速度是 %d\n", sum);
+	
+return 0;	
+--------------------------------------------------------------
+
+	int integerV = 0;
+	int integerA = 0;
+	int integerE = 0;
+	
+	printf("輸入速度");
+	scanf("%d", &integerV);
+
+	printf("輸入加速度");
+	scanf("%d", &integerA);
+	
+	printf("輸入時間");
+	scanf("%d", &integerE);
+
+	int sum = 0;
+	sum = integerV * integerE +0.5* integerA * integerE ;
+
+	printf("移動距離是 %d\n", sum);
+	
+return 0;	
+
+
