@@ -1,0 +1,3 @@
+﻿  2.17.cpp
+C:\Users\User\source\repos\0921(2.17)\0921(2.17)\2.17.cpp(16,12): warning C4244: '=': 將 'double' 轉換為 'int'，由於類型不同，可能導致資料遺失
+  0921(2.17).vcxproj -> C:\Users\User\source\repos\0921(2.17)\x64\Debug\0921(2.17).exe
