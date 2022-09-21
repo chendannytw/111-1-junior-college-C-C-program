@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main(void) {
+	int integer1 = 0;
+	int integer2 = 0;
+	int v = 0;
+	int a = 0;
+	int e = 0;
+
+	printf("Enter first integer: ");
+	scanf_s("%d", &integer1);
+	printf("Enter first integer: ");
+	scanf_s("%d", &integer2);
+	printf("Enter v ");
+	scanf_s("%d", &v);
+	printf("Enter a ");
+	scanf_s("%d", &a);
+	printf("Enter e");
+	scanf_s("%d", &e);
+
+	int 和 = 0;
+	和 = integer1 + integer2;
+	int 差 = 0;
+	差 = integer1 - integer2;
+	int 乘積 = 0;
+	乘積 = integer1 * integer2;
+	int 商 = 0;
+	商 = integer1 / integer2;
+	int 餘數 = 0;
+	餘數 = integer1 % integer2;
+	int v_answer = 0;
+	v_answer = v + a * e;
+	int s = 0;
+	s = v * e + 0.5 * a * e;
+
+	
+	printf("和 is %d\n", 和);
+	printf("差 is %d\n", 差);
+	printf("乘積 is %d\n", 乘積);
+	printf("商 is %d\n", 商);
+	printf("餘數 is %d\n", 餘數);
+	printf("v is %d\n", v_answer);
+	printf("s is %d\n", s);
+
+}
