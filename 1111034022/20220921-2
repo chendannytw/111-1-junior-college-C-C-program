@@ -16,10 +16,10 @@ int main ( void )
 	int mod;
 	
 	printf("Enter first integer\n");//first number to be entered by user
-	scanf("%d",&integer1);//second number to be entered by user
+	scanf_s("%d",&integer1);//second number to be entered by user
 	
 	printf("Enter second integer\n");//prompt
-	scanf("%d",&integer2);//read an integer
+	scanf_s("%d",&integer2);//read an integer
 	
 	sum=integer1+integer2;//assign total to sum
 	sub=integer1-integer2;//assign total to sub
