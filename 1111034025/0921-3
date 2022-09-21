@@ -1,0 +1,23 @@
+int main()
+{
+	int v = 0;
+	int a = 0;
+	int e = 0;
+	int s = 0;
+
+	printf("Enter v:");
+	scanf_s("%d", &v);
+
+	printf("Enter a:");
+	scanf_s("%d", &a);
+
+	printf("Enter e:");
+	scanf_s("%d", &e);
+
+	s = v * e + a  * e/ 2;
+	v = v + a * e;
+	
+
+	printf("v is %d\n", v);
+	printf("s is %d\n", s);
+}
