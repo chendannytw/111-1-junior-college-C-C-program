@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int v, a, e, s;
+	    printf("enter v:");
+		scanf_s("%d", &v);
+
+		printf("enter a:");
+		scanf_s("%d", &a);
+
+		printf("enter e:");
+		scanf_s("%d", &e);
+		v = v+a*e;
+		printf("v is %d\n", v);
+
+		s = v*e+1/2*a*e;
+		printf("s is %d\n", s);
+
+		
+}
