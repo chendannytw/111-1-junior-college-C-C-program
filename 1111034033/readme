@@ -1,4 +1,17 @@
+	
+		
+int  main(void) {
+	int integer1, integer2, sum = 0;
+	printf("Enter first integer:");
+	scanf_s("%d", &integer1);
 
+	printf("Enter second integer:");
+	scanf_s("%d", &integer2);
+	sum = integer1 + integer2;
+	printf("Sum is %d\n", sum);
+}
+
+------------------------------------------------
 	int integerV = 0;
 	int integerA = 0;
 	int integerE = 0;
