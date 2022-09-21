@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	int v, a, e, s , v_answer , s_answer;
+	int v, a, e, s , v_answer;
 	    printf("enter v:");
 		scanf_s("%d", &v);
 
