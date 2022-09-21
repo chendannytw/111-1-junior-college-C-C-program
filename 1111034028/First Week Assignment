@@ -1,7 +1,7 @@
 #include <stdio.h>
 int main(void)		
 {
-  //第一題
+ 	//第一題
 	int n1, n2, nSum, nSubtract, nMultipy, nDivide, nRrmainder;
 	scanf_s("%d", &n1);
 	scanf_s("%d", &n2);
@@ -12,7 +12,7 @@ int main(void)
 	nRrmainder = n1 % n2;
 	printf("sum is %d\n", nSum);
 
-  //第二題
+ 	//第二題
 	int nV, nA, nT, nS;
 	scanf_s("%d", &nV);
 	scanf_s("%d", &nA);
