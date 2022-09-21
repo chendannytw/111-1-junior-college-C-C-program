@@ -1,0 +1,27 @@
+#include <stdio.h>
+int main(void)		
+{
+  //第一題
+	int n1, n2, nSum, nSubtract, nMultipy, nDivide, nRrmainder;
+	scanf_s("%d", &n1);
+	scanf_s("%d", &n2);
+	nSum = n1 + n2;
+	nSubtract = n1 - n2;
+	nMultipy = n1 * n2;
+	nDivide = n1 / n2;
+	nRrmainder = n1 % n2;
+	printf("sum is %d\n", nSum);
+
+  //第二題
+	int nV, nA, nT, nS;
+	scanf_s("%d", &nV);
+	scanf_s("%d", &nA);
+	scanf_s("%d", &nT);
+	nS = (nV * nT) + (nA * nT / 2);
+	nV = nV + (nA * nT);
+	printf("物體末速度(v)：%d", nV);
+	printf("移動距離(S)：%d", nS);
+
+
+	return 0;
+}
