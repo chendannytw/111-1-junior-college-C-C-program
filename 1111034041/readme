@@ -1,1 +1,18 @@
 
+#include <stdio.h>
+int main(void)
+{
+    int integer1, integer2= 0 ;
+    printf("Enter first integer1");
+    scanf_s("%d", &integer1);
+
+    printf("Enter first integer2");
+    scanf_s("%d", &integer2);
+    int sum = 0;
+
+        sum = integer1 + integer2;
+
+
+
+    printf("sum is %d\n", sum);
+} 
