@@ -1,0 +1,24 @@
+int main()
+{
+	int sum;
+	int number1;
+	int number2;
+	printf("請輸入數字1\n");
+	scanf_s("%d", & number1);
+	printf("請輸入數字2\n");
+	scanf_s("%d", &number2);
+	sum = number1 + number2;
+	int difference;
+	difference = number1 - number2;
+	int product;
+	product = number1 * number2;
+	int quo;
+	quo = number1 / number2;
+	int mod;
+	mod = number1 % number2;
+	printf("sum is % d\n", sum);
+	printf("difference is % d\n", difference);
+	printf("product is % d\n ", product);
+	printf("quo is % d\n", quo);
+	printf("mod is % d\n", mod);  
+}
