@@ -1,27 +1,34 @@
 #include <stdio.h>
 int main(void)		
 {
- 	//第一題
-	int n1, n2, nSum, nSubtract, nMultipy, nDivide, nRrmainder;
+	//第一題
+	int n1, n2, nSum = 0, nSubtract = 0, nMultipy = 0, nDivide = 0, nRrmainder = 0;
+	printf("輸入數字1：");
 	scanf_s("%d", &n1);
+	printf("輸入數字2：");
 	scanf_s("%d", &n2);
 	nSum = n1 + n2;
 	nSubtract = n1 - n2;
 	nMultipy = n1 * n2;
 	nDivide = n1 / n2;
 	nRrmainder = n1 % n2;
-	printf("sum is %d\n", nSum);
+	printf("兩數相加為：%d\n", nSum);
+	printf("兩數相差為：%d\n", nSubtract);
+	printf("兩數相乘為：%d\n", nMultipy);
+	printf("兩數相除為：%d\n", nDivide);
+	printf("兩數餘數為：%d\n", nRrmainder);
 
- 	//第二題
+	//第二題
 	int nV, nA, nT, nS;
+	printf("輸入初速度(V0)：\n");
 	scanf_s("%d", &nV);
+	printf("輸入加速度(a)：\n");
 	scanf_s("%d", &nA);
+	printf("輸入時間(t)：\n");
 	scanf_s("%d", &nT);
 	nS = (nV * nT) + (nA * nT / 2);
 	nV = nV + (nA * nT);
-	printf("物體末速度(v)：%d", nV);
-	printf("移動距離(S)：%d", nS);
-
-
+	printf("物體末速度(v)：%d\n", nV);
+	printf("移動距離(S)：%d\n", nS);
 	return 0;
 }
