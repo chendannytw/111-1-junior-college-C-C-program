@@ -1,0 +1,46 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main(int argc, char *argv[]) {
+	int V = 0;
+	int A = 0;
+	int E = 0;
+	
+	printf("輸入速度");
+	scanf("%d", &V);
+
+	printf("輸入加速度");
+	scanf("%d", &A);
+	
+	printf("輸入時間");
+	scanf("%d", &E);
+
+	int sum = 0;
+	sum = V + A * E ;
+
+	printf("速度是 %d\n", sum);
+	
+return 0;	
+
+
+	int integerV = 0;
+	int integerA = 0;
+	int integerE = 0;
+	
+	printf("輸入速度");
+	scanf("%d", &V);
+
+	printf("輸入加速度");
+	scanf("%d", &A);
+	
+	printf("輸入時間");
+	scanf("%d", &E);
+	sum = integerV * E +0.5* A * E ;
+
+	printf("移動距離是 %d\n", sum);
+	
+return 0;	
+
+}
