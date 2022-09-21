@@ -2,18 +2,18 @@ int main(void)
 {
 	int v, a, e, s;
 
-	printf("v\n");
+	printf("輸入物體速度\n");
 	scanf_s("%d", &v);
 
-	printf("a\n");
+	printf("輸入加速度\n");
 	scanf_s("%d", &a);
 
-	printf("e\n");
+	printf("輸入經過時間\n");
 	scanf_s("%d", &e);
 
 	v = v + a * e;
-	printf("%d\n", v);
+	printf("物件最後的速度 %d\n", v);
 
 	s = v * e + 0.5 * a * e;
-	printf("%d\n", s);
+	printf("移動距離 %d\n", s);
 }
