@@ -13,3 +13,59 @@ int main(void) {
 
 	printf("Sum is %d\n", sum);
   {
+
+#include<stdio.h>
+int main(void) 
+{
+	int integer1;
+	int integer2;
+	printf("Enter first integer\n");
+	scanf_s("%d", &integer1);
+
+	printf_s("Enter second integer\n");
+	scanf_s("%d", &integer2);
+
+	int a;
+	int b;
+	int c;
+	int d;
+	int e;
+
+	a = integer1 + integer2;
+	printf("相加 是 %d\n", a);
+	b = integer1 - integer2;
+	printf("相減 是 %d\n", b);
+	c = integer1 * integer2;
+	printf("相乘 是 %d\n", c);
+	d = integer1 / integer2;
+	printf("商 是 %d\n", d);
+	e = integer1 % integer2;
+	printf("相減 是 %d\n", e);
+	
+}
+
+#include<stdio.h>
+int main(void)
+{
+int v;
+int a2;
+int e2;
+printf("物體速度是\n");
+scanf_s("%d", &v);
+
+printf("加速度是\n");
+scanf_s("%d", &a2);
+
+printf("經過的時間\n");
+scanf_s("%d", &e2);
+
+int one1;
+int two;
+one1 = v + a2 * e2;
+printf("v=v+axe : %d \n", one1);
+
+one1 = v * e2+a2 * e2/2;
+printf("v=v+axe : %d \n", two);
+
+}
+
