@@ -1,32 +1,29 @@
 int msin(void){
-	int integer1=0;
-	int integer2=0;
-	
-	prinf("Enter first integer: ");
-	scanf("%d",&integer1);
-	
-	prinf("Enter first integer: ");
-    scanf("%d",&integer2);
-    
-    int sum ;
-    sum = integer1+integer2;
-    printf("和為 ",sum);
-    
-    int Xsd;
-    Xsd=integer1-integer2
-    printf("差為 ",Xsd)
-    
-    int psd;
-    psd=integer1*integer2
-    printf("乘積為 ",psd)
-	
-	int osd
-	osd=integer1/integer2
-	printf("商為 ",osd)
-	
-	int fdsw
-	fdsw=integer1%integer2
-	printf("餘數為 ",fdsw)
+	{
+	int interger1 = 0;
+	int interger2 = 0;
+	int sum = 0;
+
+	printf("enter frist interger\n");
+	scanf_s("%d", &interger1);
+
+	printf("enter second interger\n");
+	scanf_s("%d", &interger2);
+
+	sum = interger1 + interger2;
+	printf("加 %d\n", sum);
+
+	sum = interger1 - interger2;
+	printf("減 %d\n", sum);
+
+	sum = interger1 * interger2;
+	printf("乘 %d\n", sum);
+
+	sum = interger1 / interger2;
+	printf("商 %d\n", sum);
+
+	sum = interger1 % interger2;
+	printf("餘數 %d\n", sum);
 
   {
 	int integer1=0;
