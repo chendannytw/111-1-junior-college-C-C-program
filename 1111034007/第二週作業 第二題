@@ -1,0 +1,18 @@
+int  main(void) {
+	int v, a, e, s,u = 0;
+	printf("Enter first integer:");
+	scanf_s("%d", &u);
+
+	printf("Enter second integer:");
+	scanf_s("%d", &a);
+	printf("Enter third integer:");
+	scanf_s("%d", &e);
+	v = u + a * e;
+	s = u * e +a *0.5 * e*e;
+
+
+
+
+	printf("Sum1 is %d\n", v);
+	printf("Sum2 is %d\n", s);
+}
