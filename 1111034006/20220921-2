@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+
+//function main begins program execution
+int main(void)
+{
+	int v1 = 0, a1 = 0, e1 = 0;
+
+	printf("v = ");
+	scanf_s("%d", &v1);
+
+	printf("a = ");
+	scanf_s("%d", &a1);
+
+	printf("e = ");
+	scanf_s("%d", &e1);
+
+
+	int v = v1 + a1 * e1;
+	int s = v1 * e1 + a1 * e1 * 0.5;
+	printf("v = %d", v);
+	printf("s = %d", s);
+}
