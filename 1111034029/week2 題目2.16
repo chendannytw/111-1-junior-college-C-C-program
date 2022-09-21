@@ -1,0 +1,23 @@
+int main()
+{
+	int number1;
+	int number2;
+	printf("plz enter new number\n");
+	scanf_s("%d", &number1);
+	printf("plz enter new number\n");
+	scanf_s("%d", &number2);
+	int sum;
+	sum=number1+number2;
+	int difference;
+	difference = number1 - number2;
+	int product;
+	product = number1 * number2;
+	int quotient;
+	quotient = number1 / number2;
+	int mod;
+	mod = number1 % number2;
+	printf("sum is %d\n", sum);
+	printf("difference is % d\n", difference);
+	printf("product is %d\n", product);
+	printf("quotient is % d\n",quotient);
+	printf("mod is % d\n", mod);
