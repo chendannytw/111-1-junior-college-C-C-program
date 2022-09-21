@@ -27,3 +27,26 @@ int msin(void){
 	int fdsw
 	fdsw=integer1%integer2
 	printf("餘數為 ",fdsw)
+
+  {
+	int integer1=0;
+	int integer2=0;
+	int integer3=0;
+	printf("物體速度: ");
+	scanf("%d/n",&integer1);
+	
+	printf("加速度:");
+	scanf_s("%d/n",&integer2)
+	
+	printf("經過時間:");
+	scanf_s("%d/n",&integer3);
+	
+	int sum = 0;
+	sum = integer1+integer2+integer3;
+	
+	int sum1=0;
+	sum1 = integer2*integer3+(1/2)*a*e*ej
+	
+	printf("最後速度:",sum);
+	printf("移動速度:",sum1) 
+}
