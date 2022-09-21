@@ -1,0 +1,49 @@
+int main(void) {
+	int integer1 = 0;
+	int integer2 = 0;
+
+	printf("Enter first integer: "); 
+	scanf("%d", &integer1);
+
+	printf("Enter second integer:");
+		scanf("%d", &integer2);
+
+		int sum = 0;
+		sum= integer1 + integer2;
+
+		printf("Sum is %d\n", sum);
+
+		int y = 0;
+		y = integer1 -integer2;
+		printf("Sum is %d\n", y);
+		
+			int z = 0;
+		z = integer1 *integer2;
+		printf("Sum is %d\n", z);
+		
+			int a = 0;
+		a = integer1 /integer2;
+		printf("Sum is %d\n", a);
+		
+			int b = 0;
+		b = integer1 %integer2;
+		printf("Sum is %d\n", b);
+		
+	
+		int  main(void) {
+	int v, o, e, s,u = 0;
+	printf("Enter first integer:");
+	scanf_s("%d", &u);
+
+	printf("Enter second integer:");
+	scanf_s("%d", &o);
+	printf("Enter third integer:");
+	scanf_s("%d", &e);
+	v = u + o * e;
+	s = u * e +o *0.5 * e*e;
+
+
+
+
+	printf("Sum1 is %d\n", v);
+	printf("Sum2 is %d\n", s);
