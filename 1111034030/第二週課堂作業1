@@ -11,17 +11,17 @@ int main(void)
 	scanf_s("%d", &interger2);
 
 	sum = interger1 + interger2;
-	printf("sum is %d\n", sum);
+	printf("加 %d\n", sum);
 
 	sum = interger1 - interger2;
-	printf("sum is %d\n", sum);
+	printf("減 %d\n", sum);
 
 	sum = interger1 * interger2;
-	printf("sum is %d\n", sum);
+	printf("乘 %d\n", sum);
 
 	sum = interger1 / interger2;
-	printf("sum is %d\n", sum);
+	printf("商 %d\n", sum);
 
 	sum = interger1 % interger2;
-	printf("sum is %d\n", sum);
+	printf("餘數 %d\n", sum);
 }
