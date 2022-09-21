@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int integer1;
+	int integer2;
+	int sum;
+	int sum1;
+	int sum2;
+	int sum3;
+	int sum4;
+	printf("Enter first integer\n");
+	scanf_s("%d", &integer1);
+	printf("Enter scond integer\n");
+	scanf_s("%d", &integer2);
+	sum = integer1+integer2;
+	sum1= integer1-integer2;
+	sum2 = integer1 * integer2;
+	sum3 = integer1 / integer2;
+	sum4 = integer1 %integer2;
+	printf("Sum is %d\n", sum);
+	printf("Sum is %d\n", sum1);
+	printf("Sum is %d\n", sum2);
+	printf("Sum is %d\n", sum3);
+}
