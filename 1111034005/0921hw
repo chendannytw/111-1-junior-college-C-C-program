@@ -33,12 +33,12 @@ int main(void) {
 		int  main(void) {
 	int v, o, e, s,u = 0;
 	printf("Enter first integer:");
-	scanf_s("%d", &u);
+	scanf("%d", &u);
 
 	printf("Enter second integer:");
-	scanf_s("%d", &o);
+	scanf("%d", &o);
 	printf("Enter third integer:");
-	scanf_s("%d", &e);
+	scanf("%d", &e);
 	v = u + o * e;
 	s = u * e +o *0.5 * e*e;
 
