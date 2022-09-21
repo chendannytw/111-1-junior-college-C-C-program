@@ -22,10 +22,10 @@ int main(void)
 	scanf("%d",&integer2);//read on integer
 	
 	sum=integer1+integer2;//assign total to sum
-	sub=integer1-integer2;//assign total to sum	
-	mul=integer1*integer2;//assign total to sum
-	div=integer1/integer2;//assign total to sum
-	mod=integer1%integer2;//assign total to sum
+	sub=integer1-integer2;//assign total to sub	
+	mul=integer1*integer2;//assign total to mul
+	div=integer1/integer2;//assign total to div
+	mod=integer1%integer2;//assign total to mod
 		
 	printf("Sum is %d\n",sum);//print sum
 	printf("Sub is %d\n",sub);//print sub
