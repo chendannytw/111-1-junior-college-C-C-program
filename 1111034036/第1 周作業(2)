@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int v = 0,  a = 0, e = 0, sum1 = 0, sum2 = 0;
+    printf("速度");
+    scanf_s("%d", &v);
+    printf("加速度");
+    scanf_s("%d", &a);
+    printf("時間");
+    scanf_s("%d", &e);
+    sum1 = v + a * e;
+    sum2 = v * e + a *0.5 * e ;
+    
+    printf("速度:%d\n", sum1);
+    printf("距離:%d\n", sum2);
+   
+}
