@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+
+//function main begins program execution
+int main ( void )
+{
+	int integer1;
+	int integer2;
+	int sum;
+	int sub;
+	int mul;
+	int div;
+	int mod;
+	
+	printf("Enter first integer\n");//first number to be entered by user
+	scanf("%d",&integer1);//second number to be entered by user
+	
+	printf("Enter second integer\n");//prompt
+	scanf("%d",&integer2);//read an integer
+	
+	sum=integer1+integer2;//assign total to sum
+	sub=integer1-integer2;//assign total to sub
+	mul=integer1*integer2;//assign total to mul
+    div=integer1/integer2;//assign total to div
+	mod=integer1%integer2;//assign total to mod
+	
+	printf("Sum is %d\n",sum);//print sum
+	printf("Sub is %d\n",sub);//print sub
+	printf("Mul is %d\n",mul);//print mul
+	printf("Div is %d\n",div);//print div
+	printf("Mod is %d\n",mod);//print mod
+
+}
