@@ -27,3 +27,22 @@ int main(void)
     printf("Sum is %d\n", a);
 
 }
+//fig02_04.C
+//A first progarm in C.
+#include <stdio.h>
+
+int main(void)
+{
+    int a,u,v,s,t = 0;
+    printf("Enter first integer: ");
+    scanf("%d", &u);
+    printf("Enter second integer: ");
+    scanf("%d", &a);
+ printf("Enter third integer: ");
+    scanf("%d", &t);
+    
+    v = u+a*t;
+    s = u*t+1/2*a*t;
+    printf("Sum1 is %d\n",v);
+	printf("Sum1 is %d\n",s);
+}
