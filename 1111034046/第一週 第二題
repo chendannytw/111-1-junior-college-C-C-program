@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int v = 0, a = 0, e = 0, s = 0;
+	printf("速度:");
+	scanf_s("%d", &v);
+	printf("加速度:");
+	scanf_s("%d", &a);
+	printf("經過時間:");
+	scanf_s("%d", &e);
+	v = v + a * e;
+	s = v * e + a * e / 2;
+	printf("最後速度是: %d\n", v);
+	printf("移動距離是: %d\n", s);
+}
