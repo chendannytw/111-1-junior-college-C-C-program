@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int integer1;
+    int integer2 ;
+    printf("Enter first integer\n");
+    scanf_s("%d", &integer1);
+
+    printf("Enter second integer\n");
+    scanf_s("%d", &integer2);
+
+    int a;
+    int b;
+    int c1;
+    int d;
+    int e;
+
+     a = integer1 + integer2;
+    printf("相加 是 %d\n", a);
+    b = integer1 - integer2;
+    printf("相減 是 %d\n", b);
+    c1 = integer1 * integer2;
+    printf("相乘 是 %d\n", c1);
+    d = integer1 / integer2;
+    printf("商 是 %d\n", d);
+    e = integer1 % integer2;
+    printf("餘數 是 %d\n", e);
+
+    int v;
+    int a2;
+    int e2;
+    printf("物體速度是\n");
+    scanf_s("%d", &v);
+
+    printf("加速度是\n");
+    scanf_s("%d", &a2);
+
+    printf("經過的時間\n");
+    scanf_s("%d", &e2);
+
+    int one1;
+    int two;
+    one1 = v+ a2*e2;
+    printf ("v=v+axe : %d\n", one1);
+
+    two = v*e2+a2*e2/2;
+    printf("s=vxe+1/2xaxe : %d\n", two);
+
+
+
+
+
+}
