@@ -2,7 +2,7 @@
 
 int main(void)
 {
-	int v, a, e, s;
+	int v, a, e, s , v_answer , s_answer;
 	    printf("enter v:");
 		scanf_s("%d", &v);
 
@@ -11,10 +11,10 @@ int main(void)
 
 		printf("enter e:");
 		scanf_s("%d", &e);
-		v = v+a*e;
-		printf("v is %d\n", v);
+		v_answer = v+a*e;
+		printf("v is %d\n", v_answer);
 
-		s = v*e+1/2*a*e;
+		s = v*e+a/2*e*e;
 		printf("s is %d\n", s);
 
 		
