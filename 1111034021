@@ -1,2 +1,29 @@
-# 111-1-junior-college-C-C-program
-臺中科大資應二甲程式設計(二)(教學實踐計畫)版本控制儲存庫
+int msin(void){
+	int integer1=0;
+	int integer2=0;
+	
+	prinf("Enter first integer: ");
+	scanf("%d",&integer1);
+	
+	prinf("Enter first integer: ");
+    scanf("%d",&integer2);
+    
+    int sum ;
+    sum = integer1+integer2;
+    printf("和為 ",sum);
+    
+    int Xsd;
+    Xsd=integer1-integer2
+    printf("差為 ",Xsd)
+    
+    int psd;
+    psd=integer1*integer2
+    printf("乘積為 ",psd)
+	
+	int osd
+	osd=integer1/integer2
+	printf("商為 ",osd)
+	
+	int fdsw
+	fdsw=integer1%integer2
+	printf("餘數為 ",fdsw)
