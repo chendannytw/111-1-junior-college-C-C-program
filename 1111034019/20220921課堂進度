@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main()
+{
+    int integer1 = 0;
+    int integer2 = 0;
+    int sum = 0;
+    printf("enter first integer");
+    scanf_s("%d", &integer1);
+
+    printf("enter second integer");
+    scanf_s("%d", &integer2);
+
+    sum = integer1 + integer2;
+    printf("sum is %d\n", sum);
+}
