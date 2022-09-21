@@ -1,0 +1,16 @@
+int main(void)
+{
+    printf ("uwu;6!\n");
+    int interger1 = 0;
+    int interger2 = 0;
+    int sum = 0;
+
+    printf("enter frist interger\n");
+    scanf_s("%d", &interger1);
+
+    printf("enter second interger\n");
+    scanf_s("%d", &interger2);
+
+    sum = interger1 + interger2;
+    printf("sum is %d\n", sum);
+}
