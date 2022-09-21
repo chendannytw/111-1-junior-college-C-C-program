@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int integer1 = 0;
+    int integer2 = 0;
+
+    printf("Enter first integer:  ");
+    scanf_s("%d", &integer1);
+    printf("Enter first integer:");
+    scanf_s("%d", &integer2);
+    int sum = 0;
+    sum = integer1 + integer2;
+    int product = 0;
+        product = integer1 - integer2;
+    int difference = 0;
+        difference = integer1 * integer2;
+    int quotient = 0;
+    quotient = integer1 / integer2;
+    int remainder = 0;
+    remainder = integer1 / integer2;
+        
+    printf("Sum is %d\n", sum);
+    printf("product is %d\n", product);
+    printf("difference is %d\n", difference);
+    printf("quotient is %d\n", quotient);
+    printf("remainder is %d\n", remainder);
+}
