@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int u = 0 ;
+    int a = 0;
+    int t = 0;
+    printf("Enter first integer:");
+    scanf_s("%d", &u);
+    printf("Enter first integer:");
+    scanf_s("%d", &a);
+    printf("Enter first integer:");
+    scanf_s("%d", &t);
+    int v = 0;
+    int s = 0;
+    v = u + a*t;
+    printf("v is %d\n", v);
+    s= u*t + a*t*t /2  ;
+    printf("s is %d\n", s);
+    
+  
+}
