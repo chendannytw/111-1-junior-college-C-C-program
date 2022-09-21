@@ -1,6 +1,6 @@
 int main()
    {
-題數2.16
+
 	int number1, mod, number2, diff, pro, quo, sum;
 	printf("請輸入數字1\n");
 	scanf_s("%d" , & number1);
