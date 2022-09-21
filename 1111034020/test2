@@ -1,0 +1,22 @@
+int main()
+{
+	int a = 0;
+	int b = 0;
+    int c = 0;
+	int d = 0;
+
+	printf("Enter a: ");
+	scanf_s("%d", &a);
+
+	printf("Enter b: ");
+	scanf_s("%d", &b);
+
+	printf("Enter c: ");
+	scanf_s("%d", &c);
+
+	d = a * c + b * c / 2;
+	a = a + b * c;
+
+	printf("a is %d\n", a);
+	printf("d is %d\n", d);
+}
