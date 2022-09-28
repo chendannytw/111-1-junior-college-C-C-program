@@ -1,0 +1,51 @@
+#include <stdio.h>
+void main() {
+	int a, b, c, largest = 0, smallest = 9999;
+	printf("輸入三個數字:");
+	scanf_s("%d %d %d", &a, &b, &c);
+
+	if (a > largest)
+		largest = a;
+	if (b > largest)
+		largest = b;
+	if (c > largest)
+		largest = c;
+	if (a < smallest)
+		smallest = b;
+	if (b < smallest)
+		smallest = b;
+	if (c < smallest)
+		smallest = c;
+
+	if (a >= b) {
+		if (a >= c)
+			largest = a;
+		else
+			largest = b;
+	}
+	else if (c > b) {
+		largest = c;
+	}
+	else {
+		largest = b;
+	}
+	
+	if (a <= b) {
+		if (a <= c)
+			smallest = a;
+		else
+			smallest = b;
+	}
+	else if (c < b) {
+		smallest = c;
+	}
+	else {
+		smallest = b;
+	}
+
+	printf("largest is %d\n", largest);
+	printf("smallest is %d\n", smallest);
+	printf("a + b + c is %d\n", a+b+c);
+	printf("average of three number is %d\n", (a+b+c)/3);
+	printf("a * b * c is %d\n", a*b*c);
+}
