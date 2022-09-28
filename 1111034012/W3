@@ -1,0 +1,47 @@
+#include <iostream>
+
+int main()
+{
+  int a, b, c,largest = 0, smallest = 99999;
+  printf("a; ");
+  scanf_s("%d", &a);
+  printf("b; ");
+  scanf_s("%d", &b);
+  printf("c; ");
+  scanf_s("%d", &c);
+  if (a >= b)
+  { if (a >= c)
+		  largest = a;
+	  else
+		  largest = b;}
+  else if (c > b)
+  {largest = c;}
+  else {largest = b;}
+  printf("largest = %d\n", largest);
+  if (a >= b) {
+	  smallest = b;
+  }
+  if (b >= a) {
+	  smallest = a;
+  }
+  if (c < smallest) {
+	  smallest = c;
+  }
+  printf("smallest = %d\n", smallest);
+  printf("和 = %d\n", a + b + c);
+  printf("乘積 = %d\n", a * b * c);
+  printf("平均 = %d\n", (a + b + c) / 3);
+  if (a > largest)
+	  largest = a;
+  if (b > largest)
+	  largest = b;
+  if (c > largest)
+	  largest = c;
+  if (a < smallest)
+	  smallest = a;
+  if (b < smallest)
+	  smallest = b;
+  if (c < smallest)
+	  smallest = c;
+    std::cout << "Hello World!\n";
+}
