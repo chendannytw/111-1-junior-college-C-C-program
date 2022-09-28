@@ -34,5 +34,4 @@ int main(void)
         average = sum / 3;
         product = a * b * c;
         printf_s("\n%d\n%d\n%d\n%d\n%d\n",largest,smallest,sum,average,product);
-    
 }
