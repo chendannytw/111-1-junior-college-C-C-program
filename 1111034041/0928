@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+// function main begins program execution
+int main(void)
+{
+	int a, b, c, max = 0, min = 9999;
+	scanf_s("%d %d %d", &a, &b, &c);
+	if (a > max)
+		max = a;
+	if (b > max)
+		max = b;
+	if (c > max)
+		max = c;
+	if (a < min)
+		min = a;
+	if (b < min)
+		min = b;
+	if (c < min)
+		min = c;
+}
