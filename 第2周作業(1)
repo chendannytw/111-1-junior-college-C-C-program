@@ -1,0 +1,32 @@
+int main(void)
+{
+   
+    int  sum = 0, average = 0, product = 0;
+    int a, b, c, max = 0, min= 9999;
+    //int num2; // second number to be read from user
+
+    scanf_s("%d %d %d", &a, &b, &c); // read two integers
+    if (a > max) {
+        max = a;
+    }
+    if (b > max) {
+        max = b;
+    }
+    if (c> max) {
+        max = c;
+    }
+    if (a < max) {
+        min = a;
+    }
+    if (c < max) {
+        min = c;
+    }
+    if (b < max) {
+        min = b;
+    }
+sum = a + b + c;
+average = sum / 3;
+product = a * b * c;
+printf_s("%d%d%d%d%d", max, min, sum, average, product);
+
+}
