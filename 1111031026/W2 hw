@@ -1,0 +1,38 @@
+int main(void)
+{
+    printf("Enter three different\n");
+    printf("there largest smallest average product sum ");
+
+    int num1;
+    int num2;
+    int num3;
+    int largest=0;
+    int smallest=9999;
+    int average;
+    int product;
+    int sum;
+    if (num1 > largest)
+        largest = num1;
+    if (num2 > largest)
+        largest = num2;
+    if (num3 > largest)
+        largest = num3;
+    if (num1 < smallest)
+        smallest = num1;
+    if (num2 < smallest)
+        smallest = num2;
+    if (num3 < smallest)
+        smallest = num3;
+    scanf_s("%d", &num1);
+    scanf_s("%d", &num2);
+    scanf_s("%d", &num3);
+    
+    average = (num1 + num2 + num3) / 3;
+    product = num1 * num2 * num3;
+    sum = num1 + num2 + num3;
+    printf("largest is %d\n", largest);
+    printf("smallest is %d\n", smallest);
+    printf("average is %d\n", average);
+    printf("product is %d\n", product);
+    printf("sum is %d\n", sum);
+}
