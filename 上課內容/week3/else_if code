@@ -21,7 +21,7 @@ int main( void )
    else if (num1 >=80  ) {
          puts("B");
    } // end if
-	else if (num1 >=70  ) {
+   else if (num1 >=70  ) {
          puts("C");
    } // end if
    else if (num1 >=60  ) {
