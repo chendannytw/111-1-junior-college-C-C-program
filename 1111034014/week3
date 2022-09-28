@@ -1,0 +1,49 @@
+#include <stdio.h>
+void main() {
+	int a, b, c, mix = 0, min = 9999;
+	//scanf_s("% d % d % d", &a, &b, &c);
+	printf("a: ");
+	scanf_s("%d", &a);
+	printf("b: ");
+	scanf_s("%d", &b);
+	printf("c: ");
+	scanf_s("%d", &c);
+	if (a >= b) {
+		if (a >= c)
+			mix = a;
+		else
+			mix = b;
+	}
+	else if (c > b) {
+		mix = c;
+	}
+	else {
+		mix = b;
+	}
+	printf("mix = %d\n", mix);
+	if (a >= b) {
+		min = b;
+	}
+	if (b >= a) {
+		min = a;
+	}
+	if (c < min) {
+		min = c;
+	}
+	printf("min = %d\n", min);
+	printf("和 = %d\n", a + b + c);
+	printf("乘積 = %d\n", a * b * c);
+	printf("平均 = %d\n", (a + b + c)/3);
+	if (a > mix)
+		mix = a;
+	if (b > mix)
+		mix = b;
+	if (c > mix)
+		mix = c;
+	if (a < min)
+		min = a;
+	if (b < min)
+		min = b;
+	if (c < min)
+		min = c;
+}
