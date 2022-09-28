@@ -19,5 +19,5 @@ int main()
      if (c < min)
          min = c;
 
-            printf_s("%d\n%d\n",max,min);
+            printf_s(\n"%d\n%d\n",max,min);
 }
