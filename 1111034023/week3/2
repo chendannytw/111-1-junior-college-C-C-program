@@ -1,0 +1,90 @@
+// Fig. 2.13: fig02_13.c
+// Using if statements, relational 
+// operators, and equality operators
+#include <stdio.h>
+int type;
+
+void I() {
+	int number = 0;
+	unsigned int counter = 1;
+	int big = 0;
+	int small = 0;
+	int sum = 0;
+	int arr = 0;
+	int product = 1;
+
+	while (counter <= 3) {
+		printf("輸入第%d個數", counter);
+		scanf_s("%d", &number);
+		if (counter == 1)
+		{
+			small = number;
+		}
+		if (small > number) {
+			small = number;
+		}
+		if (number > big) {
+			big = number;
+		}
+		product *= number;
+		sum += number;
+		arr = sum / 3;
+		counter += 1;
+
+	};
+	printf("最大:%d\n 最小:%d\n 總和:%d\n 平均:%d\n 乘積:%d", big, small, sum, arr, product);
+
+}
+void II() {
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	unsigned int counter = 1;
+	int big = 0;
+	int small = 0;
+	int sum = 0;
+	int arr = 0;
+	int product = 1;
+	scanf_s("%d", &a);
+	scanf_s("%d", &b);
+	scanf_s("%d", &c);
+	if (a > b) {
+		if (a > c)
+		{
+			big = a;
+		}
+		else
+		{
+			big = c;
+		}
+	}
+	else
+	{
+		if (b > c) {
+			big = b;
+		}
+		else {
+			big = c;
+		}
+		
+
+	}
+	sum = a + b + c;
+	arr = sum / 3;
+	product = a * b * c;
+	
+	printf("最大:%d\n 最小:%d\n 總和:%d\n 平均:%d\n 乘積:%d", big, small, sum, arr, product);
+}
+// function main begins program execution
+int main(void)
+{	
+	printf("輸入1進入IF\n輸入其他東西進入ELSE IF");
+	scanf_s("%d", &type);
+	if (type == 1) {
+		I();
+	}
+	else
+	{
+		II();
+	}
+}
