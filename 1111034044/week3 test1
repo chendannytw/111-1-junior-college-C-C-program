@@ -12,12 +12,12 @@ int main()
     if (c > max)
         max = c;
 
-                if (a < min)
-                    min = a;
-            if (b < min)
-                min = b;
-            if (c < min)
-                min = c;
+     if (a < min)
+        min = a;
+    if (b < min)
+        min = b;
+     if (c < min)
+         min = c;
 
             printf_s("%d%d%d",max,min);
 }
