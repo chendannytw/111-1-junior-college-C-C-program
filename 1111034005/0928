@@ -1,0 +1,48 @@
+	int main(void)
+{
+	int a, b, c, max = 0, min = 9999;
+	int sum,average,product;
+		scanf_s("%d %d %d",&a, &b, &c);
+		if (a > max)
+			max = a;
+		if (b > max)
+			max = b;
+		if (c > max)
+			max = c;
+		if (a < min)
+			min = a;
+		if (b < min)
+			min = b;
+		if (c < min)
+			min = c;
+			
+		if (a >= b) {
+            if (a >= c)
+                max = a;
+            else
+                max = b;
+        }
+        else if (c >= b) {
+            max = c;
+        }
+        else {
+            max = b;
+        }
+
+        if (a <= b) {
+            if (a <= c)
+                min = a;
+            else
+                min = b;
+        }
+        else if (c <= b) {
+            min = c;
+        }
+        else {
+            min = b;
+        }
+        sum = a + b + c;
+        average = sum / 3;
+        product = a * b * c;
+        printf_s("%d%d%d%d%d",max,min,sum,average,product);
+}
