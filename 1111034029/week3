@@ -1,0 +1,33 @@
+int main(void)
+{
+	unsigned int counter;
+	int a, b, c, max = 0, min = 9999;
+
+	printf("enter number1\n");
+	scanf_s("%d", &a);
+	printf("enter number2\n");
+	scanf_s("%d", &b);
+	printf("enter number3\n");
+	scanf_s("%d", &c);
+	if (a > max) {
+		max = a;
+	}
+	if (b > max) {
+		max = b;
+	}
+	if (c > max) {
+		max = c;
+	}
+	printf("the largest number is %d\n" ,max);
+	if (a < min) {
+		min = a;
+	}
+	if (b < min) {
+		min = b;
+	}
+	if (c < min) {
+		min = c;
+	}
+	printf("the smallest number is %d\n",min);
+}
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------
