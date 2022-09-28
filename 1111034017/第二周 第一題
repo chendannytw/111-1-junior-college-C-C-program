@@ -1,0 +1,22 @@
+{
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    scanf_s("%d%d%d", &a, &b, &c);
+    int largest = 0, smallest = 0, sum = 0, average = 0, product = 0,max=0,min=99999;
+    if (a > max)
+        max = a;
+    if (b > max)
+        max = b;
+    if (c > max)
+        max = c;
+
+                if (a < min)
+                    min = a;
+            if (b < min)
+                min = b;
+            if (c < min)
+                min = c;
+
+            printf_s("%d%d%d",max,min);
+}
