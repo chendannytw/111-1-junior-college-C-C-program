@@ -42,24 +42,19 @@ int main(void)
 // function main begins program execution
 int main(void)
 {
-	int a, b, c, largest = 0, smallst = 9999;
-		scanf_s("%d %d %d", &a ,&b ,&c);
-		if (a >= b >= c) { largest = a, smallst = c; }
-		{printf("the largest is %d \n", largest);
-		}
-		if (a >= c >= b) { largest = a, smallst = b; }
-		{printf("the largest is %d \n", largest);
-		}	
-		if (b >= a >= c) { largest = b, smallst = c; }
-		{printf("the largest is %d \n", largest);
-		}
-		if (b >= c >= a) { largest = b, smallst = a; }
-		{printf("the largest is %d \n", largest);
-		}
-		if (c >= a >= b) { largest = c, smallst = b ; }
-		{printf("the largest is %d \n", largest);
-		}
-		if (c >= b >= a) { largest = c, smallst = a; }
-		{printf("the largest is %d \n", largest);
-		}
+	int a, b, c, max = 0, min = 9999;
+		scanf_s("%d %d %d",&a, &b, &c);
+		if (a > max)
+			max = a;
+		if (b > max)
+			max = b;
+		if (c > max)
+			max = c;
+		if (a < min)
+			min = a;
+		if (b < min)
+			min = b;
+		if (c < min)
+			min = c;
+		
 -----------------------------------------
