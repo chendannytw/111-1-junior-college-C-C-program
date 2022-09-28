@@ -43,3 +43,4 @@ sum=a+b+c;
 avg=sum/3;
 product=a*b*c;
 printf("%d %d %d %d",max ,min, sum, avg, product);
+}
