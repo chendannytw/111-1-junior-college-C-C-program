@@ -1,0 +1,26 @@
+
+#include <stdio.h>
+
+int main(void)
+{
+    int max = 0, min = 9999;
+    int a, b, c;
+    printf("a: ");
+    scanf_s("%d", &a);
+    printf("b: ");
+    scanf_s("%d", &b);
+    printf("c: ");
+    scanf_s("%d", &c);
+
+    if (a >max) {   
+            max = a;
+   }
+    
+    if (b > max) {
+        max =b;
+    }
+    if (c > max) {
+        max = c;
+    }
+    printf("max = %d\n", max);
+} 
