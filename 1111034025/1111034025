@@ -1,0 +1,32 @@
+int main(void) {
+	printf( "輸入三個數字 ");
+    printf("總和 乘積 平均值 最大值和最小值  ");
+      int x, y, z, max=0, min=9999;
+    scanf( "%d %d %d", &x, &y, &z);
+    if( x >= y){
+        if(x >= z)
+        max=x;
+        else
+        max=y;
+    }
+    else if(z > y){
+        max=z;
+    }
+    else{
+        max= y;
+    }
+
+    if ( x >= y){
+        min=y;
+    }
+
+    if ( y >= x ){
+        min=x;
+    }
+    
+    if ( z<min){
+        min=z;
+
+    return 0;
+	}
+}
