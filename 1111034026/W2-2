@@ -1,30 +1,38 @@
-
-#include<stdio.h>
 int main(void)
 {
-   int integer1 = 0;
-   int integer2 = 0;
-   printf("Enter first integer:");
-   scanf_s("%d", &integer1);
+    int a=0;
+    int b=0;
+    int c=0;
+    scanf_s("%d%d%d",&a,&b,&c );
+        int largest=0,smallest=0,sum=0,average=0,product=0;
+        if (a >= b) {
+            if (a >= c)
+                largest = a;
+            else
+                largest = b;
+        }
+        else if (c >= b) {
+            largest = c;
+        }
+        else {
+            largest = b;
+        }
 
-   printf("Enter second integer:");
-   scanf_s("%d", &integer2);
-
-   int sum = 0;
-   int reduce = 0;
-   int chen= 0;
-   int average = 0;
-   int mod = 0;
-
-   sum = integer1 + integer2;
-   reduce = integer1 - integer2;
-   chen = integer1 * integer2;
-   average = integer1 / integer2;
-   mod = integer1 % integer2;
-
-   printf("Sum is %d\n", sum);
-   printf("reduce is %d\n", reduce);
-   printf("chen is %d\n", chen);
-   printf("average is %d\n", average);
-   printf("mod is %d\n", mod);
+        if (a <= b) {
+            if (a <= c)
+                smallest = a;
+            else
+                smallest = b;
+        }
+        else if (c <= b) {
+            smallest = c;
+        }
+        else {
+            smallest = b;
+        }
+        sum = a + b + c;
+        average = sum / 3;
+        product = a * b * c;
+        printf_s("%d%d%d%d%d",largest,smallest,sum,average,product);
+    
 }
