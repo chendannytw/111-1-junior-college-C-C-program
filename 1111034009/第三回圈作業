@@ -1,0 +1,60 @@
+#include <stdio.h>
+
+int main(void)
+{//第二種
+	printf("輸入三個數字，我會告訴你\n");
+	printf("最大值 最小值 總和 平均 乘積\n");
+	int a,b,c,a1,a2,a3, largest = 0, smallest = 9999;
+
+		scanf_s ("%d %d %d",&a,&b,&c);
+		if (a >= b) {
+			if (a >= c)
+				largest = a;
+			else
+				largest = c;
+		}
+		else if(c>b){
+			largest = c;
+	}
+		else { largest = b; }
+		
+
+		if (a >= b) {
+			smallest = b;
+			if (b >= c)
+				smallest = c;
+		}
+		else if (a>c) {
+			smallest = c;
+		}
+		else { smallest = a; }
+
+
+		//第一種
+		int max = 0, min = 9999;
+		if (a > max)
+			max = a;
+		if (b > max)
+			max = b;
+		if (c > max)
+			max = c;
+
+		if (a< min)
+			min = a;
+		if (b > min)
+			min=b;
+		if (c > min)
+			min = c;
+
+		a1 = a + b + c;
+		a2 = a1 / 3;
+		a3 = a * b * c;
+		printf("最大是 %d\n",largest);
+		printf("最小是 %d\n", smallest);
+		printf("總和 %d\n", a1); 
+		printf("平均 %d\n", a2);
+		printf("乘積 %d\n",a3);
+
+}
+
+
