@@ -2,7 +2,9 @@ int main(void)
 {
     printf("輸入三個數字\n");
     int a, b, c, largest = 0, smallest = 9999, x, y, z;
-    scanf_s("%d %d %d", &a, &b, &c);
+    scanf_s("%d", &a);
+    scanf_s("%d", &b);
+    scanf_s("%d", &c);
     if (a >= b) {
         if (a >= c)
             largest = a;
