@@ -9,7 +9,7 @@ int main(void)
     unsigned int passes = 0; // number of passes   
     unsigned int failures = 0; // number of failures 
     unsigned int students = 1; // student counter
-    unsigned int p ;
+    float p ;
     int result; // one exam result 
 
     // process 10 students using counter-controlled loop 
