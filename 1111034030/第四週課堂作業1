@@ -3,7 +3,7 @@ int main(void)
    // initialize variables in definitions 
     unsigned int passes = 0; // number of passes   
     unsigned int failures = 0; // number of failures 
-    unsigned int student = 1; // student counter    
+    unsigned int student = 0; // student counter    
     int result=0; // one exam result 
     float average;
 
@@ -28,6 +28,7 @@ int main(void)
     // termination phase; display number of passes and failures 
     printf("Passed %u\n", passes);
     printf("Failed %u\n", failures-1);
+    student -= 1;
     average =(float) passes / student*100;
     printf("通過率為 %.2f\n", average);
     // if more than eight students passed, print "Bonus to instructor!" 
