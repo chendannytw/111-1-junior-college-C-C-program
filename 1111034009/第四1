@@ -32,7 +32,7 @@ int main(void)
     printf("students %u\n", student);
     printf ("現在比率是 %.2f%%", a1*100 );
 
-    a1 = (float)passes / student
+    a1 = (float)passes / student;
 
         if (a1 >= 80)
         { puts("有賞")
