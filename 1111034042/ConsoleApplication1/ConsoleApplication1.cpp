@@ -1,41 +1,41 @@
-﻿// ConsoleApplication1.cpp : 此檔案包含 'main' 函式。程式會於該處開始執行及結束執行。
-//
-
+﻿// Fig. 3.10: fig03_10.c
+// Analysis of examination results 
 #include <stdio.h>
 
+// function main begins program execution 
 int main(void)
-{
-	int v = 0;
-	int u = 0;
-	int a = 0;
-	int t = 0;
-	int s = 0;
-	printf("輸入數字");
-	scanf_s("%d", & v);
-	printf("輸入數字");
-	scanf_s("%d", & u);
+{//輸入-1後停止輸入資料，並且結算業績 ，通過比率大於或等於80% ，印出"有賞!" 
+   // initialize variables in definitions 
+    unsigned int passes = 0; // number of passes   
+    unsigned int failures = 0; // number of failures 
+    unsigned int student = 1; // student counter 
+    int result = 1; // one exam result 
+    float percent;
+    // process 10 students using counter-controlled loop 
+    while (result != -1) {
 
-	printf("輸入數字");
-	scanf_s("%d", & a);
+        // prompt user for input and obtain value from user 
+        printf("Enter result ( 1=pass,2=fail ): ");
+        scanf_s("%d", &result);
 
-	printf("輸入數字");
-	scanf_s("%d", & t);
-	printf("輸入數字");
-	scanf_s("%d", & s);
-	v = u + a * t;
-	s = u * t + 1 / 2 * a * t * t;
-		printf("加速度 是  %d\n",v);
-		printf("移動距離是  %d\n", s);
+        // if result 1, increment passes 
+        if (result == 1)
+            passes++;
+        // end if 
+        else // otherwise, increment failures 
+            failures++;
+        // end else 
 
-}
+        student++; // increment student counter  
+    } // end while 
 
-// 執行程式: Ctrl + F5 或 [偵錯] > [啟動但不偵錯] 功能表
-// 偵錯程式: F5 或 [偵錯] > [啟動偵錯] 功能表
-
-// 開始使用的提示: 
-//   1. 使用 [方案總管] 視窗，新增/管理檔案
-//   2. 使用 [Team Explorer] 視窗，連線到原始檔控制
-//   3. 使用 [輸出] 視窗，參閱組建輸出與其他訊息
-//   4. 使用 [錯誤清單] 視窗，檢視錯誤
-//   5. 前往 [專案] > [新增項目]，建立新的程式碼檔案，或是前往 [專案] > [新增現有項目]，將現有程式碼檔案新增至專案
-//   6. 之後要再次開啟此專案時，請前往 [檔案] > [開啟] > [專案]，然後選取 .sln 檔案
+    // termination phase; display number of passes and failures 
+    printf("Passed %u\n", passes);
+    printf("Failed %u\n", failures);
+    percent = (float)passes / (student - failures);
+    printf("pass rate %.2f\n", percent * 100);
+    // if more than eight students passed, print "Bonus to instructor!" 
+    if (percent > 0.8) {
+        puts("有賞");
+    } // end if 
+} // end function main
