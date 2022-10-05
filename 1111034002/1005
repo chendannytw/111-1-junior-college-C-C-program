@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>  
+
+詮釋主要（無效）
+{//改為輸入本金、年數，印出歷年的本利和
+    詮釋 p;
+    雙 r;
+    整數y;
+    雙倍金額；
+    // 輸出表列標題
+    printf("輸入本金");
+    scanf_s("%lf",&p);
+    printf("輸入");
+    scanf_s("%lf", &r);
+    printf("輸入年分");
+    scanf_s("%lf", &y);
+
+    // 計算每十年的存款金額
+    for (int i=0 ;i <= y; ++i) {
+
+        // 計算指定年份的新金額
+         金額 = p* pow(1 + r, i);
+
+        // 輸出一個表格行
+        printf("%4u%21.2f\n",i, 數量);
+    }
+}
