@@ -1,0 +1,42 @@
+
+// Fig. 3.10: fig03_10.c
+// Analysis of examination results 
+#include <stdio.h>
+
+int main(void)
+{//輸入-1後停止輸入資料，並且結算業績 ，通過比率大於或等於80% ，印出"有賞!" 
+   // initialize variables in definitions 
+    unsigned int passes = 0;   
+    unsigned int failures = 0; 
+    unsigned int student = 1; 
+    int result =0; 
+    int a1 = 0;
+
+        while (result !=-1)
+        {
+        printf("輸入資料 ( 1=過,2=失敗 ),輸入-1結束結算: ");
+        scanf_s ("%d", &result);
+
+        if (result == 1)
+            passes++;
+        else(result == 2);
+            failures ++;
+
+
+        student++;
+        } 
+
+    // termination phase; display number of passes and failures 
+    printf("Passed %u\n", passes);
+    printf("Failed %u\n", failures);
+    printf("students %u\n", student);
+    printf ("現在比率是 %.2f%%", a1*100 );
+
+    a = (float)passes / student;
+
+        if (a >= 80)
+        { puts("有賞")
+        } ;
+
+
+} 
