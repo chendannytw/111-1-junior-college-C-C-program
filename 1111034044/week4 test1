@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+// function main begins program execution 
+int main(void)
+{//輸入-1後停止輸入資料，並且結算業績 ，通過比率大於或等於80% ，印出"有賞!" 
+   // initialize variables in definitions 
+    unsigned int passes = 0; // number of passes   
+    unsigned int failures = 0; // number of failures 
+    unsigned int student = 1; // student counter    
+    int result = 0; // one exam result 
+    float bonus = 0;
+
+    // process 10 students using counter-controlled loop 
+    while (result != -1) {
+
+        // prompt user for input and obtain value from user 
+        printf("Enter result ( 1=pass,2=fail ): ");
+        scanf_s("%d", &result);
+
+        // if result 1, increment passes 
+        if (result == 1)
+            passes++;
+        // end if 
+        else // otherwise, increment failures 
+            failures++;
+    } // end while 
+    failures = failures - 1;
+    student = passes + failures;
+    bonus = (float)passes / student;
+   
+    // termination phase; display number of passes and failures 
+    printf("Passed %u\n", passes);
+    printf("Failed %u\n", failures);
+    printf("通過率 %.2f%%\n", bonus * 100);
+    
+    // if more than eight students passed, print "Bonus to instructor!" 
+    if (bonus >= 0.8)
+        puts("有賞");
+}
