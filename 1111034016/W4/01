@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main(void)
+{
+    unsigned int passes = 0;
+    unsigned int failures = 0;
+    unsigned int student = 1;
+    int result = 0;
+    int a1 = 0;
+
+    while (result != -1)
+    {
+        printf("輸入資料 ( 1=過,2=失敗 ),輸入-1結束結算: ");
+        scanf_s("%d", &result);
+
+        if (result == 1)
+            passes++;
+        else(result == 2);
+        failures++;
+
+
+        student++;
+    }
+
+   
+    printf("Passed %u\n", passes);
+    printf("Failed %u\n", failures);
+    printf("students %u\n", student);
+    printf("現在比率是 %.2f%%", a1 * 100);
+
+    a1 = (float)passes / student;
+
+    if (a1 >= 80)
+    {
+        puts("有賞");
+    }
+
+}
