@@ -1,0 +1,41 @@
+// Fig. 3.10: fig03_10.c
+// Analysis of examination results 
+#include <stdio.h>
+
+// function main begins program execution 
+int main(void)
+{//輸入-1後停止輸入資料，並且結算業績 ，通過比率大於或等於80% ，印出"有賞!" 
+   // initialize variables in definitions 
+    unsigned int passes = 0; // number of passes   
+    unsigned int failures = 0; // number of failures 
+    unsigned int students = 1; // student counter
+    unsigned int p ;
+    int result; // one exam result 
+
+    // process 10 students using counter-controlled loop 
+   {
+        do
+        {printf("Enter result ( 1=pass,2=fail ):,-1 to end ");
+        scanf_s("%d", &result);
+        if (result == 1)
+            passes++;
+        else if (result == 2)
+            failures++;
+        students++;
+        } while (result!= -1); 
+
+    
+    printf("Passed %u\n", passes);
+    printf("Failed %u\n", failures);
+    p = ((float)passes / students);
+    
+    printf("passes rote %f%%\n", p*100);
+    // if more than eight students passed, print "Bonus to instructor!" 
+    
+    if (p>=0.8) {
+        
+        puts("有賞");
+    }
+     // end if 
+} // end function main 
+}
