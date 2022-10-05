@@ -7,13 +7,13 @@ int main(void)
 {//改為輸入本金、利率、年數，印出 歷年的本利和 
     double principal = 1000.0; // starting principal
     double rate = .05; // annual interest rate
-    int year = 1;
+    int year;
     printf("輸入年數");
     scanf_s("%d", &year);
     printf("輸入本金");
-    scanf_s("%If", &principal);
+    scanf_s("%lf", &principal);
     printf("輸入利率");
-    scanf_s("%If", &rate);
+    scanf_s("%lf", &rate);
     // calculate amount on deposit for each of ten years
     for (unsigned int x = 1; x <= year; ++x) {
 
