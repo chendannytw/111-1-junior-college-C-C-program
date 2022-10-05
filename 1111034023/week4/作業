@@ -1,0 +1,90 @@
+// Fig. 3.10: fig03_10.c
+// Analysis of examination results 
+#include <stdio.h>
+#include<math.h>
+
+void II() {
+    //改為輸入本金、利率、年數，印出 歷年的本利和 
+    double principal = 1000.0; // starting principal
+    double rate = .05; // annual interest rate
+    int year = 1;
+
+
+    // output table column heads
+    printf("Enter Year Amount");
+    scanf_s("%d",&year);
+    printf("Enter Principal Amount");
+    scanf_s("%lf", &principal);
+    printf("Enter rate Amount");
+    scanf_s("%lf", &rate);
+
+    // calculate amount on deposit for each of ten years
+    for (unsigned int count = 1; count <= year; ++count) {
+
+        // calculate new amount for specified year
+        double amount = principal * pow(1.0 + rate, count);
+
+        // output one table row
+        printf("%4u%21.2f\n", count, amount);
+        
+    }
+}
+void I()
+{//輸入-1後停止輸入資料，並且結算業績 ，通過比率大於或等於80% ，印出"有賞!" 
+// initialize variables in definitions 
+    bool loop = true;
+    unsigned int passes = 0; // number of passes   
+    unsigned int failures = 0; // number of failures 
+    unsigned int student = 0; // student counter   
+    float per = 0;
+    float call = 0;
+    int result; // one exam result 
+
+    // process 10 students using counter-controlled loop 
+    while (loop)
+    {
+        // prompt user for input and obtain value from user 
+        printf("Enter result ( 1=pass,2=fail ): ");
+        scanf_s("%d", &result);
+        // if result 1, increment passes 
+        if (result == 1)
+            passes++;
+            student++;
+        // end if 
+        if (result == -1) {
+            loop = false;
+        }
+        if (result == 2) { // otherwise, increment failures 
+            failures++;
+            student++;
+        }// end else 
+         // increment student counter  
+    } // end while 
+
+    // termination phase; display number of passes and failures 
+    student--;
+    printf("Passed %u\n", passes);
+    printf("Failed %u\n", failures);
+    per = (float)passes / student;
+    call = per * 100;
+    // if more than eight students passed, print "Bonus to instructor!" 
+    printf("通過%.2f%%", call);
+    if (per > 0.8) {
+        call = per;
+        puts("Bonus to instructor!");
+        printf("%.2f%%", call);
+    } // end if 
+}
+// function main begins program execution 
+int main(void){
+    int type;
+    printf("輸入1進入IF\n輸入其他東西進入ELSE IF");
+    scanf_s("%d", &type);
+    if (type == 1) {
+        I();
+    }
+    else
+    {
+        II();
+    }
+} // end function main 
