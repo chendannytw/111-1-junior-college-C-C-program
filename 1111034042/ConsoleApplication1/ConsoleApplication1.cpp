@@ -1,41 +1,23 @@
-﻿// Fig. 3.10: fig03_10.c
-// Analysis of examination results 
+﻿
 #include <stdio.h>
+#include <math.h>  
 
-// function main begins program execution 
 int main(void)
-{//輸入-1後停止輸入資料，並且結算業績 ，通過比率大於或等於80% ，印出"有賞!" 
-   // initialize variables in definitions 
-    unsigned int passes = 0; // number of passes   
-    unsigned int failures = 0; // number of failures 
-    unsigned int student = 1; // student counter 
-    int result = 1; // one exam result 
-    float percent;
-    // process 10 students using counter-controlled loop 
-    while (result != -1) {
+{//改為輸入本金、利率、年數，印出 歷年的本利和 
+    double p;
+    double r;
+    double y;
+    printf("輸入本金: ");
+    scanf_s("%lf", &p);
+    printf("輸入利率: ");
+    scanf_s("%lf", &r);
+    printf("輸入年數: ");
+    scanf_s("%lf", &y);
 
-        // prompt user for input and obtain value from user 
-        printf("Enter result ( 1=pass,2=fail ): ");
-        scanf_s("%d", &result);
+    for (int i = 1; i <= y; i++) {
 
-        // if result 1, increment passes 
-        if (result == 1)
-            passes++;
-        // end if 
-        else // otherwise, increment failures 
-            failures++;
-        // end else 
+        double amount = p * pow(1.0 + r, i);
 
-        student++; // increment student counter  
-    } // end while 
-
-    // termination phase; display number of passes and failures 
-    printf("Passed %u\n", passes);
-    printf("Failed %u\n", failures);
-    percent = (float)passes / (student - failures);
-    printf("pass rate %.2f\n", percent * 100);
-    // if more than eight students passed, print "Bonus to instructor!" 
-    if (percent > 0.8) {
-        puts("有賞");
-    } // end if 
-} // end function main
+        printf("%4u%21.2f\n", i, amount);
+    }
+}
