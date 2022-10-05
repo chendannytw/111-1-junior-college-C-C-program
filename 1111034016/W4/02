@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <math.h>  
+
+int main(void)
+{
+    int p;
+    double r;
+    int y;
+    double amount;
+   
+    printf("輸入本金");
+    scanf_s("%d", &p);
+    printf("輸入利率");
+    scanf_s("%lf", &r);
+    printf("輸入年分");
+    scanf_s("%d", &y);
+
+   
+    for (int i = 0; i <= y; ++i) {
+
+     
+        amount = p * pow(1 + r, i);
+
+        printf("%4u%21.2f\n", i, amount);
+    }
+}
