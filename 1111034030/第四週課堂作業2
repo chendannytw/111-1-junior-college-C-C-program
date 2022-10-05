@@ -1,0 +1,23 @@
+int main(void)
+{//改為輸入本金、利率、年數，印出 歷年的本利和 
+    int money, x, y;
+    float z;
+    printf("請輸入年數");
+    scanf_s("%d", &y);
+    printf("請輸入本金");
+    scanf_s("%d", &money);
+    printf("請輸入利率");
+    scanf_s("%d", &x);
+   
+    // output table column heads
+   
+
+    // calculate amount on deposit for each of ten years
+    for (unsigned int year = 1; year = y;) {
+
+        // calculate new amount for specified year
+        z = money * pow(1.0 + x, year);
+        printf("今年本利和 %4u%21.2f", z);
+      
+    }
+}
