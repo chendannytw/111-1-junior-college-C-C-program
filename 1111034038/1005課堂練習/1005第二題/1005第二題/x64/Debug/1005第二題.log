@@ -1,0 +1,5 @@
+﻿  1005第二題.cpp
+C:\Users\User\source\repos\1005第二題\1005第二題\1005第二題.cpp(18,20): warning C4474: 'printf': 傳遞給格式字串的引數太多
+C:\Users\User\source\repos\1005第二題\1005第二題\1005第二題.cpp(18,20): message : 預留位置及其參數需要 0 個 variadic 引數，但卻提供了 1 個
+C:\Users\User\source\repos\1005第二題\1005第二題\1005第二題.cpp(21,38): warning C4018: '<=': signed/unsigned 不相符
+  1005第二題.vcxproj -> C:\Users\User\source\repos\1005第二題\x64\Debug\1005第二題.exe
