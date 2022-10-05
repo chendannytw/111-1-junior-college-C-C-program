@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>  
+
+int main(void)
+{
+    double p;
+    double r;
+    double y;
+    double amount;
+    // output table column heads
+    printf("輸入本金");
+    scanf_s("%lf", &p);
+    printf("輸入利率");
+    scanf_s("%lf", &r);
+    printf("輸入年分");
+    scanf_s("%lf", &y);
+
+    // calculate amount on deposit for each of ten years
+    for (int i = 0; i <= y; ++i) {
+
+        // calculate new amount for specified year
+        amount = p * pow(1 + r, i);
+
+        // output one table row
+        printf("%4u%21.2f\n", i, amount);
+    }
+}
