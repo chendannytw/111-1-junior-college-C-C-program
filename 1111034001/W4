@@ -1,0 +1,26 @@
+// Fig. 3.10: fig03_10.c
+// Analysis of examination results 
+#include <stdio.h>
+int main(void)
+{//輸入-1後停止輸入資料，並且結算業績 ，通過比率大於或等於80% ，印出"有賞!" 
+    unsigned int passes = 0; 
+    unsigned int student = 1; 
+    int result=0;
+    float percent;
+    while (result != -1) {
+        printf("Enter result ( 1=pass,2=fail ): ");
+        scanf_s("%d", &result);
+        if (result == 1) {
+            passes++;
+        }
+        student++;
+    } // end while 
+    percent = (float)passes / student*100;
+    printf("Passed %u\n", passes);
+    if (percent >= 80) {
+        puts("有賞!");
+    }
+    else {
+        puts("沒有賞!");
+    }
+} 
