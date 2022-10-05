@@ -33,10 +33,10 @@ int main(void)
     // termination phase; display number of passes and failures 
     printf("Passed %u\n", passes);
     printf("Failed %u\n", failures);
-    printf("Student %u\n", student);
 
     // if more than eight students passed, print "Bonus to instructor!" 
-    l = (float)passes / student;
+    l = (float)passes / student*100;
+    printf("通過率 %.2f%%\n", l);
     if (l >= 0.8) {
         puts("Bonus to instructor!");
     } // end if 
