@@ -34,3 +34,4 @@ int main(void)
     // if more than eight students passed, print "Bonus to instructor!" 
     if (bonus>=0.8) 
         puts("有賞");
+}
