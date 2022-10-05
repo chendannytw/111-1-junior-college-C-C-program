@@ -1,0 +1,28 @@
+int main(void)
+{   unsigned int passes = 0; 
+    unsigned int failures = 0;
+    unsigned int student = 1; 
+    int result = 1;
+    float percent;
+    while (result != -1) {
+
+        printf("Enter result ( 1=pass,2=fail ): ");
+        scanf_s("%d", &result);
+
+        if (result == 1)
+            passes++;
+        else 
+            failures++;
+
+        student++;
+    } 
+
+    // termination phase; display number of passes and failures 
+    printf("Passed %u\n", passes);
+    printf("Failed %u\n", failures);
+    percent = (float)passes / (student - failures);
+    printf("pass rate %.2f\n", percent * 100);
+    if (percent > 0.8) {
+        puts("有賞");
+    } 
+}
