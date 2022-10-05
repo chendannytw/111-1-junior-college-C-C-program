@@ -1,5 +1,3 @@
-// Fig. 3.10: fig03_10.c
-// Analysis of examination results 
 #include <stdio.h>
 
 // function main begins program execution 
@@ -9,11 +7,11 @@ int main(void)
     unsigned int passes = 0; // number of passes   
     unsigned int failures = 0; // number of failures 
     unsigned int student = 1; // student counter    
-    int result = 0; // one exam result 
-    float l;
+    int result=0; // one exam result 
+    float bonus = 0;
 
     // process 10 students using counter-controlled loop 
-    while (result != -1) {
+    while (result!=-1) {
 
         // prompt user for input and obtain value from user 
         printf("Enter result ( 1=pass,2=fail ): ");
@@ -24,20 +22,15 @@ int main(void)
             passes++;
         // end if 
         else // otherwise, increment failures 
-            failures++;
-        // end else 
-
+            failures++;  
     } // end while 
-    failures = failures - 1;
-    student = passes + failures;
+      failures=failures - 1;
+      student = passes + failures;
+      bonus = (float) passes/student ;
     // termination phase; display number of passes and failures 
     printf("Passed %u\n", passes);
     printf("Failed %u\n", failures);
-    printf("Student %u\n", student);
-
+    printf("通過率 %.2f%%\n", bonus);
     // if more than eight students passed, print "Bonus to instructor!" 
-    l = (float)passes / student;
-    if (l >= 0.8) {
-        puts("Bonus to instructor!");
-    } // end if 
-} // end function main 
+    if (bonus>=0.8) 
+        puts("有賞");
