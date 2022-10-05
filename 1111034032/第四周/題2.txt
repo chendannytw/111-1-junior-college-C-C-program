@@ -1,0 +1,31 @@
+// Fig. 4.6: fig04_06.c
+// Calculating compound interest
+#include <stdio.h>
+#include <math.h>  
+
+int main(void)
+{//改為輸入本金、利率、年數，印出 歷年的本利和 
+    double principal; // starting principal
+    printf("Enter 本金");
+    scanf_s("%lf", &principal);
+    double rate;
+    printf("Enter 利率");
+    scanf_s("%lf", &rate);
+    int years;
+    printf("Enter 年數");
+    scanf_s("%d", &years);
+    // annual interest rate
+
+    // output table column heads
+    printf("Year", "Amount on deposit");
+
+    // calculate amount on deposit for each of ten years
+    for ( int i = 1; i <= years; i++) {
+
+        // calculate new amount for specified year
+        double amount = principal * pow(1.0 + rate, i);
+
+        // output one table row
+        printf("%4u%21.2f\n", i, amount);
+    }
+}
