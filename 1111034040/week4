@@ -1,4 +1,4 @@
-int main(void)        題1
+int main(void)      題1
 {//輸入-1後停止輸入資料，並且結算業績 ，通過比率大於或等於80% ，印出"有賞!" 
    // initialize variables in definitions 
     unsigned int passes = 0; // number of passes   
@@ -38,3 +38,4 @@ int main(void)        題1
         printf("有賞");
        } // end if 
 }
+-------------------------------------------------------------------------------------------------------
