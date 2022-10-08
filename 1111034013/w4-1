@@ -31,7 +31,7 @@ int main(void)
     printf("Failed %u\n", failures);
     percent = ((float)passes / student);
     
-    printf("passes rote %f%%\n", percent*100);
+    printf("passes rote %.2f%%\n", percent*100);
     // if more than eight students passed, print "Bonus to instructor!" 
     
     if (percent>0.8) {
