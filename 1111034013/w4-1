@@ -8,33 +8,35 @@ int main(void)
    // initialize variables in definitions 
     unsigned int passes = 0; // number of passes   
     unsigned int failures = 0; // number of failures 
-    unsigned int students = 1; // student counter
-    float p ;
-    int result; // one exam result 
-
+    unsigned int student = 1; // student counter
+    int result=0; // one exam result 
+    float percent ;    
     // process 10 students using counter-controlled loop 
-   {
-        do
-        {printf("Enter result ( 1=pass,2=fail ):,-1 to end ");
+   
+        while (result!= -1){
+        printf("Enter result ( 1=pass,2=fail ):,-1 to end ");
         scanf_s("%d", &result);
+        
         if (result == 1)
             passes++;
+       
         else if (result == 2)
             failures++;
-        students++;
-        } while (result!= -1); 
+        
+        student++;
+        }  
 
     
     printf("Passed %u\n", passes);
     printf("Failed %u\n", failures);
-    p = ((float)passes / students);
+    percent = ((float)passes / student);
     
-    printf("passes rote %f%%\n", p*100);
+    printf("passes rote %f%%\n", percent*100);
     // if more than eight students passed, print "Bonus to instructor!" 
     
-    if (p>=0.8) {
+    if (percent>0.8) {
         
-        puts("有賞");
+        puts("Bonus to instructor!");
     }
      // end if 
 } // end function main 
