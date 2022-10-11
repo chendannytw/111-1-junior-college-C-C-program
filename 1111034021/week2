@@ -1,0 +1,52 @@
+#include<stdio.h>
+
+int type;
+int int1;
+int int2;
+int int3;
+int Ilikedrinkwater;
+int ferzbowdrinkwater;
+int Ericdrinkwater;
+int threeSonsdrinkwater;
+int speedup;
+
+void I() {
+	printf("type first number\n");
+	scanf_s("%d", &int1);
+	printf("type second number\n");
+	scanf_s("%d", &int2);
+	Ilikedrinkwater = int1 + int2;
+	ferzbowdrinkwater = int1 - int2;
+	Ericdrinkwater = int1 * int2;
+	threeSonsdrinkwater = int1 / int2;
+	speedup = int1 % int2;
+	printf("和 %d\n", Ilikedrinkwater);
+	printf("差 %d\n", ferzbowdrinkwater);
+	printf("乘積 %d\n", Ericdrinkwater);
+	printf("商 %d\n", threeSonsdrinkwater);
+	printf("餘數 %d\n", speedup);
+}
+void II(){
+	printf("輸入物體速度\n");
+	scanf_s("%d", &int1);
+	printf("輸入加速度\n");
+	scanf_s("%d", &int2);
+	printf("輸入經過時間\n");
+	scanf_s("%d", &int3);
+	threeSonsdrinkwater = int1 + int2 * int3;
+	speedup = int1 * int3 + int2 / 2 * int3;
+	printf("最後的速度 %d\n", threeSonsdrinkwater);
+	printf("移動距離 %d\n", speedup);
+
+}
+void main(void) {
+	printf("輸入1進入2.16\n輸入其他東西進入2.17");
+	scanf_s("%d", &type);
+	if (type == 1) {
+		I();
+	}
+	else
+	{
+		II();
+	}
+}
