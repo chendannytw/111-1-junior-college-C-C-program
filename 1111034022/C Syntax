@@ -1,0 +1,6 @@
+#include <stdio.h>          / * a header file library that lets us work with input and output functions * /
+
+int main() {                / * function * /
+  printf("Hello World!");   / * a function used to output/print text to the screen * /
+  return 0;                 / * Every C statement ends with a semicolon ; * /
+}
