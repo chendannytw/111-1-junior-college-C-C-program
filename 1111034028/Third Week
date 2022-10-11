@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <math.h>
+void studenttest(void)
+{
+    unsigned int passes = 0;
+    unsigned int  nStudntCount = 0;
+    int result = 0;
+    float nPassRat = 0;
+    //輸入-1後停止輸入資料，並且結算業績 ，通過比率大於或等於80% ，印出"有賞!" 
+    while(result != -1){
+        printf("Enter result ( 1=pass,2=fail ): ");
+        scanf_s("%d", &result);
+        if (result == 1) {
+            passes++;
+            nStudntCount++;
+            continue;
+        }
+        nStudntCount++;
+    }
+    nStudntCount--;
+    nPassRat = float(passes) / float(nStudntCount) * 100;
+    printf("Studnt count is %u\n", nStudntCount);
+    printf("All pass rate is %f%\n", nPassRat);
+    if (nPassRat >= 80) {
+        puts("加薪");
+    }
+    else
+    {
+        puts("未達標準");
+    }
+
+
+    double principal = 0; 
+    double rate = 0; 
+    unsigned int year = 0;
+    //改為輸入本金、利率、年數，印出 歷年的本利和 
+    printf("輸入本金\n");
+    scanf_s("%lf", &principal);
+    printf("輸入利率\n");
+    scanf_s("%lf", &rate);
+    printf("輸入年數\n");
+    scanf_s("%d", &year);
+    printf("Year Amount on deposit");
+    for (int i = 0; i <= year; i++) {
+        double amount = principal * pow((1 + rate), (double)i);
+        printf("%4u%21.2f\n", i, amount);
+    }
+}
