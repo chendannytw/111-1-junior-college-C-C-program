@@ -1,0 +1,12 @@
+/ * Input down below * /
+#include <stdio.h>
+
+int main() {
+  printf("Hello World!\n\n");
+  printf("I am learning C.");
+  return 0;
+}
+/ * Output down below * /
+/ * Hello World!
+
+    I am learning C. * /
