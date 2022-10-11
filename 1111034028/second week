@@ -1,0 +1,26 @@
+int main(void)		
+{
+	//第二周題目
+	printf("輸入數字1：\n");
+	scanf_s("%d", &n1);
+	printf("輸入數字2：\n");
+	scanf_s("%d", &n2);
+	printf("輸入數字3：\n");
+	scanf_s("%d", &n3);
+	int nMax = n1, nMin = n1, nAvarge = 0, ntmp = 0, nProduct = 0;
+	nMin = (n1 < nMin) ? n1  : nMin;
+	nMin = (n2 < nMin) ? n2 : nMin;
+	nMin = (n3 < nMin) ? n3 : nMin;
+	printf("最小數值為：%d", nMin);
+	nMax = (n1 > nMax) ? n1 : nMax;
+	nMax = (n2 > nMax) ? n2 : nMax;
+	nMax = (n3 > nMax) ? n3 : nMax;
+	printf("最大數值為：%d", nMax);
+	nSum = n1 + n2 + n3;
+	nAvarge = nSum / 3;
+	nProduct = n1 * n2 * n3;
+	printf("總合為：%d",  nSum);
+	printf("平均值為：%d", nAvarge);
+	printf("乘積為：%d", nProduct);
+	return 0;
+}
