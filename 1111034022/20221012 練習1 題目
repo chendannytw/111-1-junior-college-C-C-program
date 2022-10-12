@@ -29,3 +29,5 @@ for(i=1;i<=y; i++)
 	result=result*i;
 return result; // returns the square of y as an int              
 }  //函數的定義(本尊) 
+
+/ * 利用副程式 輸入一個值n 計算以下函數 * / 
