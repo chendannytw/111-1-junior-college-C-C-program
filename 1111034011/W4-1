@@ -1,0 +1,34 @@
+ int result; // one exam result 
+    unsigned int x = 0;
+    int y;
+
+    // process 10 students using counter-controlled loop 
+    while (x == 0) {
+
+        // prompt user for input and obtain value from user 
+        printf("Enter result ( 1=pass,2=fail ): ");
+        scanf_s("%d", &result);
+
+        // if result 1, increment passes 
+        if (result == -1)
+            x++;
+        if (result == 1)
+            passes++;
+        // end if 
+        if (result == 2) // otherwise, increment failures 
+            failures++;
+        // end else 
+
+        student++; // increment student counter  
+    } // end while 
+
+    // termination phase; display number of passes and failures 
+    printf("Passed %u\n", passes);
+    printf("Failed %u\n", failures);
+
+    // if more than eight students passed, print "Bonus to instructor!" 
+    y = float(passes) / student * 100;
+    if (y > 80) {
+        printf("有賞");
+    } // end if 
+} // end function main
