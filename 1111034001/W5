@@ -1,0 +1,41 @@
+// Fig. 5.3: fig05_03.c
+// Creating and using a programmer-defined function.
+#include <stdio.h> 
+
+double exponent(int);
+double expon(int,double);
+
+int main(void)
+{
+	int x;
+	for (x = 1; x <= 15; ++x) {
+		//printf("%d  ", square(x)); // function call  //呼叫函數 
+	    //printf("\n%d  ", facto(x));
+		//printf("\n%lf  ", exponent(x));
+		printf("\n%lf  ", expon(10, x));
+	}
+	puts("");
+}
+
+double exponent(int y)
+{
+	int result = 1, i;
+	double expo = 1;
+	for (i = 1; i <= y; i++){
+		result = result * i;
+	expo = expo + (1.0 / result);
+}
+return expo;
+}  //函數的定義(本尊) 
+
+double expon(int y,double x)
+{
+	int result = 1, i;
+	double expo = 1,power=1;
+	for (i = 1; i <= y; i++) {
+		power = power * x;
+		result = result * i;
+		expo = expo + (power / result);
+	}
+	return expo;
+}  //函數的定義(本尊) 
