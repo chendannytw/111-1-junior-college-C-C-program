@@ -1,0 +1,15 @@
+int              / * 數字 * / 
+float            / * 浮點數 * /
+char             / * 字元 * /
+
+----------------------------------
+ / * Declaring (Creating) Variables * / 
+int myNum;
+myNum = 15; 
+
+/ * 可簡化成 * /
+
+int myNum = 15;
+ 
+int myNum = 15;        // myNum is 15
+myNum = 10;            // Now myNum is 10
