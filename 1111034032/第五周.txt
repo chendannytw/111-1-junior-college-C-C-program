@@ -2,8 +2,8 @@
 
 int square(int); // function prototype 函數的原型宣告 
 int facto(int);
-double exponent(int);
-double expon(int, double);
+double test1(int);
+double test2(int, double);
 //double expon(int, double);
 
 int main(void)
@@ -16,8 +16,8 @@ int main(void)
 	for (x = 1; x <= n; ++x) {
 		//printf("%d  ", square(x)); // function call  //呼叫函數 
 		//printf("\n%d  ", facto(x));
-		//printf("\n%lf  ", exponent(x));
-		printf("\n%lf  ", expon(10, x));
+		printf("\n%lf  ", test1(x));
+		printf("\n%lf  ", test2(10, x));
 	}
 
 	puts("");
@@ -40,7 +40,7 @@ int facto(int y) // y is a copy of the argument to the function
 
 
 
-double exponent(int y) // y is a copy of the argument to the function
+double test1(int y) // y is a copy of the argument to the function
 {
 	int result = 1, i;
 	double expo = 1;
@@ -51,7 +51,7 @@ double exponent(int y) // y is a copy of the argument to the function
 	return expo; // returns the square of y as an int              
 }  //函數的定義(本尊)
 
-double expon(int y, double x) // y is a copy of the argument to the function
+double test2(int y, double x) // y is a copy of the argument to the function
 {
 	int result = 1, i;
 	double expo = 1, power = 1;
