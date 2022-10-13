@@ -13,3 +13,16 @@ int myNum = 15;
  
 int myNum = 15;        // myNum is 15
 myNum = 10;            // Now myNum is 10
+ 
+int myNum = 15;
+printf(myNum);  // Nothing happens
+
+// Create variables
+int myNum = 5;             // Integer (whole number)
+float myFloatNum = 5.99;   // Floating point number
+char myLetter = 'D';       // Character
+
+// Print variables
+printf("%d\n", myNum);         // "%d" 指輸入或輸出十進位有符號數
+printf("%f\n", myFloatNum);    // "%f" 指輸入或輸出浮點數
+printf("%c\n", myLetter);      // "%c" 指輸入或輸出一個字符
