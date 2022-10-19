@@ -1,0 +1,27 @@
+// Fig. 5.13: fig05_13.c
+// Randomizing die-rolling program.
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+void a(float x) {
+    printf("%lf", x);
+}
+
+int main(void)
+{
+    unsigned int i, n;
+    unsigned int result, temp, temp1;
+
+    printf("%s", "enter n: ");
+    scanf_s("%u", &n);
+
+    srand(n);
+    temp = pow(10, n);
+    for (i = 1; i <= temp; ++i) {
+        temp1 = (rand() % temp);
+        printf("%lf", (double)temp1 / pow(10, n));
+        if (i % 5 == 0) {
+            puts("");
+        }
+    }
+}
