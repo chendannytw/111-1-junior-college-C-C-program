@@ -1,0 +1,26 @@
+#include <stdlib.h>
+#include <stdio.h>
+#include <math.h>
+int main(void)
+{
+    unsigned int i,n;
+    unsigned int result,temp,temp1; // number used to seed the random number generator
+    printf("%s", "Enter n: ");
+    scanf_s("%u", &n); // note %u for unsigned int
+
+    srand(n); // seed the random number generator
+    temp = pow(10, n);
+
+    // loop 10 times
+    for (i = 1; i <= temp; ++i) {
+        temp1 = (rand() % temp);
+       
+        printf("%10lf",(double)temp1/pow(10,n));
+
+        
+        if (i % 5 == 0) {
+            puts("");
+        }
+    }
+}
+    
