@@ -17,7 +17,7 @@ int main(void)
     temp = pow(10, n);
     for (i = 1; i <= temp; ++i) {
         temp1 = (rand() % temp);
-        printf("%lf", (double)temp1 / pow(10, n));
+        printf("%lf\13", (double)temp1 / pow(10, n));
         if (i % 5 == 0) {
             puts("");
         }
