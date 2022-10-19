@@ -61,7 +61,7 @@ int main(void)
    unsigned int seed; // number used to seed the random number generator
    
    printf("%s", "Enter seed: ");
-   scanf("%u", &seed); // note %u for unsigned int
+   scanf_s("%u", &seed); // note %u for unsigned int
 
    srand(seed); // seed the random number generator
    
