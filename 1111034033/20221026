@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+unsigned long long int fibonacci (int n);
+int main(void) {
+int n;
+printf("輸入n");
+scanf("%d", &n);
+{
+	printf("Fibonacci(%d)=%11u\n",n,fibonacci(n));
+}
+ 
+}
+
+unsigned long long int fibonacci(int n) {
+	if (0==n || 1== n){
+		return n;
+	}
+	else{
+	return fibonacci (n-1)+fibonacci (n-2);
+	}
+}
