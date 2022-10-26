@@ -1,0 +1,24 @@
+
+#include <iostream>
+
+unsigned int factorial(int n);
+
+ int n = 0;
+int main()
+{
+    
+    printf("輸入整數n:");
+    scanf_s("%d", &n);
+  
+        printf("f(%d) = %11u\n", n, factorial(n-1));
+    
+}
+
+unsigned int factorial(int n) {
+    if (n <= 1) {
+        return n;
+    }
+    else {
+        return (factorial(n - 1) + factorial(n - 2));
+    }
+}
