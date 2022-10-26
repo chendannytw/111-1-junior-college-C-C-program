@@ -1,0 +1,27 @@
+#include <iostream>
+ 
+using namespace std;
+long long fib(int a);
+int main() {
+    int N;
+    cin >> N;
+    long long number[50];
+    number[0] = 0;
+    number[1] = 1;
+    number[2] = 1;
+    for (int i = 3; i <= N; i++)
+    {
+        number[i] = number[i - 1] + number[i - 2];
+    }
+    cout << number[N] << endl;
+    long long x = fib(N);
+    cout <<"The number of "<<N << " = "<< x << endl;
+    return 0;
+}
+ 
+long long fib(int a)
+{
+    if (a == 0) return 0;
+    if (a == 2 || a==1) return 1;
+    else if(a>=3) return (fib(a - 1) + fib(a - 2));
+}
