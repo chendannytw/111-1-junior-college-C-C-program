@@ -4,7 +4,7 @@ int main()
 {
     int n = 0;
     scanf_s("%d", &n);
-    int a = f(n - 1);
+    int a = f(n);
     printf("%d", a);
 }
 int f(int n)
