@@ -1,0 +1,20 @@
+#include <iostream>
+unsigned int f(int number);
+int main()
+{
+	int n = 0;
+	printf("ENTER n");
+	scanf_s("%d", &n);
+
+	printf("%d = %3u\n", n, f(n - 1));
+
+}
+unsigned int f(int number) {
+	if (number <= 2) {
+		return number;
+	}
+	else {
+		return (f(number - 1) + f(number - 2));
+
+	}
+}
