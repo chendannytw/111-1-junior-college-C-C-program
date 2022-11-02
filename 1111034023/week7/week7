@@ -1,0 +1,40 @@
+#include <iostream>
+
+int IAI(int n)
+{
+	if (n <= 1)
+		return n;
+	else
+		return IAI(n - 1) + IAI(n - 2);
+}
+
+void I()
+{
+	int n;
+	printf("請輸入一個數字:\n");
+	scanf_s("%d", &n);
+	printf("%d \n", IAI(n));
+}
+void II() {
+    int n;
+    int a, b, c;
+    printf("請輸入一個數字:\n");
+    scanf_s("%d", &n);
+    printf("%d \n", IAI(n));
+    for (int i =n ; i >= 0; i--) {
+
+    }
+}
+
+int main(void) {
+    int type;
+    printf("輸入1進入遞迴\n輸入其他東西進入for");
+    scanf_s("%d", &type);
+    if (type == 1) {
+        I();
+    }
+    else
+    {
+        II();
+    }
+}
