@@ -19,7 +19,7 @@ int main(void)
     for (int i=0 ;i <= y; ++i) {
 
         // calculate new amount for specified year
-         amount = p* pow(1 + r, i);
+         amount = p* pow(1.0+ r, i);
 
         // output one table row
         printf("%4u%21.2f\n",i, amount);
