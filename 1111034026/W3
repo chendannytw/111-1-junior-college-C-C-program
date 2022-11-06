@@ -8,7 +8,7 @@ int main(void)
 
     unsigned int passes = 0; 
     unsigned int failures = 0;  
-    unsigned int student = 0;   
+    unsigned int student = 1;   
     int result; 
     
        printf("Enter result ( 1=pass,2=fail,-1=getout ): ");
