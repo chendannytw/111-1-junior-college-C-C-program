@@ -3,9 +3,9 @@
 
 int main(void)
 {//改為輸入本金、利率、年數，印出 歷年的本利和 
-    int p;
+    double p;
     double r;
-    int y;
+    double y;
     double amount;
     // output table column heads
     printf("輸入本金");
