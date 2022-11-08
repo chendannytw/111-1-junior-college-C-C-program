@@ -1,24 +1,39 @@
+#include<stdio.h>
 
-#include <iostream>
+int fac(int);
 
-unsigned int factorial(int n);
-
- int n = 0;
-int main()
-{
-    
-    printf("輸入整數n:");
+int main() {
+    //Q1.
+    int n;
     scanf_s("%d", &n);
-  
-        printf("f(%d) = %11u\n", n, factorial(n-1));
+    for (int i = 0; i <= n; i++) {
+        printf_s("%d ", fac(i));
+    }
+    printf_s("\n");
+    printf_s("%d\n", fac(n));
+
+    //迭代方式
     
+    printf_s("Q2\n");
+    scanf_s("%d", &n);
+    int n1 = 0, n2 = 1, asw;
+
+    if (n <= 1)printf_s("%d ", n);
+
+    else
+    {
+        for (int i = 2; i <= n; i++) {
+            asw = n1 + n2;
+            n1 = n2;
+            n2 = asw;
+        }
+        printf_s("%d ", asw);
+    }
 }
 
-unsigned int factorial(int n) {
-    if (n <= 1) {
-        return n;
-    }
-    else {
-        return (factorial(n - 1) + factorial(n - 2));
-    }
+//遞迴方式
+int fac(int n) {
+    if (n <= 1) return n;
+
+    else return fac(n - 1) + fac(n - 2);
 }
