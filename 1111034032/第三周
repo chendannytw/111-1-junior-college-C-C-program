@@ -21,7 +21,7 @@ void main() {
 		if (a >= c)
 			largest = a;
 		else
-			largest = b;
+			largest = c;
 	}
 	else if (c > b) {
 		largest = c;
