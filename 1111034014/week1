@@ -40,7 +40,7 @@ int main(void)
 	d = integer1 / integer2;
 	printf("商 是 %d\n", d);
 	e = integer1 % integer2;
-	printf("相減 是 %d\n", e);
+	printf("餘數 是 %d\n", e);
 	
 }
 
@@ -64,7 +64,7 @@ int two;
 one1 = v + a2 * e2;
 printf("v=v+axe : %d \n", one1);
 
-one1 = v * e2+a2 * e2/2;
+ = v * e2+a2 * e2/2;
 printf("v=v+axe : %d \n", two);
 
 }
