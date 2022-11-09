@@ -1,3 +1,5 @@
+#include <stdio.h>
+
 int main(void)
 {
     int integer1, integer2, sum, product, difference, quotient, remainder = 0;
