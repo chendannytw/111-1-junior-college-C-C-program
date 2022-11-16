@@ -1,0 +1,52 @@
+switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+-----------------------相同於下------------------------
+switch(變數名稱或運算式) {
+    case 符合數字或字元:
+        陳述句一;
+        break;
+    case 符合數字或字元:
+        陳述句二;
+        break;
+    default:
+        陳述三;
+        break;
+}
+//首先看看 switch 的括號，當中置放要取出數值的變數或運算式，取得數值之後，會與 case 設定的數字或字元比對
+//如果符合就執行以下的陳述句，直到遇到 break 後離開 switch 區塊，若沒有符合的數值或字元，會執行 default 後的陳述句，default 不需要時可以省略。
+----------------------------------------Example1 down below----------------------------
+int day = 4;
+
+switch (day) {
+  case 1:
+    printf("Monday");
+    break;
+  case 2:
+    printf("Tuesday");
+    break;
+  case 3:
+    printf("Wednesday");
+    break;
+  case 4:
+    printf("Thursday");
+    break;
+  case 5:
+    printf("Friday");
+    break;
+  case 6:
+    printf("Saturday");
+    break;
+  case 7:
+    printf("Sunday");
+    break;
+}
+
+// Outputs "Thursday" (day 4)
