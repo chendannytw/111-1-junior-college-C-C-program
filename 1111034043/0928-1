@@ -1,6 +1,6 @@
 int main(void)
 {
-    printf("Enter three different\n");
+    printf("Enter three different\n");.
     printf("there largest smallest average product sum ");
 
     int num1;
