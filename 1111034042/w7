@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdlib.h>
+unsigned int factorial(int n);
+int n = 0;
+void main(){
+
+	printf("輸入數值n:");
+	scanf("%d", &n);
+	factorial(n);
+	printf("f(%d)=%11u\n", n, factorial(n));
+	
+}
+
+unsigned int factorial(int n){
+	if (n <= 1) {
+		return n;
+	}
+	else {
+		return (factorial(n - 1) + factorial(n - 2));
+	}
+}
