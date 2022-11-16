@@ -1,0 +1,21 @@
+//Use "if"      to specify a block of code to be executed, if a specified condition is true
+//Use "else"    to specify a block of code to be executed, if the same condition is false
+//Use "else if" to specify a new condition to test, if the first condition is false
+//Use "switch"  to specify many alternative blocks of code to be executed
+--------------------------------Examples1 down below-----------------------------
+int time = 20;
+if (time < 18) {
+  printf("Good day.");
+} else {
+  printf("Good evening.");
+}
+  // Outputs "Good evening."
+--------------------------------Examples2 down below-----------------------------
+int myNum = 10; // Is this a positive or negative number? 這個數字是正數還是負數?
+
+if (myNum > 0)
+  printf("The value is a positive number.");  //是正數
+else if (myNum < 0)
+  printf("The value is a negative number.");  //是負數
+else
+  printf("The value is 0.");                  //是0
