@@ -22,5 +22,5 @@ void test1(int arr[],int num){
          printf("%c", '*');                                  
 	   }                                     
       puts(""); 
-  }
+   }
 }
