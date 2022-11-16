@@ -1,0 +1,57 @@
+int main(void)
+{
+
+	int a,b,c,lar=0,sma=999;
+	int sum=0,average=0,product=0;
+	scanf("%d %d %d", &a, &b, &c);
+	if (a>=b){
+		lar=a;
+	}
+	if (a>=c){
+		lar=a;
+	}
+	if (b>=a){
+		lar=b;
+	}
+	if (b>=c){
+		lar=b;
+	}
+	if (b>=a){
+		lar=b;
+	}
+	if (c>=a){
+		lar=c;
+	}
+	if (c>=b){
+		lar=c;
+	}
+	if (a >= b) {
+            if (a >= c)
+                lar = a;
+            else
+                lar = b;
+        }
+        else if (c >= b) {
+            lar = c;
+        }
+        else {
+            lar = b;
+        }
+
+        if (a <= b) {
+            if (a <= c)
+                sma = a;
+            else
+                sma = b;
+        }
+        else if (c <= b) {
+            sma = c;
+        }
+        else {
+            sma = b;
+        }
+        sum = a + b + c;
+        average = sum / 3;
+        product = a * b * c;
+        printf_s("%d%d%d%d%d",lar,sma,sum,average,product);
+}
