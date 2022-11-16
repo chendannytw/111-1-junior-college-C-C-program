@@ -1,0 +1,29 @@
+#include <stdio.h>
+#define SIZE 5
+
+
+// function main begins program execution
+void x(int arr[],int num);
+int main(void)
+{
+   // use initializer list to initialize array n
+   int n[SIZE] = {19, 3, 15, 7, 11},i,j;
+
+   printf("%s%13s%17s\n", "Element", "Value", "Histogram");
+   x(n,SIZE);
+
+}
+   // for each element of array n, output a bar of the histogram
+   void x(int arr[],int num)
+{   int i ,j;
+   
+   for (i = 0; i < SIZE; ++i) {
+      printf("%7u%13d        ", i, arr[i]) ;
+
+      for ( j = 1; j <= arr[i]; ++j) { // print one bar
+         printf("%c", '*');                                  
+	   }                                     
+
+      puts(""); // end a histogram bar with a newline
+   } 
+}
