@@ -1,0 +1,33 @@
+//題目2: 修改課本305頁的程式fig06_05.c，並透過陣列傳遞的方式，將兩個陣列傳送到副程式中進行統計，並由主程式印出票數與長條圖。
+
+#include <stdio.h>
+#define RESPONSES_SIZE 40
+#define FREQUENCY_SIZE 11
+void test2(int fre[] , int res[]);
+
+int main(void)
+{  int rating ,hist; 
+   int frequency[FREQUENCY_SIZE] = {0};
+   
+   int responses[RESPONSES_SIZE] = {1, 2, 6, 4, 8, 5, 9, 7, 8, 10,
+        1, 6, 3, 8, 6, 10, 3, 8, 2, 7, 6, 5, 7, 6, 8, 6, 7, 5, 6, 6, 
+        5, 6, 7, 5, 6, 4, 8, 6, 8, 10};
+
+   
+   printf("%s%17s\n", "Rating", "Frequency");
+   test2(frequency,responses);
+   for (rating = 1; rating < FREQUENCY_SIZE; ++rating) {
+      printf("%6d%17d       ", rating, frequency[rating]);
+      
+      for(hist=0;hist < frequency[rating];++hist)
+      printf("*");
+      printf("\n");
+   } 
+}
+
+void test2(int fre[],int res[]){
+	int answer;
+	for (answer = 0; answer < RESPONSES_SIZE; ++answer) 
+      ++fre[res[answer]];
+
+}
