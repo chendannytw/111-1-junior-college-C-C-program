@@ -1,0 +1,32 @@
+// Fig. 6.8: fig06_08.c
+// Displaying a histogram.
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 5
+void myfun(int arr[],int num);
+int n[SIZE] = {19, 3, 15, 7, 11},i,j;
+int main(void)
+{
+   // use initializer list to initialize array n
+ 
+
+   printf("%s%13s%17s\n", "Element", "Value", "Histogram");
+
+   // for each element of array n, output a bar of the histogram
+   myfun(n,SIZE);
+}
+
+void myfun(int arr[],int num)
+{
+
+   for (i = 0; i < num; ++i)
+    {
+      printf("%7u%13d         ", i, n[i]) ;
+
+      for ( j = 1; j <= arr[i]; ++j) { // print one bar
+         printf("%c", '*');                                  
+	   }                                     
+
+      puts(""); // end a histogram bar with a newline
+   } 
+}
