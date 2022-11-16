@@ -24,4 +24,4 @@ void m(int arr[], int num)
 
         puts("");
     }
-}.
+}
