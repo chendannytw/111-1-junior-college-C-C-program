@@ -28,4 +28,3 @@ void my(int arr[], int num)
         puts("");
     }
 }
-.
