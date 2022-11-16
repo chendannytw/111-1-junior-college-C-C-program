@@ -16,19 +16,23 @@ int main(void)
    // for each answer, select value of an element of array responses
    // and use that value as an index in array frequency to 
    // determine element to increment
-   for (size_t answer = 0; answer < RESPONSES_SIZE; ++answer) {
+   int answer;
+   for ( answer = 0; answer < RESPONSES_SIZE; ++answer)
+    {
       ++frequency[responses[answer]];
    } 
 
    // display results
    printf("%s%17s\n", "Rating", "Frequency");
+   b(frequency,FREQUENCY_SIZE);
 }
-void b(int frequency[], SIZE)
+void b(int frequency[], int size)
 {   
    int rating,j;
-   for (size_t rating = 1; rating < FREQUENCY_SIZE; ++rating) {
-      printf("%6d%17d\n", rating, frequency[rating]);
+   for ( rating = 1; rating < FREQUENCY_SIZE; ++rating) {
+      printf("%6d%17d       ", rating, frequency[rating]);
     for(j=0;j<frequency[rating];j++)  
       printf("*");
     printf("\n");
    } 
+}
