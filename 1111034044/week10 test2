@@ -21,15 +21,10 @@ int main(void)
     }
 
     // display results
-    printf("%s%17s\n", "Rating", "Frequency");
+  
 
-    // output the frequencies in a tabular format
-    for ( rating = 1; rating < FREQUENCY_SIZE; ++rating) {
-        printf("%6d%17d\n", rating, frequency[rating]);
-
-
-    }
-    sub( frequency, RESPONSES_SIZE);
+   
+    sub( frequency, FREQUENCY_SIZE);
 }
 void sub(int freq[], int size)
 {
