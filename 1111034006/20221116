@@ -1,6 +1,6 @@
 #include <stdio.h>
 #define SIZE 5
-void a(int arr[], int num);
+void myfun(int arr[], int num);
 // function main begins program execution
 int main(void)
 {
