@@ -1,0 +1,28 @@
+#include <stdio.h>
+#define SIZE 5
+void p(int n[], int num);
+// function main begins program execution
+int main(void)
+{
+    // use initializer list to initialize array n
+    int n[SIZE] = { 19, 3, 15, 7, 11 }, i, j;
+
+    printf("%s%13s%17s\n", "Element", "Value", "Histogram");
+
+    // for each element of array n, output a bar of the histogram
+    p(n,SIZE);
+         // end a histogram bar with a newline
+    }
+void p(int n[],int num)
+{
+    int j, x;
+
+    for (x = 0; x < num; ++x) {
+        printf("%7u%13d        ", x, n[x]);
+
+        for (j = 1; j <= n[x]; ++j) { // print one bar
+            printf("%c", '*');
+        }
+        puts("");
+    }
+}
