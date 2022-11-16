@@ -30,7 +30,7 @@ void mybad(int n[], int num)
 }
 
 
-
+題目2: 修改課本305頁的程式fig06_05.c，並透過陣列傳遞的方式，將兩個陣列傳送到副程式中進行統計，並由主程式印出票數與長條圖。
 #include <stdio.h>
 #include <math.h>
 #include <stdlib.h>
@@ -61,24 +61,6 @@ void KINGDOMCUM(int n[], int m[]) {
         puts("");
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
