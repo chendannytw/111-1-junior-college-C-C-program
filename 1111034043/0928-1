@@ -7,7 +7,7 @@ int main(void)
     int num2;
     int num3;
     int largest=0;
-    int smallest=9999;.
+    int smallest=9999;
     int average;
     int product;
     int sum;
