@@ -15,7 +15,7 @@ int main(void)
 
    
    printf("%s%17s\n", "Rating", "Frequency");
-   test2(frequency,responses);
+   test2(frequency,responses);//副程式
    for (rating = 1; rating < FREQUENCY_SIZE; ++rating) {
       printf("%6d%17d       ", rating, frequency[rating]);
       
