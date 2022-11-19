@@ -57,9 +57,9 @@ int test2(int x[],int y[],int id,int size){
 	    	break;
 	    }
 	    
-	    else{
+	else{
 	    	j++;
-	        	if(j>=9)
-	        	printf("座號%d不存在",id);
-		} 	
+	        if(j>=9)
+	        printf("座號%d不存在",id);
+            } 	
 }
