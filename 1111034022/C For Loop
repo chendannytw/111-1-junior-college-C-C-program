@@ -1,0 +1,47 @@
+//When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop:
+for (statement 1; statement 2; statement 3) {   //Statement 1 is executed (one time) before the execution of the code block.
+                                                //Statement 2 defines the condition for executing the code block.
+                                                //Statement 3 is executed (every time) after the code block has been executed.
+  // code block to be executed
+}
+for( [A.]一開始先做什麼事 ; [B.]條件式 ; [D.]等C每作完一次，就做什麼事 )
+{
+    [C.]當B條件成立時，就重覆做的事...
+}
+流程如下:
+先做A ==> 檢查B條件，成立就做C，接著做D
+
+==> 檢查B條件，成立就做C，接著做D
+
+==> 檢查B條件，成立就做C，接著做D
+
+...
+
+...
+
+==> 檢查B條件，成立就做C，接著做D
+
+==> 檢查B條件，不成立離開
+----------------------------Examples1 down below--------------------------
+int i;
+
+for (i = 0; i < 5; i++) {
+  printf("%d\n", i);
+}
+//Output be like :0
+//                1
+//                2
+//                3
+//                4
+
+----------------------------Examples2 down below--------------------------
+
+for (i = 0; i <= 10; i = i + 2) {
+  printf("%d\n", i);
+}
+//Output be like :0
+//                2
+//                4
+//                6
+//                8
+//                10
