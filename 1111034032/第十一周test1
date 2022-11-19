@@ -15,12 +15,12 @@ int main(void){
 	for(i=0 ; i<SIZE ; ++i)
 	printf("%4d",s[i]);//印結果 
 	
+	test1(a,s,SIZE);//呼叫副程式 
 	printf("\n氣泡排序後");
 	for(i=0;i<SIZE;++i)
 	printf("%4d",a[i]);//印分數
 	printf("\n");
 	printf("          ");
-    test1(a,s,SIZE);//呼叫副程式 
     for(i=0 ; i<SIZE ; ++i)
 	printf("%4d",s[i]);//印結果 
 	
