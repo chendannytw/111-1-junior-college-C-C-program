@@ -61,5 +61,5 @@ int test2(int x[],int y[],int id,int size){
 	        if(i>=9)
 	        printf("座號%d不存在",id);
             }
-        }	 	
+    }	 	
 }
