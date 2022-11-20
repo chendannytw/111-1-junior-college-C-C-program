@@ -26,7 +26,7 @@ int main(void){
 	printf("%4d",s[i]);//印結果 
 	printf("\n");
 	
-	printf("請輸入要查詢的座號");//副 
+	printf("請輸入要查詢的座號"); 
 	scanf("%d",&ID);
 	test2(a,s,ID,SIZE);		
 }
@@ -50,16 +50,16 @@ void test1(int a[],int s[],int size){
 }
 
 int test2(int x[],int y[],int id,int size){
-	int i,j;
-	for(i=0 ; i<size ; ++i)
+	int i;
+	for(i=0 ; i<size ; ++i){ 
 		if(id==x[i]){		
 	    	printf("座號%d得%d分",x[i],y[i]);
 	    	break;
 	    }
 	    
 	else{
-	    	j++;
-	        if(j>=9)
+	        if(i>=9)
 	        printf("座號%d不存在",id);
-            } 	
+            }
+		}	 	
 }
