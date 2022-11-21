@@ -23,7 +23,16 @@ int main(void){
 	for (i=0;i<SIZE;++i){
 		printf("%4d",s[i]);
 	}
-
+	printf("請輸入學號:");
+	scanf("%d",&ID);
+	for(i=0,i<SIZE;++i){
+		if(ID==a[i]){
+			printf("student %d score is %d",a[i],s[i]);
+		}
+	}
+	for(j>=9){
+		printf("student %d not found!",ID);
+	}
 	puts("");
 }
 
