@@ -52,11 +52,8 @@ void fun2(int a[],int [],int ID,int size){
 			printf("student %d score is %d",a[i],s[i]);
 		}
 		else{
-			j++;
-			//printf("student %d is not our student",ID);
+			printf("student %d is not our student",ID);
 		}
 	}
-	for(j>=9){
-		printf("student %d not found!",ID);
-	}
+
 }
