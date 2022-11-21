@@ -30,16 +30,15 @@ int main(void){
 
 void fun(int a[],int s[],int size){
 	int hold;
-		for(pass=1;pass<SIZE;++pass){
-			for(i=0;i<SIZE-1;--i){
-				if(c[i]>c[i+1]){
-					hold = c[i];
-					c[i] = c[i+1];
-					c[i+1] = hold;
-					hold = a[i];
-					a[i] = a[i+1];
-					a[i+1] = hold;
-				}
+	for(pass=1;pass<SIZE;++pass){
+		for(i=0;i<SIZE-1;--i){
+			if(c[i]>c[i+1]){
+				hold = c[i];
+				c[i] = c[i+1];
+				c[i+1] = hold;
+				hold = a[i];
+				a[i] = a[i+1];
+				a[i+1] = hold;
 			}
 		}
 	}
