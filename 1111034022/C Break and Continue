@@ -1,0 +1,77 @@
+//You have already seen the 'break' statement used in an earlier chapter of this tutorial. It was used to "jump out" of a switch statement.
+//看到break之後 跳出迴圈
+
+-------------------Examples1 down below--------------------------
+
+int i;
+
+for (i = 0; i < 10; i++) {
+  if (i == 4) {
+    break;
+  }
+  printf("%d\n", i);
+}
+//Output be like:0
+//               1
+//               2
+//               3
+//The 'continue' statement breaks one iteration (in the loop), if a specified condition occurs, and continues with the next iteration in the loop.
+
+-------------------Examples2 down below--------------------------
+
+int i;
+
+for (i = 0; i < 10; i++) {
+  if (i == 4) {                //以這裡的continue為例 25行的if迴圈直接跳過 執行28行的printf直述式
+    continue;
+  }
+  printf("%d\n", i);
+}
+//Output be like:0
+//               1
+//               2
+//               3
+//               5
+//               6
+//               7
+//               8
+//               9
+
+//You can also use break and continue in while loops:
+
+-------------------Examples3 down below--------------------------
+(Break Example)
+int i = 0;
+
+while (i < 10) {
+  if (i == 4) {
+    break;
+  }
+  printf("%d\n", i);
+  i++;
+}
+//Output be like:0
+//               1
+//               2
+//               3
+
+(Continue Example)
+int i = 0;
+
+while (i < 10) {
+  if (i == 4) {
+    i++;
+    continue;
+  }
+  printf("%d\n", i);
+  i++;
+}
+//Output be like:0
+//               1
+//               2
+//               3
+//               5
+//               6
+//               7
+//               8
+//               9
