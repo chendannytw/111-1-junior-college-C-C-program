@@ -27,3 +27,4 @@ void a(int arr[],int num)
       puts(""); 
    } 
 }
+
