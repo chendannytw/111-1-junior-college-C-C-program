@@ -1,0 +1,43 @@
+#include <iostream>
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+void lost(int n[],int x[]);
+int main(void){
+
+    int i;
+	int n[SIZE] = {12,13,14,15,16,17,18,19,21,22};
+	int x[SIZE] = {66,67,66,70,73,74,75,75,75,62};
+    printf("before\n");
+    for(i=0;i<SIZE;++i)
+	printf("%d ",n[i]);
+	printf("\n");
+	for(i=0;i<SIZE;++i)
+    printf("%d ",x[i]);
+    printf("\n");
+ 
+    lost(n,x);
+    printf("after\n");
+    for(i=0;i<SIZE;++i)
+	printf("%d ",n[i]);
+	printf("\n");
+	for(i=0;i<SIZE;++i)
+    printf("%d ",x[i]);  
+ } 
+ void lost(int n[],int x[]){
+ 	int hold,pass,i;  
+    for(pass = 1; pass < SIZE; ++pass){
+    	for(i = 0; i < SIZE -pass; ++i){
+    		if(x[i] > x[i+1]){
+			hold = x[i];
+    		x[i] = x[i+1];
+    		x[i+1] = hold;
+			hold = n[i];
+    		n[i] = n[i+1];
+    		n[i+1] = hold;
+			}
+		}
+	} 
+ }
+ 
+ 
