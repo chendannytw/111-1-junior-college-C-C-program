@@ -1,0 +1,73 @@
+//Arrays are used to store multiple values in a single variable, instead of declaring separate variables for each value. 用來存取一個陣列
+
+-----------------Example1 down below-------------------------
+int myNumbers[] = {25, 50, 75, 100};
+
+//此陣列存放了4個整數
+
+
+//Access the Elements of an Array
+
+//To access an array element, refer to its index number.
+//Array indexes start with 0: [0] is the first element. [1] is the second element, etc.
+
+-----------------Example2 down below-------------------------
+
+int myNumbers[] = {25, 50, 75, 100};  //myNumbers[0] = 第一項 myNumbers[1] = 第二項 以此類推
+printf("%d", myNumbers[0]);
+
+// Outputs 25
+
+//Change an Array Element
+
+//To change the value of a specific element, refer to the index number:
+
+-----------------Example3 down below-------------------------
+
+int myNumbers[] = {25, 50, 75, 100};
+myNumbers[0] = 33;                     //想要把陣列的第一項從25改成33 
+
+printf("%d", myNumbers[0]);
+
+// Now outputs 33 instead of 25
+
+//Loop Through an Array
+
+//You can loop through the array elements with the for loop.
+//The following example outputs all elements in the myNumbers array:
+
+-----------------Example4 down below-------------------------
+
+int main() {
+  int myNumbers[] = {25, 50, 75, 100};
+  int i;
+  
+  for (i = 0; i < 4; i++) {            
+    printf("%d\n", myNumbers[i]);
+  }
+ 
+  return 0;
+}
+
+
+//Set Array Size
+
+//Another common way to create arrays, is to specify the size of the array, and add elements later:
+
+-----------------Example5 down below-------------------------
+
+int main() {
+  // Declare an array of four integers:
+  int myNumbers[4];
+
+  // Add elements to it
+  myNumbers[0] = 25;
+  myNumbers[1] = 50;
+  myNumbers[2] = 75;
+  myNumbers[3] = 100;
+
+  printf("%d\n", myNumbers[0]);
+ 
+  return 0;
+} 
+//Output be like:25
