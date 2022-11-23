@@ -1,8 +1,8 @@
 #include <stdio.h>
 #define SIZE 10 
 
-void test1(int a[],int b[],int size);
-int test2(int x[],int y[],int id,int size);
+void t1(int a[],int b[],int size);
+int  t2(int x[],int y[],int id,int size);
 
 int main(void){
     int a[SIZE]={2,6,4,8,10,12,89,68,45,37},ID,j,i;
@@ -31,7 +31,7 @@ int main(void){
     test2(a,c,ID,SIZE);
 }
 
-void test1(int a[],int c[],int size){
+void t1(int a[],int c[],int size){
     int as,ad,i;
     for (as=1 ; as<SIZE ; ++as){
 
@@ -49,7 +49,7 @@ void test1(int a[],int c[],int size){
     }
 }
 
-int test2(int x[],int y[],int id,int size){
+int t2(int x[],int y[],int id,int size){
     int i;
     for(i=0 ; i<size ; ++i){ 
         if(id==x[i]){
