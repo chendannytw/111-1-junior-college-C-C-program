@@ -6,21 +6,21 @@ void scord(int a[],int c[],int size);
 int main(void){
 	int a[z]={2,6,4,8,10,12,89,68,45,37};
     int c[z]={66,67,66,70,73,74,75,62,32}; 
-	printf("排序前");
+	printf("前");
 	int i;
 	for(i = 0 ; i<z ; ++i)
 	printf("%4d",a[i]);
 	printf("\n");
-	printf("          ");
+	printf("  ");
 	for(i=0 ; i<z ; ++i)
 	printf("%4d",c[i]);
 
 	scord(a,c,z);
-	printf("\n排序後");
+	printf("\n後");
 	for(i=0;i<z;++i)
 	printf("%4d",a[i]);
 	printf("\n");
-	printf("          ");
+	printf("  ");
     for(i=0 ; i<z ; ++i)
 	printf("%4d",c[i]);
 
