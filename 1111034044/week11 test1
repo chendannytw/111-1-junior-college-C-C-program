@@ -29,7 +29,6 @@ int main(void) {
     printf("\n");
 
     
-    
 }
 
 void t1(int a[], int c[], int size) {
