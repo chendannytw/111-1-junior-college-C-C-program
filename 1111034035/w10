@@ -30,32 +30,33 @@ void myfun(int arr[], int num)
  
 
 #include <stdio.h>
-#include <math.h>
-#include <stdlib.h>
 #define RESPONSES_SIZE 40
 #define FREQUENCY_SIZE 11
-void KINGDOMCUM(int n[], int m[]);
+void test2(int fre[] , int res[]);
+
 int main(void)
-{
+{  int rating ,hist; 
+   int frequency[FREQUENCY_SIZE] = {0};
+   
+   int responses[RESPONSES_SIZE] = {1, 2, 6, 4, 8, 5, 9, 7, 8, 10,
+        1, 6, 3, 8, 6, 10, 3, 8, 2, 7, 6, 5, 7, 6, 8, 6, 7, 5, 6, 6, 
+        5, 6, 7, 5, 6, 4, 8, 6, 8, 10};
 
-    int frequency[FREQUENCY_SIZE] = { 0 };
-
-    
-    int responses[RESPONSES_SIZE] = { 1, 2, 6, 4, 8, 5, 9, 7, 8, 10,
-         1, 6, 3, 8, 6, 10, 3, 8, 2, 7, 6, 5, 7, 6, 8, 6, 7, 5, 6, 6,
-         5, 6, 7, 5, 6, 4, 8, 6, 8, 10 };
-    KINGDOMCUM(frequency, responses);
+   
+   printf("%s%17s\n", "Rating", "Frequency");
+   test2(frequency,responses);//呼叫副程式
+   for (rating = 1; rating < FREQUENCY_SIZE; ++rating) {
+      printf("%6d%17d       ", rating, frequency[rating]);
+      
+      for(hist=0;hist < frequency[rating];++hist)
+      printf("*");
+      printf("\n");
+   } 
 }
-void KINGDOMCUM(int n[], int m[]) {
-    for (size_t answer = 0; answer < RESPONSES_SIZE; ++answer) {
-        ++n[m[answer]];
-    }
-    printf_s("%s%17s%14s\n", "Rating", "Frequency","Chart");
-    for (size_t rating = 1; rating < FREQUENCY_SIZE; ++rating) {
-        printf_s("%6d%17d           ", rating, n[rating]);
-        for (int star_num = 0; star_num < n[rating]; star_num++) {
-            printf_s("%c",'*');
-        }
-        puts("");
-    }
+
+void test2(int fre[],int res[]){
+	int answer;
+	for (answer = 0; answer < RESPONSES_SIZE; ++answer) 
+      ++fre[res[answer]];
+
 }
