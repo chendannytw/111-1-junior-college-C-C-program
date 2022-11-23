@@ -57,6 +57,36 @@ void test2(int a[], int c[],  int ID,int size) {
             printf("座號%d得%d分", a[i], c[i]);
             break;
         }
+        else
+        if (i >= 9)
+            printf("座號%d不存在", ID);
+    }
+}
+
+void t1(int a[], int c[], int size) {
+    int as, ad, i;
+    for (as = 1; as < SIZE; ++as) {
+
+        for (i = 0; i < SIZE - as; ++i) {
+            if (c[i] > c[i + 1]) {
+                ad = c[i];
+                c[i] = c[i + 1];
+                c[i + 1] = ad;
+
+                ad = a[i];
+                a[i] = a[i + 1];
+                a[i + 1] = ad;
+            }
+        }
+    }
+}
+void test2(int a[], int c[],  int ID,int size) {
+    int i;
+    for (i = 0; i < size; ++i) {
+        if (ID == a[i]) {
+            printf("座號%d得%d分", a[i], c[i]);
+            break;
+        }
 
         else {
             if (i >= 9)
