@@ -34,7 +34,6 @@ int main(void) {
     test2(a, c, ID, SIZE);
 
 }
-
 void t1(int a[], int c[], int size) {
     int as, ad, i;
     for (as = 1; as < SIZE; ++as) {
