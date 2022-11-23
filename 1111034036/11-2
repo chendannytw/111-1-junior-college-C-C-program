@@ -21,7 +21,7 @@ int main(void)
 		printf("%4d", score[n]);
 	}
 	puts("");
-	puts("輸入想查詢的座號");
+	puts("請輸入座號");
 	scanf_s("%d", &ID);
 	b(id, score, ID);
 }
@@ -41,12 +41,12 @@ void a(int x[]) {
 void b(int x[], int y[], int id) {
 	for (size_t i = 0; i < SIZE; ++i) {
 		if (id == x[i]) {
-			printf("座號%d得%d分", x[i], y[i]);
+			printf("%d號得%d分", x[i], y[i]);
 			break;
 		}
 		else {
 			if (i >= 19)
-				printf("座號%d不存在", id);
+				printf("%d號不存在", id);
 		}
 	}
 }
