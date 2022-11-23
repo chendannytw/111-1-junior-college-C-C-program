@@ -1,0 +1,40 @@
+#include <stdio.h>
+#define SIZE 10 
+
+int SCORE(int x[], int y[], int id, int size);
+
+int main(void) {
+	int a[SIZE] = { 2,6,4,8,10,12,89,68,45,37 }, ID, j;
+	int s[SIZE] = { 66,67,66,70,73,74,75,62,32 };
+	printf("排序前");
+	int i;
+	for (i = 0; i < SIZE; ++i)
+		printf("%4d", a[i]);
+	printf("\n");
+	printf("      ");
+	for (i = 0; i < SIZE; ++i)
+		printf("%4d", s[i]);
+
+
+
+	printf("\nENTER");
+	scanf_s("%d", &ID);
+	SCORE(a, s, ID, SIZE);
+}
+
+
+
+int SCORE(int x[], int y[], int id, int size) {
+	int i;
+	for (i = 0; i < size; ++i) {
+		if (id == x[i]) {
+			printf("%d號得%d分!", x[i], y[i]);
+			return i;
+		}
+
+		else {
+			if (i >= 9)
+				printf("%d不存在", id);
+		}
+	}
+}
