@@ -1,0 +1,30 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 5
+
+
+void a(int arr[],int num);
+int n[SIZE] = {19, 3, 15, 7, 11},i,j;
+int main(void)
+{
+   
+   printf("%s%13s%17s\n", "Element", "Value", "Histogram");
+	a(n,SIZE);
+	
+	
+}
+
+void a(int arr[],int num)
+{
+
+   for (i = 0; i < num; ++i) {
+      printf("%7u%13d        ", i, n[i]) ;
+
+      for ( j = 1; j <= arr[i]; ++j) { 
+         printf("%c", '*');                                  
+	   }                                     
+
+      puts(""); 
+   } 
+}
