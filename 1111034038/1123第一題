@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define SIZE 10
+void bubble_sort(int id[],int point[]);
+int main() {
+	int a[SIZE] = { 2,6,4,8,10,12,89,68,45,37 };
+	int score[SIZE] = { 65,69,68,96,78,25,30,0,2,5 };
+	puts("Data  items  in original order");
+
+	for (size_t i = 0; i < SIZE; ++i) {
+		printf_s("%4d", a[i]);
+	}
+	puts("");
+	puts("With the following score is");
+
+	for (size_t i = 0; i < SIZE; ++i) {
+		printf_s("%4d", score[i]);
+	}
+	bubble_sort(a, score);
+}
+	void bubble_sort(int id[], int point[]) {
+		for (int pass = 1; pass < SIZE; ++pass) {
+			for (size_t i = 0; i < SIZE - 1; ++i) {
+				if (point[i] > point[i + 1]) {
+					int hold = point[i];
+					point[i] = point[i + 1];
+					point[i + 1] = hold;
+
+					int hold_2 = id[i];
+					id[i] = id[i + 1];
+					id[i + 1] = hold_2;
+				}
+			}
+		}
+		puts("\nscore in order is");
+		for (size_t i = 0; i < SIZE; ++i) {
+			printf_s("%4d", point[i]);
+		}
+		puts("");
+		puts("Data  items  in  order");
+
+		for (size_t i = 0; i < SIZE; ++i) {
+			printf_s("%4d", id[i]);
+		}
+		puts("");
+	}
