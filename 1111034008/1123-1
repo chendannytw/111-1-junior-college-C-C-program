@@ -1,0 +1,44 @@
+#include <stdio.h>
+#define SIZE 10
+
+void sort(int a[], int b[], int size);
+
+int main(void) {
+	int a[SIZE] = { 2,6,4,8,10,12,89,68,45,37 };
+	int c[SIZE] = { 66,67,66,70,73,74,75,62,32 };
+	printf("前");
+	int i;
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", a[i]);
+	}
+	printf("\n");
+	printf("          ");
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", c[i]);
+	}
+	sort(a, c, SIZE);
+	printf("\n後");
+	for (i = 0; i < SIZE; ++i) 
+		printf("%4d", a[i]);
+		printf("\n");
+	    printf("          ");
+		for (i = 0; i < SIZE; ++i) 
+			printf("%4d", c[i]);
+}
+
+void sort(int a[],int c[], int size) {
+	int hold,pass,i;
+	for (pass = 1; pass < SIZE; ++pass) {
+		for (i = 0; i < SIZE - 1; ++i) {
+			if (c[i] > c[i + 1]) {
+				hold = c[i];
+				c[i] = c[i + 1];
+				c[i + 1] = hold;
+
+				hold = a[i];
+				a[i] = a[i + 1];
+				a[i + 1] = hold;
+			}
+		}
+	}
+}
