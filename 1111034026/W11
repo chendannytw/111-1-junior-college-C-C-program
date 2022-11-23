@@ -1,0 +1,41 @@
+#include <stdio.h>
+#define arr 10 
+
+void scord(int a[],int c[],int size);
+
+int main(void){
+	int a[arr]={2,6,4,8,10,12,89,68,45,37};
+    int c[arr]={66,67,66,70,73,74,75,62,32}; 
+	printf("排序前\n");
+	int i;
+	for(i = 0 ; i<arr ; ++i)
+	printf("%4d",a[i]);
+	printf("\n");
+	for(i=0 ; i<arr ; ++i)
+	printf("%4d",c[i]);
+	
+	scord(a,c,arr);
+	printf("\n排序後\n");
+	for(i=0;i<arr;++i)
+	printf("%4d",a[i]);
+	printf("\n");
+    for(i=0 ; i<arr ; ++i)
+	printf("%4d",c[i]);
+	
+}
+
+void scord(int a[],int c[],int size){
+	int pass,hold,i;
+	for (pass=1 ; pass<arr ; ++pass){
+	 for(i=0 ; i<arr-pass ; ++i){//
+			if(c[i]>c[i+1]){
+				hold = c[i];
+				c[i] = c[i + 1];
+				c[i + 1] = hold;
+				
+				hold = a[i];
+				a[i] = a[i + 1];
+				a[i + 1] = hold;
+			}
+		}
+	}
