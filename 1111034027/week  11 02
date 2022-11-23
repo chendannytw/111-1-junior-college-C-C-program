@@ -1,0 +1,66 @@
+#include <stdio.h>
+#define SIZE 10 
+
+void t1(int a[], int c[], int size);
+void t2(int a[], int b[],int id, int size);
+
+
+int main(void) {
+    int a[SIZE] = { 1,2,3,4,5,6,7,8,9,10 }, ID, j;
+    int s[SIZE] = { 66,55,61,89,73,80,55,13,42,70 };
+    printf("座號");
+    int i;
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", a[i]);
+    printf("\n");
+    printf("     ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", s[i]); 
+
+    t1(a, s, SIZE);
+    printf("\n學號");
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", a[i]);
+    printf("\n");
+    printf("     ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", s[i]); 
+    printf("\n");
+
+    printf("請輸入座號查詢成績");
+    scanf_s("%d", &ID);
+    t2(a, s, ID, SIZE);
+}
+    
+   
+
+
+void t1(int a[], int c[], int size) {
+    int as, ad, i;
+    for (as = 1; as < SIZE; ++as) {
+
+        for (i = 0; i < SIZE - as; ++i) {
+            if (c[i] > c[i + 1]) {
+                ad = c[i];
+                c[i] = c[i + 1];
+                c[i + 1] = ad;
+
+                ad = a[i];
+                a[i] = a[i + 1];
+                a[i + 1] = ad;
+            }
+        }
+    }
+}
+void t2(int a[], int b[], int id,int size) {
+    for (size_t i = 0; i < SIZE; ++i) {
+        if (id == a[i]) {
+            printf("%d號得%d分", a[i], b[i]);
+            break;
+        }
+        else {
+            if (i >= 9)
+                printf("%d號不存在", id);
+        }
+    }
+}
