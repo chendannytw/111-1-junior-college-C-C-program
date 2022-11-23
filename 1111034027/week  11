@@ -16,7 +16,7 @@ int main(void){
     for(i=0 ; i<SIZE ; ++i)
     printf("%4d",c[i]);
 
-    test1(a,s,SIZE);
+    test1(a,c,SIZE);
     printf("\nData items in ascending order");
     for(i=0 ; i<SIZE ; ++i)
     printf("%4d",a[i]);
@@ -37,9 +37,9 @@ void t1(int a[],int c[],int size){
 
         for(i=0 ; i<SIZE-as ; ++i){
             if(s[i]>s[i+1]){
-                ad = s[i]; 
-                s[i] = s[i + 1];
-                s[i + 1] = ad;
+                ad = c[i]; 
+                c[i] = c[i + 1];
+                c[i + 1] = ad;
 
                 ad = a[i]; 
                 a[i] = a[i + 1];
