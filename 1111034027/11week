@@ -1,0 +1,65 @@
+#include <stdio.h>
+#define SIZE 10 
+
+void test1(int a[],int b[],int size);
+int test2(int x[],int y[],int id,int size);
+
+int main(void){
+    int a[SIZE]={2,6,4,8,10,12,89,68,45,37},ID,j,i;
+    int c[SIZE]={66,67,66,70,73,74,75,62,32}; 
+    printf("Data items in ascending orde");
+
+    for(i = 0 ; i<SIZE ; ++i)
+    printf("%4d",a[i]);
+    printf("\n");
+    printf("          ");
+    for(i=0 ; i<SIZE ; ++i)
+    printf("%4d",c[i]);
+
+    test1(a,s,SIZE);
+    printf("\nData items in ascending order");
+    for(i=0 ; i<SIZE ; ++i)
+    printf("%4d",a[i]);
+    printf("\n");
+    printf("          ");
+    for(i=0 ; i<SIZE ; ++i)
+    printf("%4d",c[i]);
+    printf("\n");
+
+    printf("請輸入要查詢的座號"); 
+    scanf("%d",&ID);
+    test2(a,c,ID,SIZE);
+}
+
+void test1(int a[],int c[],int size){
+    int as,ad,i;
+    for (as=1 ; as<SIZE ; ++as){
+
+        for(i=0 ; i<SIZE-as ; ++i){
+            if(s[i]>s[i+1]){
+                ad = s[i]; 
+                s[i] = s[i + 1];
+                s[i + 1] = ad;
+
+                ad = a[i]; 
+                a[i] = a[i + 1];
+                a[i + 1] = ad;
+            }
+        }
+    }
+}
+
+int test2(int x[],int y[],int id,int size){
+    int i;
+    for(i=0 ; i<size ; ++i){ 
+        if(id==x[i]){
+            printf("%d號%d分",x[i],y[i]);
+            break;
+        }
+
+    else{
+            if(i>=9)
+            printf("%d號存不在",id);
+            }
+    }
+}
