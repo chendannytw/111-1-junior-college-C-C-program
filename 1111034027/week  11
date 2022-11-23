@@ -1,65 +1,49 @@
 #include <stdio.h>
 #define SIZE 10 
 
-void t1(int a[],int b[],int size);
-int  t2(int x[],int y[],int id,int size);
+void t1(int a[], int b[], int size);
 
-int main(void){
-    int a[SIZE]={2,6,4,8,10,12,89,68,45,37},ID,j,i;
-    int c[SIZE]={66,67,66,70,73,74,75,62,32}; 
+
+int main(void) {
+    int a[SIZE] = { 1,2,3,4,5,6,7,8,9,10 }, ID, i;
+    int c[SIZE] = { 66,67,66,70,73,74,75,65,62,80};
     printf("Data items in ascending orde");
 
-    for(i = 0 ; i<SIZE ; ++i)
-    printf("%4d",a[i]);
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", a[i]);
     printf("\n");
-    printf("  ");
-    for(i=0 ; i<SIZE ; ++i)
-    printf("%4d",c[i]);
+    printf("                             ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", c[i]);
 
-    test1(a,c,SIZE);
+    t1(a, c, SIZE);
     printf("\nData items in ascending order");
-    for(i=0 ; i<SIZE ; ++i)
-    printf("%4d",a[i]);
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", a[i]);
     printf("\n");
-    printf("          ");
-    for(i=0 ; i<SIZE ; ++i)
-    printf("%4d",c[i]);
+    printf("                             ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", c[i]);
     printf("\n");
 
-    printf("請輸入查詢的座號"); 
-    scanf("%d",&ID);
-    test2(a,c,ID,SIZE);
+    
+    
 }
 
-void t1(int a[],int c[],int size){
-    int as,ad,i;
-    for (as=1 ; as<SIZE ; ++as){
+void t1(int a[], int c[], int size) {
+    int as, ad, i;
+    for (as = 1; as < SIZE; ++as) {
 
-        for(i=0 ; i<SIZE-as ; ++i){
-            if(s[i]>s[i+1]){
-                ad = c[i]; 
+        for (i = 0; i < SIZE - as; ++i) {
+            if (c[i] > c[i + 1]) {
+                ad = c[i];
                 c[i] = c[i + 1];
                 c[i + 1] = ad;
 
-                ad = a[i]; 
+                ad = a[i];
                 a[i] = a[i + 1];
                 a[i + 1] = ad;
             }
         }
-    }
-}
-
-int t2(int x[],int y[],int id,int size){
-    int i;
-    for(i=0 ; i<size ; ++i){ 
-        if(id==x[i]){
-            printf("%d號%d分",x[i],y[i]);
-            break;
-        }
-
-    else{
-            if(i>=9)
-            printf("%d號存不在",id);
-            }
     }
 }
