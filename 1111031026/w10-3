@@ -31,6 +31,9 @@ void a(int x[],int y[]) {
 					int hold = x[i];
 					x[i] = x[i + 1];
 					x[i + 1] = hold;
+					int hold1 = y[i];
+					y[i] = y[i + 1];
+					y[i + 1] = hold1;
 				}
 			}
 	}
