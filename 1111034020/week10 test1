@@ -1,0 +1,30 @@
+// Fig. 6.8: fig06_08.c
+// Displaying a histogram.
+#include <stdio.h>
+#define SIZE 5
+
+// function main begins program execution
+void my(int arr[], int num);
+int main(void)
+{
+    
+    int n[SIZE] = { 19, 3, 15, 7, 11 }, i, j;
+
+    printf("%s%13s%17s\n", "Element", "Value", "Histogram");
+    my(n, SIZE);
+    
+    }
+void my(int arr[], int num)
+{
+    int i;
+    int j;
+    for (i = 0; i < num; ++i) {
+        printf("%7u%13d        ", i, arr[i]);
+
+        for (j = 1; j <= arr[i]; ++j) { // print one bar
+            printf("%c", '*');
+        }
+
+        puts("");
+    }
+}
