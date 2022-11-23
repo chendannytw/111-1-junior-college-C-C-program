@@ -48,3 +48,38 @@ void t1(int a[], int c[], int size) {
     }
 }
 ---------------------------------------------------------------------------------------------------------
+#include<stdio.h>   題2
+#define 大小 10
+
+//搜索ID;
+int Search(int id[], int sc[], int key);
+
+int 主要（無效）{
+	int a[SIZE] = { 12,13,14,15,16,17,19,21,22,23 };
+	int c[SIZE] = { 66,67,70,66,73,74,75,75,62,32 }, key, i, temp;
+	puts("原始順序的數據項");
+	對於 (i = 0; i < SIZE; ++i) {
+		printf("\n%4d", a[i]);
+		printf("%4d", c[i]);
+	}
+
+	printf("\n請輸入編號：");
+	scanf_s("%d", &key);
+
+	temp = Search(a, c, key);
+	如果（溫度==-1）{
+		printf("沒有找到身份證件！");
+			返回 0；
+	}
+	printf("ID %d 得到分數 %d", a[temp], c[temp]);
+	放（“”）;
+}
+int Search(int id[], int sc[], int key){
+	詮釋我;
+	對於 (i = 0; i < SIZE; i++){
+		如果（id[i] == 鍵）{
+			返回我；
+		}
+	}
+	返回 - 1;
+}
