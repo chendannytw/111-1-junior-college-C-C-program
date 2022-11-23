@@ -1,0 +1,78 @@
+#include <iostream>
+#include <stdio.h>
+#define SIZE 10
+
+void x(int a[], int sc[]);
+int y(int a[], int sc[], int key);
+
+int main(void)
+{
+	int a[SIZE] = { 2,6,4,8,10,12,89,68,45,37 };
+	int sc[SIZE] = { 68,42,73,94,84,99,81,78,79,91 }, key, temp;
+
+	puts("Data items in original order");
+
+	for (size_t i = 0; i < SIZE; ++i)
+	{
+		printf("\n%4d", a[i]);
+		printf("%4d", sc[i]);
+	}
+	puts("\nData items in ascending order");
+
+	x(a, sc);
+
+	for (size_t i = 0; i < SIZE; ++i)
+	{
+		printf("\n%4d", a[i]);
+		printf("%4d", sc[i]);
+	}
+	puts("");
+
+	printf("\nPlease input ID: ");
+    scanf_s("%d", &key);
+
+	temp = y(a, sc, key);
+	if (temp == -1) 
+	{
+		printf("ID not found!");
+		return 0;
+	}
+	printf("The ID %d get score %d", a[temp], sc[temp]);
+
+	puts("");
+
+	y(a, sc, key);
+}
+
+void x(int a[], int sc[])
+{
+	for (int pass = 1; pass < SIZE; ++pass)
+	{
+		for (size_t i = 0; i < SIZE - 1; ++i)
+		{
+			if (sc[i] < sc[i + 1])
+			{
+				int hold = sc[i];
+				sc[i] = sc[i + 1];
+				sc[i + 1] = hold;
+
+				hold = a[i];
+				a[i] = a[i + 1];
+				a[i + 1] = hold;
+			}
+		}
+	}
+}
+
+int y(int a[], int sc[], int key)
+{
+	int i;
+	for (i = 0; i < SIZE; i++)
+	{
+		if (sc[i] == key) 
+		{
+			return i;
+		}
+	}
+	return -1;
+}
