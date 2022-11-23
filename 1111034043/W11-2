@@ -59,7 +59,7 @@ void test2(int x[], int y[], int id, int size) {
 
 		else {
 			if (i >= 9)
-				printf("404Not Found", id);
+				printf("404  Not Found", id);
 		}
 	}
 }
