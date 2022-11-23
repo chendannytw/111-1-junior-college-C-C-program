@@ -1,0 +1,65 @@
+#include <stdio.h>
+#define SIZE 10 
+
+void test1(int a[], int b[], int size);
+void test2(int x[], int y[], int id, int size);
+
+int main(void) {
+	int a[SIZE] = { 2,6,4,8,10,12,9,7,5,43 }, d, j;
+	int s[SIZE] = { 66,67,66,70,73,74,75,62,32,100 };
+	printf("氣泡排序前");
+	int i;
+	for (i = 0; i < SIZE; ++i)
+		printf("%4d", a[i]); 
+	printf("\n");
+	printf("          ");
+	for (i = 0; i < SIZE; ++i)
+		printf("%4d", s[i]); 
+
+	test1(a, s, SIZE);
+	printf("\n氣泡排序後");
+	for (i = 0; i < SIZE; ++i)
+		printf("%4d", a[i]);
+	printf("\n");
+	printf("          ");
+	for (i = 0; i < SIZE; ++i)
+		printf("%4d", s[i]); 
+	printf("\n");
+
+	printf("座號");
+    scanf_s("%d",&d);
+	test2(a, s, d, SIZE);
+}
+
+void test1(int a[], int s[], int size) {
+	int pass, hold, i;
+	for (pass = 1; pass < SIZE; ++pass) {
+		
+		for (i = 0; i < SIZE - pass; ++i) { 
+			if (s[i] > s[i + 1]) {
+				hold = s[i]; 
+				s[i] = s[i + 1];
+				s[i + 1] = hold;
+
+				hold = a[i];
+				a[i] = a[i + 1];
+				a[i + 1] = hold;
+			}
+		}
+	}
+}
+
+void test2(int x[], int y[], int id, int size) {
+	int i;
+	for (i = 0; i < size; ++i) {
+		if (id == x[i]) {
+			printf("%d號  %d分", x[i], y[i]);
+			break;
+		}
+
+		else {
+			if (i >= 9)
+				printf("404Not Found", id);
+		}
+	}
+}
