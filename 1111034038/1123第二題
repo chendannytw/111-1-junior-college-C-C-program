@@ -1,0 +1,37 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define SIZE 10
+int search(int id[], int point[], int key);
+int main() {
+	int b = 0;
+	int a[SIZE] = { 2,6,4,8,10,12,89,68,45,37 };
+	int score[SIZE] = { 65,69,68,96,78,25,30,0,2,5 };
+	puts("Data  items  in original order");
+
+	for (size_t i = 0; i < SIZE; ++i) {
+		printf_s("%4d", a[i]);
+	}
+	puts("");
+	puts("With the following score is");
+
+	for (size_t i = 0; i < SIZE; ++i) {
+		printf_s("%4d", score[i]);
+	}
+	puts("");
+	printf_s("請輸入搜尋學號: \n");
+	scanf_s("%d", &b);
+	if (search(a, score, b) == -1) {
+		printf_s("沒有任何搜尋結果");
+	}
+		printf_s("搜尋結果為 學號: %d 成績: %d", a[search(a, score, b)], score[search(a, score, b)]);
+}
+
+int search(int id[], int point[], int key) {
+	for (int i = 0; i < SIZE; ++i) {
+		if (id[i] == key) {
+			return i;
+		}
+	}
+	return -1;
+}
