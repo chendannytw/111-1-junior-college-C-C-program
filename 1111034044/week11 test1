@@ -35,7 +35,7 @@ void t1(int a[], int c[], int size) {
     for (as = 1; as < SIZE; ++as) {
 
         for (i = 0; i < SIZE - as; ++i) {
-            if (c[i] > c[i + 1]) {
+            if (c[i] > c[i + 1]) {              //將>改成<便可以由大到小排列
                 ad = c[i];
                 c[i] = c[i + 1];
                 c[i + 1] = ad;
