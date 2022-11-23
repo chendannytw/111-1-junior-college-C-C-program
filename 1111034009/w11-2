@@ -13,23 +13,23 @@ int main(void) {
 		printf("%4d", c[i]);
 	}
 
-	printf("\nPlease input ID: ");
+	printf("\n請輸入: ");
 	scanf_s("%d", &key);
 
 	temp = Search(a, c, key);
 	if (temp == -1) {
-		printf("ID not found!");
-			return 0;
+		printf("找沒有喔!");
+		return 0;
 	}
-	printf("The ID %d get score %d", a[temp], c[temp]);
+	printf("%d的成績是%d", a[temp], c[temp]);
 	puts("");
 }
-int Search(int id[], int sc[], int key){
+int Search(int id[], int sc[], int key) {
 	int i;
-	for (i = 0; i < SIZE; i++){
-		if (id[i] == key){
+	for (i = 0; i < SIZE; i++) {
+		if (id[i] == key) {
 			return i;
 		}
 	}
-	return - 1;
+	return -1;
 }
