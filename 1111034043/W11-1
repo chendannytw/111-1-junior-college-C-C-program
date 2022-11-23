@@ -9,7 +9,7 @@ int main(void) {
 	printf("氣泡排序前");
 	int i;
 	for (i = 0; i < SIZE; ++i)
-		printf("%4d", a[i]);//印分數 
+		printf("%4d", a[i]);
 	printf("\n");
 	printf("          ");
 	for (i = 0; i < SIZE; ++i)
