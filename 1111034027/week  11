@@ -12,7 +12,7 @@ int main(void){
     for(i = 0 ; i<SIZE ; ++i)
     printf("%4d",a[i]);
     printf("\n");
-    printf("          ");
+    printf("  ");
     for(i=0 ; i<SIZE ; ++i)
     printf("%4d",c[i]);
 
@@ -26,7 +26,7 @@ int main(void){
     printf("%4d",c[i]);
     printf("\n");
 
-    printf("請輸入要查詢的座號"); 
+    printf("請輸入查詢的座號"); 
     scanf("%d",&ID);
     test2(a,c,ID,SIZE);
 }
