@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 10
+void fun(int a[],int s[],int size);
+void fun2(int a[],int s[],int ID,int size);
 
 int i,pass,ID;
 int main(void){
@@ -14,7 +16,7 @@ int main(void){
 	for (i=0;i<SIZE;++i){
 		printf("%4d",s[i]);
 	}
-	fun(a,s,size);
+	fun(a,s,SIZE);
 	puts("\nData items in ascending order");
 	for(i=0;i<SIZE;++i){
 		printf("%4d",a[i]);
@@ -25,7 +27,7 @@ int main(void){
 	}
 	printf("請輸入學號:");
 	scanf("%d",&ID);
-	fun2(a,s,ID,size);
+	fun2(a,s,ID,SIZE);
 	puts("");
 }
 
@@ -33,11 +35,11 @@ int main(void){
 void fun(int a[],int s[],int size){
 	int hold;
 	for(pass=1;pass<SIZE;++pass){
-		for(i=0;i<SIZE-1;--i){
-			if(c[i]>c[i+1]){
-				hold = c[i];
-				c[i] = c[i+1];
-				c[i+1] = hold;
+		for(i=0;i<SIZE-1;++i){
+			if(s[i]>s[i+1]){
+				hold = s[i];
+				s[i] = s[i+1];
+				s[i+1] = hold;
 				hold = a[i];
 				a[i] = a[i+1];
 				a[i+1] = hold;
@@ -46,13 +48,15 @@ void fun(int a[],int s[],int size){
 	}
 }
 
-void fun2(int a[],int [],int ID,int size){
-	for(i=0,i<SIZE;++i){
+void fun2(int a[],int s[],int ID,int size){
+	for(i=0;i<SIZE;++i){
 		if(ID==a[i]){
 			printf("student %d score is %d",a[i],s[i]);
+			break;
 		}
 		else{
-			printf("student %d is not our student",ID);
+			if(i>=9)
+			printf("student %d is not our student",ID);		
 		}
 	}
 
