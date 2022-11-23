@@ -7,21 +7,21 @@ void t1(int a[], int b[], int size);
 int main(void) {
     int a[SIZE] = { 1,2,3,4,5,6,7,8,9,10 }, ID, i;
     int c[SIZE] = { 66,67,66,70,73,74,75,65,62,80};
-    printf("Data items in ascending orde");
+    printf("前");
 
     for (i = 0; i < SIZE; ++i)
         printf("%4d", a[i]);
     printf("\n");
-    printf("                             ");
+    printf("  ");
     for (i = 0; i < SIZE; ++i)
         printf("%4d", c[i]);
 
     t1(a, c, SIZE);
-    printf("\nData items in ascending order");
+    printf("\n後");
     for (i = 0; i < SIZE; ++i)
         printf("%4d", a[i]);
     printf("\n");
-    printf("                             ");
+    printf("  ");
     for (i = 0; i < SIZE; ++i)
         printf("%4d", c[i]);
     printf("\n");
