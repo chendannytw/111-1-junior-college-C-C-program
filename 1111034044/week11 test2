@@ -88,7 +88,6 @@ void test2(int a[], int c[],  int ID,int size) {
             printf("座號%d得%d分", a[i], c[i]);
             break;
         }
-
         else {
             if (i >= 9)
                 printf("座號%d不存在", ID);
