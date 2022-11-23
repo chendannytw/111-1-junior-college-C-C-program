@@ -28,7 +28,6 @@ int main(void) {
         printf("%4d", c[i]);
     printf("\n");
 
-    
 }
 
 void t1(int a[], int c[], int size) {
