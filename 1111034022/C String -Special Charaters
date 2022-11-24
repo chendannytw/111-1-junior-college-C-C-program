@@ -38,7 +38,7 @@ int main() {
   return 0;
 }
 Output be like :The character \ is called backslash.
-      Escape Character	Result
+Escape Character	Result
       \n	New Line	
-\t	Tab	
-\0	Null
+      \t	Tab	
+      \0	Null
