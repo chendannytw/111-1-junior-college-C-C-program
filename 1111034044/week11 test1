@@ -11,7 +11,7 @@ int main(void) {
     
     printf("前");
     for (i = 0; i < SIZE; ++i)
-        printf("%4d", a[i]);
+        printf("%4d", a[i]);        //印出學生座號
     printf("\n");
     printf("  ");
     for (i = 0; i < SIZE; ++i)
@@ -20,11 +20,12 @@ int main(void) {
     t1(a, c, SIZE);
     printf("\n後");
     for (i = 0; i < SIZE; ++i)
-        printf("%4d", a[i]);
+        printf("%4d", a[i]);        //印出學生座號
     printf("\n");
     printf("  ");
     for (i = 0; i < SIZE; ++i)
-        printf("%4d", c[i]);
+        printf("%4d", c[i]);        //印出排序後的成績陣列
+
     printf("\n");
 }
 
