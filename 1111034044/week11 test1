@@ -15,7 +15,7 @@ int main(void) {
     printf("\n");
     printf("  ");
     for (i = 0; i < SIZE; ++i)
-        printf("%4d", c[i]);
+        printf("%4d", c[i]);        //印出成績陣列
 
     t1(a, c, SIZE);
     printf("\n後");
