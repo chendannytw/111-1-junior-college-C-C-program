@@ -2,13 +2,13 @@
 #define SIZE 10 
 
 void test1(int a[],int b[],int size);
-int test2(int s[],int ID,int low,int high);
+int test2(int s[],int score,int low,int high);
 
 int main(void){
 	int a[SIZE]={2,6,4,8,10,12,89,68,45,37};
     int s[SIZE]={66,67,66,70,73,74,75,62,32}; 
 	printf("氣泡排序前");
-	int i,ID;
+	int i,score;
 	for(i = 0 ; i<SIZE ; ++i)
 	printf("%4d",a[i]);//印分數 
 	printf("\n");
@@ -27,14 +27,14 @@ int main(void){
 	
 	//下為十二周程式 
 	printf("\n");
-	test2(s,ID,0,SIZE-1);//呼叫副程式
+	test2(s,score,0,SIZE-1);//呼叫副程式
 	printf("輸入查詢成績:");
-	scanf("%d",&ID);
-	if(test2(s,ID,0,SIZE-1) == -1)
+	scanf("%d",&score);
+	if(test2(s,score,0,SIZE-1) == -1)
 	printf("查無此成績");	
 	
 	else
-	printf("成績為%d的同學學號為:%d",ID,test2(s,ID,0,SIZE-1));
+	printf("成績為%d的同學學號為:%d",score,a[test2(s,score,0,SIZE-1)]);//注意 test2(s,score,0,SIZE-1)只是項數，故前面要加陣列 a 
 }
 
 void test1(int a[],int s[],int size){
@@ -55,15 +55,15 @@ void test1(int a[],int s[],int size){
 	}
 }
 
-int test2(int s[],int ID,int low,int high){
+int test2(int s[],int score,int low,int high){
 	int mid;
 	while(low <= high){
 		mid = (low+high) / 2;
 		
-		if(ID == s[mid])
+		if(score == s[mid])
 		return mid;
 		
-		else if(ID < s[mid])
+		else if(score < s[mid])
 		high = mid - 1;
 		
 		else
