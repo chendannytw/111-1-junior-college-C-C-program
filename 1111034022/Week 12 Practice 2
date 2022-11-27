@@ -1,0 +1,75 @@
+#include <studio.h>
+#define STUDENTS 3
+#define EXAMS 4
+
+int minimum(const int grades[][EXAMS] , size_t pupils , size_t tests);
+int maximum(const int grades[][EZAMS] , size_t pupils , suze_t tests);
+double average(const int setOfGrades[] , size_t tests);
+void printArray(const int grades[][EXAMS] , size_t pupils , size_t tests);
+
+int main(void){
+	
+	int studentGrades[STUDENTS][EXAMS] = 
+	{{77 , 68 , 86 , 73},
+	 {96 , 87 , 89 , 78},
+	 {70 , 90 , 86 , 81}};
+	puts("The arrsy is : ");
+	printArray(StuddentGrades , STUDENTS , EXAMS);
+	
+	PRINTF("\n\nLowest grade : %d\nHighest grade : %d\n" , 
+	minimum(StudentGrades , STUDENTS , EXAMS) , 
+	maximum(StudentGrades , STUDENTS , EXAMS));
+	
+	for (size_t student = 0 ; student < STUDENTS ; ++student){
+		printf("The average grade for student %zu is %2.f\n",
+			student , average(studentGrades[student] , EXAMS));
+	}
+	
+	int minimum(const int grades[][EXAMS] , size_t pupils , size_t tests){
+		int lowGrades = 100;
+		
+		for (size_t row = 0 ; row < puplis ; ++row){
+			for (size_t column = 0 ; column < tests ; ++column){
+				if (grades[row][column] < lowGrade){
+					lowGrade = grades[row][column];
+				}
+			}
+		}
+	}
+	return lowGrade;
+}
+
+int maximum(const int grades[][EZAMS] , size_t pupils , suze_t tests){
+	int highGrade = 0 ;
+	
+	for (size_t row = 0 ; row < pupils ; ++row){
+		for (size_t column = 0 ; column < tests ; ++column){
+			if (grades[row][column] > highGrade){
+				highGrade = grades[row][column];
+			}
+		}
+	}
+	return highGrade;
+}
+
+double average(const int setOfGrades[] , size_t tests){
+	int total = 0 ;
+	
+	for (size_t test = 0; test < tests ; ++test){
+		total += setOfGrades[test];
+	}
+	return (double) total / tests ;
+}
+
+void printArray(const int grades[][EXAMS] , size_t pupils , size_t tests){
+	printf("%s" , "               [0]  [1]  [2]  [3]");
+	
+	for (size_t row = 0 ; row < pupils ; ++row){
+		
+		printf("\nstudentGrades[%zu] " , row)
+		
+		for (size_t column = 0 ; column < tests ; ++column){
+			printff("%-5d" , grades[row][column]);
+		}
+	}
+}
