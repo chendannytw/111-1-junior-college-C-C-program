@@ -1,0 +1,50 @@
+//You have already learned that printf() is used to output values in C.
+//To get user input, you can use the scanf() function:
+
+---------------------------Ex1 down below---------------------------------
+
+int main() {
+  // Create an integer variable that will store the number we get from the user
+  int myNum;
+
+  // Ask the user to type a number
+  printf("Type a number and press enter: \n"); 
+
+  // Get and save the number the user types
+  scanf("%d", &myNum);
+
+  // Print the number the user typed
+  printf("Your number is: %d", myNum);
+
+  return 0;
+}
+
+//The scanf() function takes two arguments: 
+//the format specifier of the variable (%d in the example above) and the reference operator (&myNum), which stores the memory address of the variable.
+//Tip: You will learn more about memory addresses and functions in the next chapter.
+
+//User Input Strings
+//You can also get a string entered by the user:
+
+---------------------------Ex1 down below---------------------------------
+
+int main() {
+  // Create a string
+  char firstName[30];
+
+  // Ask the user to input some text
+  printf("Enter your first name: \n");
+
+  // Get and save the text
+  scanf("%s", firstName);
+
+  // Output the text
+  printf("Hello %s.", firstName);
+  
+  return 0;
+}
+
+
+//You must specify the size of the string/array 
+//(we used a very high number, 30, but atleast then we are certain it will store enough characters for the first name), 
+//and you don't have to specify the reference operator (&) when working with strings in scanf().
