@@ -17,26 +17,27 @@ int main( void )
      else 
 	 largest=c;
    }   
-                                  
-   else if (c>b ) {
-        largest=c;
-   } 
+ 
    else{
-   	largest=b;
+   	 if(b>=c)
+     largest=b;
+     else 
+	 largest=c;
    }
    
    if ( a>=b ) {
      if(b>=c)
-     smallest=b;
+     smallest=c;
      else 
-	 smallest=c;
+	 smallest=b;
    }   
                                   
-   else if (a>c ) {
-        smallest=c;
-   } 
+
    else{
-   	smallest=a;
+     if(a>=c)
+     smallest=c;
+     else 
+	 smallest=a;
    }
    
  //第一題 
