@@ -33,7 +33,7 @@ int main(void) {
         average = total / SIZE;
         printf_s("\n");
         printf_s("平均%d",average);
-        printf("中位數%d", x[9]);
+        printf("中位數%d", x[SIZE/2]);
     
     int key;
      printf("\n");
