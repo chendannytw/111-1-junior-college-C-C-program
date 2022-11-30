@@ -70,7 +70,7 @@ void sort(int id[],int sc[])
    for ( pass = 1; pass < SIZE; ++pass) {                   
                                                              
       // loop to control number of comparisons per pass   
-      for ( i = 0; i < SIZE - pass; ++i) {                     
+      for ( i = 0; i < SIZE - pass; ++i) {   //改成pass                  
                                                              
          // compare adjacent elements and swap them if first 
          // element is greater than second element           
