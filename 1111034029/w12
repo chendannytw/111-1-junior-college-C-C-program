@@ -91,7 +91,7 @@ int binarySearch(const int a[],int ID,int low,int high)
 	return -1;
 }
 -----------------------------------------------------------------------------------------------------------------------------------------
-#include <iostream>
+#include <iostream> 題二
 #include <stdio.h>
 #include <stdlib.h>
 #define SIZE 20
