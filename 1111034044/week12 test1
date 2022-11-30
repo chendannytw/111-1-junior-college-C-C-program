@@ -34,8 +34,6 @@ int main(void) {
     else {
         printf("座號%d分數為%d", n[lost2(x, key, 0, SIZE - 1)], key);
     }
-    
-
 }
 
 void lost(int n[], int x[]) {
