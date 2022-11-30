@@ -1,4 +1,5 @@
 題目3:以下程式碼的功能是搜尋成績並印出學號，但是執行時卻找不到正確的結果，請加以修正
+
 #include <stdio.h>
 #define SIZE 10
 void sort(int id[],int sc[]);
