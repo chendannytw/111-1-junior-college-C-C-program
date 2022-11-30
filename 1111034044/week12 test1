@@ -5,7 +5,7 @@
 int lost2(int x[], int key, int low, int high);
 void lost(int n[], int x[]);
 int main(void) {
-
+    int ava;
     int i;
     int n[SIZE] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
     int x[SIZE] = { 66,55,90,89,73,100,75,63,62,80,91,50,78,77,95,41,85,98,61,32 };
@@ -34,9 +34,10 @@ int main(void) {
     else {
         printf("座號%d分數為%d", n[lost2(x, key, 0, SIZE - 1)], key);
     }
-
+    
 
 }
+
 void lost(int n[], int x[]) {
     int hold, pass, i;
     for (pass = 1; pass < SIZE; ++pass) {
