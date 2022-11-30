@@ -25,3 +25,62 @@ int search(const int b[],int key,int low,int high);
 		low=middle+1;		
 	}
 }
+
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+
+
+void sort(int id[], int size);
+
+int main(void){
+	int id[SIZE]={2,6,4,8,10,12,89,68,45.37};
+	int score[SIZE]={66,67,95,70,73,74,75,62,32,60};
+
+    printf("氣泡排序前");
+    int i;
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", id[i]);
+	}
+
+	printf("\n");
+    printf("          ");
+	for (i = 0; i < SIZE; ++i){
+	    printf("%4d",score[i]);
+	}
+	
+	
+
+	sort(id, score, SIZE);
+	printf("\n氣泡排序後");
+	for (i = 0; i < SIZE; ++i){
+	    printf("%4d", id[i]);
+	}
+	printf("\n");
+	printf("          ");
+	
+    for (i = 0; i < SIZE; ++i) {
+    	printf("%4d",score[i]);
+	}
+	
+			
+			
+
+
+void sort(int id[],int score[], int size) {
+	int hold,pass,i;
+	for (pass = 1; pass < SIZE; ++pass) {
+		for (i = 0; i < SIZE - 1; ++i) {
+			if (score[i] > score[i + 1]) {
+				hold = score[i];
+				score[i] = score[i + 1];
+				score[i + 1] = hold;
+
+				hold = id[i];
+				id[i] = id[i + 1];
+				id[i + 1] = hold;
+			}
+		}
+	}
+}
+}
