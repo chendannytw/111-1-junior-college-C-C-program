@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+
+void a(int x[], int y[]);
+int b(int x[], int ID, int low, int high);
+
+int main(void)
+{
+	int i, ID, x;
+	int id[SIZE] = { 2,6,4,8,10,12,89,68,45,37 };
+	int score[SIZE] = { 66,67,66,70,73,74,75,62,32,60 };
+	a(score, id);
+	puts("座號:");
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", id[i]);
+
+	}
+	puts("");
+	puts("成績:");
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", score[i]);
+	}
+	puts("");
+	printf("輸入想查詢的成績:");
+	scanf_s("%d", &ID);
+	b(score, ID, 0, SIZE - 1);
+
+	if (x = b(score, ID, 0, SIZE - 1) == -1)
+		printf("查無此成績");
+	else
+		printf("成績為%d的同學座號為:%d", ID, id[x]);
+
+}
+void a(int x[], int y[]) {
+	int pass;
+	for (pass = 1; pass < SIZE; ++pass) {
+		for (size_t i = 0; i < SIZE - 1; ++i) {
+			if (x[i] > x[i + 1]) {
+				int hold = x[i];
+				x[i] = x[i + 1];
+				x[i + 1] = hold;
+				hold = y[i];
+				y[i] = y[i + 1];
+				y[i + 1] = hold;
+			}
+		}
+	}
+}
+
+int b(int x[], int ID, int low, int high) {
+	int middle;
+	while (low <= high) {
+		middle = (low + high) / 2;
+		if (ID == x[middle])
+			return middle;
+		else if (ID < x[middle])
+			high = middle - 1;
+		else
+			low = middle + 1;
+	}
+	return -1;
+}
