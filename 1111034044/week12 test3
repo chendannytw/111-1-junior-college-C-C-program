@@ -74,7 +74,7 @@ void sort(int id[],int sc[])
                                                              
          // compare adjacent elements and swap them if first 
          // element is greater than second element           
-         if (sc[i] > sc[i + 1]) {                        
+         if (sc[i] > sc[i + 1]) {  //將原本的<改成>                      
             int hold = sc[i];                                   
             sc[i] = sc[i + 1];                             
             sc[i + 1] = hold;
