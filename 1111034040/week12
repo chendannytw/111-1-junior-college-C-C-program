@@ -90,3 +90,84 @@ int binarySearch(const int a[],int ID,int low,int high)
 	}
 	return -1;
 }
+----------------------------------------------------------------------------------------------------------------
+#include <iostream>    題2
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 20
+int lost2(int a[], int key, int low, int high);
+void lost(int a[], int c[]);
+
+int main(void) {
+    int average;
+    int total = 0;
+    int i;
+    int n[SIZE] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+    int x[SIZE] = { 81,71,69,33,43,54,85,95,72,22,84,66,57,32,82,68,92,10,16,33 };
+    
+    printf_s("前\n");
+    for (i = 0; i < SIZE; ++i)
+        printf_s("%d ", n[i]);
+    printf_s("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf_s("%d ", x[i]);
+    printf_s("\n");
+
+    lost(n, x);
+    printf_s("後\n");
+    for (i = 0; i < SIZE; ++i)
+        printf_s("%d ", n[i]);
+    printf_s("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf_s("%d ", x[i]);
+    for (int i = 0; i < SIZE; ++i)
+    
+        total += x[i];
+        average = total / SIZE;
+        printf_s("\n");
+        printf_s("平均%d",average);
+        printf("中位數%d", x[SIZE/2]);
+    
+    int key;
+     printf("\n");
+    printf("請輸入座號");
+    scanf_s("%d", &key);
+    lost2(x, key, 0, SIZE - 1);
+    if (lost2(x, key, 0, SIZE - 1) == -1)
+        printf_s("找不到");
+    else {
+        printf_s("%d分座號為%d", key, n[lost2(x, key, 0, SIZE - 1)]);
+    }
+    
+
+}
+  
+void lost(int n[], int x[]) {
+    int hold, pass, i;
+    for (pass = 1; pass < SIZE; ++pass) {
+        for (i = 0; i < SIZE - pass; ++i) {
+            if (x[i] > x[i + 1]) {
+                hold = x[i];
+                x[i] = x[i + 1];
+                x[i + 1] = hold;
+                hold = n[i];
+                n[i] = n[i + 1];
+                n[i + 1] = hold;
+            }
+        }
+    }
+}
+int lost2(int x[], int key, int low, int high) {
+    int mid;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if (key == x[mid])
+            return mid;
+        else if (key < x[mid])
+            high = mid - 1;
+        else
+            low = mid + 1;
+    }
+    return -1;
+}
+-------------------------------------------------------------------------------------
