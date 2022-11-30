@@ -1,38 +1,78 @@
 #include <stdio.h>
-#include <stdlib.h>
-#define SIZE 10
+#define SIZE 20
 
-void test1(int a[], int c[]);
-int test2(int a[], int ID, int low, int high);
-int main(void)
-{
-	int i,ID,a;
-	int id[SIZE] = { 2,6,4,8,10,12,89,68,45,37 };
-	int score[SIZE] = { 66,67,66,70,73,74,75,62,32,60 };
-	test1(score, id);
-	puts("座號:");
-	for (i = 0; i < SIZE; ++i) {
-		printf("%4d", id[i]);
+void sort(int id[],int sc[]);
+size_t search(const int score[], int key,size_t low, size_t high);
+//int linearSearch(int id[],int sc[],int key);
+// function main begins program execution
+int main(void) 
+{   
+   // initialize a
+   int     a[SIZE]={12,13,14,15,16,17,19,21,22,23,24,26,27,28,29,31,32,33,36,37},i,key,temp;
+   int score[SIZE]={63,67,66,70,73,74,75,79,62,32,44,46,27,12,80,33,96,90,11,86};
 
-	}
+   puts("Data items in original order");
+   
+   // output original array
+   for ( i = 0; i < SIZE; ++i) {
+	  printf("\n%4d", a[i]);
+	  printf("%4d", score[i]);
+   } 
+	sort(a,score);
 	puts("");
-	printf("成績:");
-	for (i = 0; i < SIZE; ++i) {
-		printf("%4d", score[i]);
-	}
-	puts("");
-	printf("輸入想查詢的成績:");
-	scanf_s("%d", &ID);
-	test2(score,ID,0,SIZE - 1);
+	puts("\nData items in ascending order");
+
+   // output sorted array
+   for ( i = 0; i < SIZE; ++i) {
+      printf("\n%4d", a[i]);
+      printf("%4d", score[i]);
+   } 
+   
+   
+
+	printf("\nPlease input score: ");
+	scanf("%d",& key);
 	
-	if (a=b(score,ID, 0, SIZE - 1) == -1)
-		printf("沒有這個成績");
+	temp=search(score,key,0,SIZE-1);
+	if(temp<0) 
+		printf("\nscore not found!");
 	else
-		printf("成績為%d的同學座號為:%d", ID,id[a]);
+	    printf("the ID %d get score %d",a[temp],score[temp]);
+
+  
+}
+
+
+int LinerSearch(int id[],int sc[],int key)   //如果找到， 傳回陣列位址 ，如果找不到就傳回-1 
+{
+int i;
+for(i=0;i<SIZE;i++)
+	if(id[i]==key)
+		return i;
+
+return -1;	
 	
 }
-void test1(int a[], int c[]) {
-	for (unsigned int pass = 1; pass < SIZE; ++pass) {
+ 
+ size_t search(const int score[], int key,size_t low, size_t high) 
+ {
+ 	while(low<=high){
+ 		size_t middle = (low+high)/2;
+ 		
+		if(key ==score[middle]){
+ 		    return middle ;
+		}
+		else if (key< score [middle]){
+		 	high=middle-1;
+		} 
+		else{
+			low= middle+1;
+		}
+	
+   }
+   return -1;
+	 
+ }
 		for (size_t i = 0; i < SIZE - 1; ++i) {
 			if (a[i] > a[i + 1]) {
 				int hold = a[i];
