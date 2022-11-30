@@ -1,0 +1,72 @@
+#include <stdio.h>
+#define SIZE 10 
+void test1(int a[],int b[],int size);
+int test2(int s[],int score,int low,int high);
+
+int main(void){
+	int a[SIZE]={2,6,4,8,10,12,89,68,45,37};
+    int s[SIZE]={65,67,66,70,73,74,75,62,32}; 
+	printf("前");
+	int i,score;
+	for(i = 0 ; i<SIZE ; ++i)
+	printf("%4d",a[i]);
+	printf("\n");
+	printf("  ");
+	for(i=0 ; i<SIZE ; ++i)
+	printf("%4d",s[i]);
+	
+	test1(a,s,SIZE);
+	printf("\n後");
+	for(i=0;i<SIZE;++i)
+	printf("%4d",a[i]);
+	printf("\n");
+	printf("  ");
+    for(i=0 ; i<SIZE ; ++i)
+	printf("%4d",s[i]); 
+	
+	
+	printf("\n");
+	test2(s,score,0,SIZE-1);
+	printf("輸入成績:");
+	scanf("%d",&score);
+	if(test2(s,score,0,SIZE-1) == -1)
+	printf("找不到");	
+	
+	else
+	printf("%d分的同學是%d號",score,a[test2(s,score,0,SIZE-1)]);
+}
+
+void test1(int a[],int s[],int size){
+	int pass,hold,i;
+	for (pass=1 ; pass<SIZE ; ++pass){
+		
+		for(i=0 ; i<SIZE-pass ; ++i){
+			if(s[i]>s[i+1]){
+				hold = s[i];
+				s[i] = s[i + 1];
+				s[i + 1] = hold;
+				
+				hold = a[i];
+				a[i] = a[i + 1];
+				a[i + 1] = hold;
+			}
+		}
+	}
+}
+
+int test2(int s[],int score,int low,int high){
+	int mid;
+	while(low <= high){
+		mid = (low+high) / 2;
+		
+		if(score == s[mid])
+		return mid;
+		
+		else if(score < s[mid])
+		high = mid - 1;
+		
+		else
+		low = mid + 1;
+	}
+	return -1;
+}
