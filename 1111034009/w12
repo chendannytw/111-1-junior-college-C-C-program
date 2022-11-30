@@ -62,12 +62,12 @@ void fun(int a[],int s[],int size){
 void fun2(int a[],int s[],int ID,int size){
 	for(i=0;i<SIZE;++i){
 		if(ID==a[i]){
-			printf("student %d score is %d",a[i],s[i]);
+			printf("\n學號%d 找到分數 %d\n",a[i],s[i]);
 			break;
 		}
 		else{
 			if(i>=19)
-			printf("student %d is not our student",ID);		
+			printf("\n學號%d 未找到\n",ID);		
 		}
 	}
 
