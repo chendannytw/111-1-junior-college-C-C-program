@@ -13,7 +13,7 @@ int main(void)
 	a(two[0],two[1]);
 	puts("座號:");
 		for (i = 0; i < SIZE; ++i) {
-			printf("%4d", two[j, i]);
+			printf("%4d", two[0, i]);
 		}
 	puts("");
 	puts("成績:");
