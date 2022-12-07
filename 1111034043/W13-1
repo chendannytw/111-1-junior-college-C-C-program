@@ -33,16 +33,6 @@ int main(void) {
 
 
 
-    int key;
-    printf("\n輸入你要搜尋的成績");
-    scanf_s("%d", &key);
-    lost2(n[1], key, 0, SIZE - 1);
-    if (lost2(n[1], key, 0, SIZE - 1) == -1)
-        printf("找不到");
-    else {
-        printf("座號%d分數為%d", n[lost2(n[1], key, 0, SIZE - 1)], key);
-    }
-
 
 }
 
