@@ -1,0 +1,44 @@
+#include <stdio.h>
+#define SIZE 10
+
+void sort(int a[], int b[], int size);
+void swap(int* element1Ptr, int* element2Ptr);
+void sort(int a[][SIZE], int size);
+int main(void) {
+	int a[2][SIZE] = { {2,6,4,8,10,12,89,68,45,37}, {66,67,66,70,73,74,75,62,32} };
+	printf("氣泡排序前");
+	int i;
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", a[0][i]);
+	}
+	printf("\n");
+	printf("          ");
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", a[1][i]);
+	}
+	void sort(int a[][SIZE],int size);
+	printf("\n氣泡排序後");
+	for (i = 0; i < SIZE; ++i)
+		printf("%4d", a[0][i]);
+	printf("\n");
+	printf("          ");
+	for (i = 0; i < SIZE; ++i)
+		printf("%4d", a[1][i]);
+}
+void sort(int a[], int c[], int size) {
+	int hold, pass, i;
+	for (pass = 1; pass < SIZE; ++pass) {
+		for (i = 0; i < SIZE - pass; ++i) {
+			if (c[i] > c[i + 1]) {
+				swap(&c[i], &c[i + 1]);
+				swap(&a[i], &a[i + 1]);
+			}
+		}
+	}
+}
+
+void swap(int* element1Ptr, int* element2Ptr) {
+	int hold = *element1Ptr;
+	*element1Ptr = *element2Ptr;
+	*element2Ptr = hold;
+}
