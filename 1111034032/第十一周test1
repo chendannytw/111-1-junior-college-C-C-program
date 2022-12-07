@@ -5,7 +5,7 @@ void test1(int a[],int b[],int size);
 
 int main(void){
 	int a[SIZE]={2,6,4,8,10,12,89,68,45,37};
-    int s[SIZE]={66,67,66,70,73,74,75,62,32}; 
+    int s[SIZE]={0,66,67,66,70,73,74,75,62,32}; 
 	printf("氣泡排序前");
 	int i;
 	for(i = 0 ; i<SIZE ; ++i)
