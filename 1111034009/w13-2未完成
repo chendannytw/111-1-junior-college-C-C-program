@@ -1,0 +1,77 @@
+#include <stdio.h>
+#define SIZE 10
+
+void sort(int a[][SIZE],  int size);
+void swap(int* e1ee, int* e2ee);
+// function main begins program execution
+int main(void)
+{
+    int key, result = 0;
+    // initialize a
+    int a[3][SIZE] = { {12,13,14,15,16,17,19,21,22,23}, {66,67,66,70,73,74,75,75,62,32},{55,52,44,80,99,54,88,44,76,84}};
+    int c[10][4];
+
+    puts("排序前 學號 技概 數學");
+    puts("         ");
+    // output original array
+    for (int i = 0; i < SIZE; ++i) {
+        printf("%4d", a[0][i]);
+       
+        printf("%4d", a[1][i]);
+       
+        printf("%4d", a[2][i]);
+        printf("\n");
+    }
+ 
+
+    // bubble sort                                         
+    // loop to control number of passes                    
+
+    sort(a,SIZE);
+    puts("\n排序後");
+    puts("學號");
+    // output sorted array
+    for (int i = 0; i < SIZE; ++i) {
+        printf("%4d", a[0][i]);
+    }
+    printf("\n");
+    puts("數學");
+    for (int i = 0; i < SIZE; ++i) {
+        printf("%4d", a[1][i]);
+    }
+    printf("\n");
+    puts("技概");
+    for (int i = 0; i < SIZE; ++i) {
+        printf("%4d", a[2][i]);
+    }
+
+}
+
+
+void sort(int a[][SIZE], int size)
+{
+    int hold, pass, i;
+    for (unsigned int pass = 1; pass < SIZE; ++pass) {
+
+        // loop to control number of comparisons per pass   
+        for (i = 0; i < size - pass; ++i) {
+
+            // compare adjacent elements and swap them if first 
+            // element is greater than second element           
+            if (a[1][i] < a[1][i + 1]) {
+                swap(&a[1][i], &a[1][i + 1]);
+                swap(&a[0][i], &a[0][i + 1]);
+                swap(&a[2][i], &a[2][i + 1]);
+            }
+        }
+    }
+
+}
+void swap(int* e1ee, int* e2ee)
+{
+    int hold;
+    hold = *e1ee;
+    *e1ee = *e2ee;
+    *e2ee = hold;
+}
+
