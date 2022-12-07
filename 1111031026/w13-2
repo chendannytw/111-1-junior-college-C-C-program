@@ -1,0 +1,65 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+void c(int two[][SIZE]);
+void a(int two[][SIZE], int size);
+int main(void)
+{
+	int i, ID, x, mid, size;
+	int id[SIZE] = { 2,6,4,8,10,12,9,68,45,37 };
+	int score[SIZE] = { 65,67,66,70,73,74,75,62,32,60 };
+	int two[4][SIZE] = { {2,6,4,8,10,12,9,68,45,37},{ 65,67,66,70,73,74,75,62,32,60 },{66,62,65,80,90,91,95,67,66,50} };//id0 com1 math2
+	a(two,SIZE);
+	puts("座號:");
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", two[0][i]);
+
+	}
+	puts("");
+	puts("成績(計概):");
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", two[1][i]);
+	}
+	puts("\n成績(數學):");
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", two[2][i]);
+	}
+	c(two);
+	printf("\n計概中位數為:%d", two[1][SIZE / 2]);
+	printf("\n數學中位數為:%d", two[2][SIZE / 2]);
+	printf("\n平均中位數為:%d", two[3][SIZE / 2]);
+}
+void a(int two[][SIZE],int size) {
+	int pass;
+	void swap(int* e1Ptr, int* e2Ptr);
+	for (pass = 0; pass < size; ++pass) {
+		for (size_t i = 0; i < size - 1; ++i) {
+			if (two[1][i] > two[1][i + 1]){
+				swap(&two[1][i], &two[1][i + 1]);
+				swap(&two[0][i], &two[0][i + 1]);
+				swap(&two[2][i], &two[2][i + 1]);
+			}
+		}
+	}
+}
+
+void swap(int *e1Ptr,int *e2Ptr) {
+	int hold = *e1Ptr;
+	*e1Ptr = *e2Ptr;
+	*e2Ptr = hold;
+
+}
+void c(int two[][SIZE]) {
+	int avg = 0;
+	int i;
+	int result;
+	for (i = 0; i < SIZE; ++i) {
+		two[3][i] = (two[2][i] + two[1][i])/2;
+	}
+	
+	puts("\n平均:");
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", two[3][i]);
+
+	}
+}
