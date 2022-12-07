@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define SIZE 20
+#define SIZE 10
 
 void fun(int d[2][SIZE],int size);
 void swap(int *element1Ptr,int *element2Ptr);
