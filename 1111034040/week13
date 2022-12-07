@@ -106,3 +106,115 @@ int binarySearch(int b[], int searchKey, int low, int high)
     return -1; // searchKey not found
 }
 -----------------------------------------------------------------------------------
+#include <iostream>     題2
+int id[SIZE] = { 5,7,3,4,10,6,2,8,9,1 };
+int math[SIZE] = { 85,67,32,94,100,56,26,87,92,11 };
+int notmath[SIZE] = { 99,28,54,63,78,16,54,90,57,32 };
+int arv[SIZE];
+int end[4][10];
+
+
+
+void a(int x[], int y[],int z[],int w[]) {
+	void swap(int* element1Ptr, int* element2Ptr);
+	int pass;
+	for (pass = 1; pass < SIZE; ++pass) {
+		for (size_t i = 0; i < SIZE - 1; ++i) {
+			if (w[i] > w[i + 1]) {
+				swap(&x[i], &x[i + 1]);
+				swap(&y[i], &y[i + 1]);
+				swap(&z[i], &z[i + 1]);
+				swap(&w[i], &w[i + 1]);
+			}
+		}
+	}
+	for (int i = 0; i < 20; i++)
+	{
+		end[0][i] = x[i];
+		end[1][i] = y[i];
+	}
+}
+void setvar(int a[],int b[],int c[]) 
+{	
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[0][i] = id[i];
+	}
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[1][i] = math[i];
+	}
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[2][i] = notmath[i];
+	}
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[3][i] = (end[1][i] + end[2][i]) / 2;
+		arv[i] = (end[1][i] + end[2][i]) / 2;
+	}
+	
+}
+int main()
+{
+	setvar(id, math, notmath);
+	puts("排序前");
+	puts("");
+	puts("座號:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4d", end[0][i]);
+
+	}
+	puts("");
+	puts("數學:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4d", end[1][i]);
+	}
+	puts("");
+	puts("計概:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4d", end[2][i]);
+	}
+	puts("");
+	puts("平均:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4d", end[3][i]);
+	}
+	puts("");
+	puts("排序後");
+	puts("");
+	a(id, math, notmath,arv);
+	setvar(id, math, notmath);
+	printf("名次:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4d", SIZE - i);
+	}
+	puts("");
+	printf("座號:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4d", end[0][i]);
+
+	}
+	puts("");
+	printf("數學:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4d", end[1][i]);
+	}
+	puts("");
+	printf("計概:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4d", end[2][i]);
+	}
+	puts("");
+	printf("平均:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4d", end[3][i]);
+	}
+	
+}
+void swap(int* element1Ptr, int* element2Ptr)
+{
+	int hold = *element1Ptr;
+	*element1Ptr = *element2Ptr;
+	*element2Ptr = hold;
+}
