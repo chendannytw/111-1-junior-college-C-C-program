@@ -47,6 +47,17 @@ void sort(int grades[][EXAMS], int pupils,int tests)
 }
 
 
+void printfArray(int grades[][EXAMS],int pupils,int tests)
+{
+	printf("%s","                     [0]  [1]  [2]  [3]");
+	for(int row = 0;row<pupils;++row){
+		printf("\nstudentsGrades[%u]",row);
+		for(int column = 0;column < tests;++column){
+			printf("%-5d",grades[row][column]);
+		}
+	}
+}
+
 void swap(int *element1Ptr,int *element2Ptr){
 	int hold =*element1Ptr;
 	*element1Ptr =*element2Ptr;
