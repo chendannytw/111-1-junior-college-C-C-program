@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define SIZE 20
+
+void fun(int d[2][SIZE],int size);
+void swap(int *element1Ptr,int *element2Ptr);
+//void fun2(int a[],int s[],int ID,int size);
+//int binarySearch(const int a[],int ID,int low,int high);
+int i,pass,ID,score,j;
+int main(void){
+	//int a[SIZE]={12,13,14,15,16,17,19,21,22,23,24,26,27,28,29,31,32,33,36,37};
+	//int s[SIZE]={66,67,66,70,73,74,75,75,62,32,44,46,27,12,80,63,66,90,11,66};
+	int d[2][SIZE]={{12,13,14,15,16,17,19,21,22,23,24,26,27,28,29,31,32,33,36,37},
+	                {66,67,66,70,73,74,75,75,62,32,44,46,27,12,80,63,66,90,11,66}};
+
+
+	puts("Data items in original order");
+	for (i=0;i<SIZE;++i){
+		printf("%4d",d[0][i]);
+	}
+	printf("\n");
+	for (i=0;i<SIZE;++i){
+		printf("%4d",d[1][i]);
+	}
+	fun(d,SIZE);
+	puts("\nData items in ascending order");
+	for(i=0;i<SIZE;++i){
+		printf("%4d",d[0][i]);
+	}
+	printf("\n");
+	for (i=0;i<SIZE;++i){
+		printf("%4d",d[1][i]);
+	}
+	/*printf("\n請輸入學號:");
+	scanf("%d",&ID);
+	fun2(a,s,ID,SIZE);
+	puts("");
+	printf("\n請輸入成績:");
+	scanf("%d",&score);
+	int result = binarySearch(s,score,0,SIZE-1);
+	if (result != -1){
+		printf("\n%d found at subscript %d\n",score,a[result]);
+	}
+	else{
+		printf("\n%d not found\n",score);
+	}*/
+}
+
+
+void fun(int d[2][SIZE],int size){
+	int hold;
+	for(pass=1;pass<SIZE;++pass){
+		for(i=0;i<SIZE-1;++i){
+			if(d[1][i]>d[1][i+1]){
+				/*hold = s[i];
+				s[i] = s[i+1];
+				s[i+1] = hold;
+				hold = a[i];
+				a[i] = a[i+1];
+				a[i+1] = hold;*/
+				swap(&d[1][i],&d[1][i+1]);
+				swap(&d[0][i],&d[0][i+1]);
+			}
+		}
+	}
+}
+
+void swap(int *element1Ptr,int *element2Ptr)
+{
+	int hold;
+	hold = *element1Ptr;
+	*element1Ptr = *element2Ptr;
+	*element2Ptr = hold;
+}
