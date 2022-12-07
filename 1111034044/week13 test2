@@ -40,7 +40,6 @@ int main(void) {
     for (i = 0; i < SIZE; ++i)
         printf("%d ", n[2][i]);
     printf("\n");
-    printf("\n");
     for (i = 0; i < SIZE; ++i)
         printf("%d ", n[3][i]);
     
