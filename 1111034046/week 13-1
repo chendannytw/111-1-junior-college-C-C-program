@@ -1,0 +1,89 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 20
+int lost2(int x[], int key, int low, int high);
+void lost(int n[], int x[]);
+
+int main(void) {
+    int ava;
+    int total = 0;
+
+    int i;
+    int n[2][SIZE] = {{ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 },
+     { 66,55,90,89,73,100,75,63,62,80,91,50,78,77,95,41,85,98,61,32 }};
+    printf("before\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[0][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[1][i]);
+    printf("\n");
+
+    lost(n[0], n[1]);
+    printf("after\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[0][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[1][i]);
+
+    printf("\n");
+
+
+
+
+    for (i = 0; i < SIZE; ++i)
+        total += n[1][i];
+    ava = total / SIZE;
+    printf("平均數是%d ", ava);
+    printf("中位數是%d ", n[1][SIZE / 2]);
+
+
+
+    int key;
+    printf("\nenter ur number");
+    scanf_s("%d", &key);
+    lost2(n[1], key, 0, SIZE - 1);
+    if (lost2(n[1], key, 0, SIZE - 1) == -1)
+        printf("找不到");
+    else {
+        printf("座號%d分數為%d", n[lost2(n[1], key, 0, SIZE - 1)], key);
+    }
+
+
+}
+
+void lost(int n[], int x[]) {
+    int hold, pass, i;
+    void swap(int* r1ptr, int* r2ptr);
+    for (pass = 1; pass < SIZE; ++pass) {
+        for (i = 0; i < SIZE - pass; ++i) {
+            if (x[i] > x[i + 1]) {
+                swap(&x[i],&x[i + 1]);
+                swap(&n[i], &n[i + 1]);
+          
+            }
+        }
+    }
+}
+int lost2(int x[], int key, int low, int high) {
+    int mid;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if (key == x[mid])
+            return mid;
+        else if (key < x[mid])
+            high = mid - 1;
+        else
+            low = mid + 1;
+    }
+    return -1;
+}
+
+void swap(int *r1ptr,int *r2ptr)
+{
+    int hold;
+    hold = *r1ptr;
+    *r1ptr = *r2ptr;
+    *r2ptr = hold;
+}
