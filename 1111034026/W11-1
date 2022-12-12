@@ -1,7 +1,7 @@
 #include <stdio.h>
 #define SIZE 10 
 
-void test1(int b[],int c[],int size);
+void test1(int b[],int c[]);
 
 int main(void){
 	int a[SIZE]={2,6,4,8,10,12,89,68,45,37};
@@ -15,7 +15,7 @@ int main(void){
 	for(i=0 ; i<SIZE ; ++i)
 	printf("%4d",s[i]); 
 	
-	test1(a,s,SIZE);
+	test1(a,s);
 	printf("\n排序後");
 	for(i=0;i<SIZE;++i)
 	printf("%4d",a[i]);
