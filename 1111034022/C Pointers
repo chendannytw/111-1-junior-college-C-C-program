@@ -43,3 +43,24 @@ int main() {
 //Note that the type of the pointer has to match the type of the variable you're working with.
 //Use the & operator to store the memory address of the myAge variable, and assign it to the pointer.
 //Now, ptr holds the value of myAge's memory address.
+
+//In the example above, we used the pointer variable to get the memory address of a variable (used together with the & reference operator).
+//However, you can also get the value of the variable the pointer points to, by using the * operator (the dereference operator):
+
+#include <stdio.h>
+
+int main() {
+  int myAge = 43;  // Variable declaration
+  int* ptr = &myAge;  // Pointer declaration
+
+  // Reference: Output the memory address of myAge with the pointer (0x7ffe5367e044)
+  printf("%p\n", ptr);
+
+  // Dereference: Output the value of myAge with the pointer (43)
+  printf("%d\n", *ptr);
+  
+  return 0;
+}
+
+//Output be like:0x7ffe5367e044
+//               43
