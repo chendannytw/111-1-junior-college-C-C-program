@@ -1,0 +1,45 @@
+#include <stdio.h>
+
+int main() {
+  int myAge = 43;
+  
+  printf("%d\n", myAge);
+  printf("%p\n", &myAge);
+  return 0;
+}
+//Output be like :43
+//                0x7ffe5367e044
+
+//In the example above, &myAge is also known as a pointer.
+//A pointer is a variable that stores the memory address of another variable as its value.
+//A pointer variable points to a data type (like int) of the same type, 
+//and is created with the * operator. The address of the variable you are working with is assigned to the pointer:
+
+--------------------------------Ex1 down below-----------------
+#include <stdio.h>
+
+int main() {
+  int myAge = 43;  // An int variable
+  int* ptr = &myAge;  // A pointer variable, with the name ptr, that stores the address of myAge
+
+  // Output the value of myAge (43)
+  printf("%d\n", myAge);
+
+  // Output the memory address of myAge (0x7ffe5367e044)
+  printf("%p\n", &myAge);
+
+  // Output the memory address of myAge with the pointer (0x7ffe5367e044)
+  printf("%p\n", ptr);
+
+  return 0;
+}
+
+//Otput be like :43
+//               0x7ffe5367e044
+//               0x7ffe5367e044
+
+//Example explained
+//Create a pointer variable with the name ptr, that points to an int variable (myAge).
+//Note that the type of the pointer has to match the type of the variable you're working with.
+//Use the & operator to store the memory address of the myAge variable, and assign it to the pointer.
+//Now, ptr holds the value of myAge's memory address.
