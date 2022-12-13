@@ -1,10 +1,9 @@
 #include <stdio.h>
 #define SIZE 10
 
-void sort(int id[], int b[], int size);
-void sort2(int id[],int b[],int key,int size);
+void sort(int id[], int sc[]);
 int binarySearch(const int id[],int key,int low,int high);
-int i,pass,key,score;
+int i,score;
 
 int main(void) {
 	int id[SIZE] = { 2,6,4,8,10,12,89,68,45,37 };
@@ -18,32 +17,32 @@ int main(void) {
 	for (i = 0; i < SIZE; ++i) {
 		printf("%4d", sc[i]);
 	}
-	sort(id, sc, SIZE);
+	sort(id, sc);
 	printf("\n氣泡排序後");
 	for (i = 0; i < SIZE; ++i) 
 		printf("%4d", id[i]);
 		printf("\n");
 	    printf("          ");
 		for (i = 0; i < SIZE; ++i) 
-			printf("%4d", sc[i]);
-}
+		printf("%4d", sc[i]);
+			
 
-printf("\n請輸入學號:");
-	scanf("%d",&key);
-	sort2(id,b,key,SIZE);
-	puts("");
 	printf("\n請輸入成績:");
 	scanf("%d",&score);
-	int result = binarySearch(b,score,0,SIZE-1);
+
+	int result = binarySearch(sc,score,0,SIZE-1);
 	if (result != -1){
-		printf("\n%d found at subscript %d\n",score,id[result]);
+		printf("成績為%d的同學座號為%d",score,id[result]);
 	}
 	else{
-		printf("\n%d not found\n",score);
+		printf("查無此成績",score);
 	}
 }
 
-void sort(int id[],int sc[], int size) {
+
+
+
+void sort(int id[],int sc[]) {
 	int hold,pass,i;
 	for (pass = 1; pass < SIZE; ++pass) {
 		for (i = 0; i < SIZE - 1; ++i) {
@@ -60,26 +59,16 @@ void sort(int id[],int sc[], int size) {
 	}
 }
 
-void sort2(int id[],int b[],int key,int size){
-	for(i=0;i<SIZE;++i){
-		if (result == -1){
-		printf("查無此成績");
-	}
-	
-	else{
-		printf("成績為%d的同學座號為%d",key,result);
-	}	
-	}
-}
 
-int binarySearch(const int id[],int key,int low,int high)
+
+int binarySearch( int sc[],int score,int low,int high)
 {
 	while (low <=high){
 		int mid = (low +high)/2;
-		if (key == id[mid]){
+		if (score == sc[mid]){
 			return mid;
 		}
-		else if (key< id[mid]){
+		else if (score< sc[mid]){
 			high = mid-1;
 		}
 		else{
