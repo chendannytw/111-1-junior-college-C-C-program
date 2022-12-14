@@ -1,0 +1,90 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+void t1(int n[], int x[], int y[], int z[]);
+int t2(int x[], int key, int low, int high);
+
+
+int main(void) {
+    int ava;
+    int total = 0;
+
+    int i;
+    int n[4][SIZE] = { { 1,2,3,4,5,6,7,8,9,10},{ 35,85,55,45,89,41,55,38,56,89}, {26,57,42,99,98,89,19,90,79,69} };
+    printf("排序前\n");
+
+    for (i = 0; i < SIZE; ++i)
+        printf("%2u ", n[0][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[1][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[2][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i) {
+        n[3][i] = (n[1][i] + n[2][i]) / 2;
+        printf("%d ", n[3][i]);
+    }
+    printf("\n");
+
+    t1(n[0], n[1], n[2], n[3]);
+
+
+
+    printf("排序後\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%2u ", n[0][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[1][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[2][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[3][i]);
+    printf("\n最高分%d",n[3][0]);
+    printf("\n最低分%d", n[3][SIZE-1]);
+
+
+
+}
+
+void t1(int n[], int x[], int y[], int z[]) {
+    int hold, pass, i;
+    void swap(int* r1ptr, int* r2ptr);
+    for (pass = 1; pass < SIZE; ++pass) {
+        for (i = 0; i < SIZE - pass; ++i) {
+            if (z[i] < z[i + 1]) {
+                swap(&x[i], &x[i + 1]);
+                swap(&n[i], &n[i + 1]);
+                swap(&y[i], &y[i + 1]);
+                swap(&z[i], &z[i + 1]);
+
+            }
+        }
+    }
+}
+
+void swap(int* r1ptr, int* r2ptr)
+{
+    int hold;
+    hold = *r1ptr;
+    *r1ptr = *r2ptr;
+    *r2ptr = hold;
+}
+
+    int t2(int x[], int key, int low, int high) {
+        int mid;
+        while (low <= high) {
+            mid = (low + high) / 2;
+            if (key == x[mid])
+                return mid;
+            else if (key < x[mid])
+                high = mid - 1;
+            else
+                low = mid + 1;
+        }
+        return -1;
+    }
