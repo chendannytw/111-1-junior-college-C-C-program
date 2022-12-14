@@ -59,14 +59,14 @@ int main(void) {
     printf("\n");
     printf("名次 : ");
     for (i = 0; i < SIZE; ++i)
-        printf("%d  ",i+1);
+        printf("%d  ", i + 1);
     printf("\n");
     printf("最高平均成績: ");
     printf("%d分 ", n[3][0]);
     printf("最低平均成績: ");
-    printf("%d分 ", n[3][SIZE-1]);
+    printf("%d分 ", n[3][SIZE - 1]);
     printf("中位數: ");
-    printf("%d分 ", n[3][SIZE/2]);
+    printf("%d分 ", n[3][SIZE / 2]);
 }
 
 void lost(int n[], int x[], int y[], int z[]) {
