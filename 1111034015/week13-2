@@ -1,0 +1,72 @@
+#include <stdio.h>
+#define SIZE 10
+
+void sort(int a[4][SIZE],int size);
+//int binarySearch(const int a[],int ID,int low,int high);
+void swap(int *element1Ptr,int *element2Ptr);
+int main(void) 
+{   
+
+   
+   int a[4][SIZE]={{22,13,21,19,16,17,15,14,12,23}
+                  ,{66,67,66,70,73,74,75,75,62,32}
+				  ,{44,46,27,12,80,63,66,90,11,66}
+				  ,{0}};
+				  
+   int i,key,j;
+   double total=0;
+   
+    //sort(a[][SIZE],);
+   puts("Data items in original order");
+   for ( i = 0; i < SIZE; ++i) {
+      printf("\n%4d",a[0][i]);
+      printf("%4d", a[1][i]);
+      printf("%4d", a[2][i]);
+      printf("%4d", a[3][i]);
+   }      	
+   for ( j=1; j<3; ++j) {
+    total=a[j][i]+a[j][i];
+	a[4][0]=total;
+    }
+    
+    
+    //total=0;
+    
+
+    sort(a,SIZE);
+	puts("");
+	puts("\nData items in ascending order");
+    for ( i = 0; i < SIZE; ++i) {
+      printf("\n%4d",a[0][i]);
+      printf("%4d", a[1][i]);
+      printf("%4d", a[2][i]);
+      printf("%4d", a[3][i]);
+   }      	
+	//printf("\nPlease input score: ");
+	//scanf("%d",&key);	  
+}
+void sort(int a[4][SIZE],int size)
+{int i,pass;
+                       
+   for ( pass = 1; pass < SIZE; ++pass) {                   
+                                                             
+      
+      for ( i = 0; i < SIZE - 1; ++i) {                     
+                                                             
+         
+         if (a[0][i] > a[0][i+1]) {                        
+            swap(&a[0][i],&a[0][i+1]);
+			swap(&a[1][i],&a[1][i+1]); 
+            swap(&a[2][i],&a[2][i+1]);
+            swap(&a[3][i],&a[3][i+1]);
+			                              
+         }                                       
+      }                                   
+   }                                      
+	
+}
+void swap(int *element1Ptr,int *element2Ptr){
+	int hold =*element1Ptr;
+	*element1Ptr =*element2Ptr;
+	*element2Ptr = hold;
+}
