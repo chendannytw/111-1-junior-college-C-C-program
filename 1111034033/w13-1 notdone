@@ -1,74 +1,85 @@
 #include <stdio.h>
-
+#include <stdlib.h>
 #define SIZE 10
+int lost2(int x[], int key, int low, int high);
+void lost(int n[], int x[],int y[], int z[]);
 
-void fun(int d[2][SIZE],int size);
-void swap(int *element1Ptr,int *element2Ptr);
-//void fun2(int a[],int s[],int ID,int size);
-//int binarySearch(const int a[],int ID,int low,int high);
-int i,pass,ID,score,j;
-int main(void){
-	//int a[SIZE]={2,6,4,8,10,12,89,68,45,37};
-	//s[SIZE]={0,66,67,66,70,73,74,75,62,32}; 
-	int d[2][SIZE]={{2,6,4,8,10,12,89,68,45,37},
-	                {0,66,67,66,70,73,74,75,62,32}};
+int main(void) {
+    int ava;
+    int total = 0;
+
+    int i;
+    int n[4][SIZE] = { { 1,2,3,4,5,6,7,8,9,10},{ 66,55,90,89,73,87,75,63,62,80}, {95,67,24,58,64,52,13,48,95,15} };
+    printf("before\n");
+
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[0][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[1][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[2][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i) {
+    n[3][i] = (n[1][i] + n[2][i]) / 2;  //算平均 
+    printf("%d ", n[3][i]);}
+    printf("\n");
+
+    lost(n[0], n[1], n[2],n[3]);
 
 
-	puts("Data items in original order");
-	for (i=0;i<SIZE;++i){
-		printf("%4d",d[0][i]);
-	}
-	printf("\n");
-	for (i=0;i<SIZE;++i){
-		printf("%4d",d[1][i]);
-	}
-	fun(d,SIZE);
-	puts("\nData items in ascending order");
-	for(i=0;i<SIZE;++i){
-		printf("%4d",d[0][i]);
-	}
-	printf("\n");
-	for (i=0;i<SIZE;++i){
-		printf("%4d",d[1][i]);
-	}
-	/*printf("\n請輸入學號:");
-	scanf("%d",&ID);
-	fun2(a,s,ID,SIZE);
-	puts("");
-	printf("\n請輸入成績:");
-	scanf("%d",&score);
-	int result = binarySearch(s,score,0,SIZE-1);
-	if (result != -1){
-		printf("\n%d found at subscript %d\n",score,a[result]);
-	}
-	else{
-		printf("\n%d not found\n",score);
-	}*/
+
+    printf("after\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[0][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[1][i]);
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[2][i]);
+    printf("\n");
+    printf("\n");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[3][i]);
+    
+
 }
 
-
-void fun(int d[2][SIZE],int size){
-	int hold;
-	for(pass=1;pass<SIZE;++pass){
-		for(i=0;i<SIZE-1;++i){
-			if(d[1][i]>d[1][i+1]){
-				/*hold = s[i];
-				s[i] = s[i+1];
-				s[i+1] = hold;
-				hold = a[i];
-				a[i] = a[i+1];
-				a[i+1] = hold;*/
-				swap(&d[1][i],&d[1][i+1]);
-				swap(&d[0][i],&d[0][i+1]);
-			}
-		}
-	}
+void lost(int n[], int x[],int y[], int z[]) {
+    int hold, pass, i;
+    void swap(int* r1ptr, int* r2ptr);
+    for (pass = 1; pass < SIZE; ++pass) {
+        for (i = 0; i < SIZE - pass; ++i) {
+            if (z[i] < z[i + 1]) {
+                swap(&x[i],&x[i + 1]);
+                swap(&n[i], &n[i + 1]);
+                swap(&y[i], &y[i + 1]);
+                swap(&z[i], &z[i + 1]);
+          
+            }
+        }
+    }
+}
+int lost2(int x[], int key, int low, int high) {
+    int mid;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if (key == x[mid])
+            return mid;
+        else if (key < x[mid])
+            high = mid - 1;
+        else
+            low = mid + 1;
+    }
+    return -1;
 }
 
-void swap(int *element1Ptr,int *element2Ptr)
+void swap(int *r1ptr,int *r2ptr)
 {
-	int hold;
-	hold = *element1Ptr;
-	*element1Ptr = *element2Ptr;
-	*element2Ptr = hold;
+    int hold;
+    hold = *r1ptr;
+    *r1ptr = *r2ptr;
+    *r2ptr = hold;
 }
