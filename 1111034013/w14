@@ -2,7 +2,7 @@
 #define SIZE 4
 #define stu 10
 //int binarySearch(int b[], int searchKey, int low, int high);
-void sort(int a[][SIZE], int size);
+void sort(char *name[10],int a[][SIZE], int size);
 void swap(int *e1Ptr,int*e2Ptr);
 // function main begins program execution
 int main(void)
@@ -30,6 +30,7 @@ int main(void)
         	a[j][3]+=a[j][i];
     	}
 	}
+	
     
     for(j=0;j<10;j++)
     {	printf("%10s", name[j]);
@@ -48,7 +49,7 @@ int main(void)
     // bubble sort                                         
     // loop to control number of passes                    
 
-    sort(a, stu);
+    sort(name , a, stu);
     puts("\nData items in ascending order");
 
     for(j=0;j<10;j++)
