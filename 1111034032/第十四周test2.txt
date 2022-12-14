@@ -90,4 +90,6 @@ int middium(int a[][SIZE],int low,int high){
 	int mid;
 	mid = (low+high) / 2;
 	printf("%d",a[mid][3]);
+	printf("\n");
+	printf("德意志萬歲");
 }
