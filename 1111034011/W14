@@ -3,6 +3,8 @@
 #define stu 10
 
 void sort(char *name[10],int a[][SIZE], int size);
+void swap(int *e1Ptr,int*e2Ptr);
+//int middle(int a[],int low,int high);
 int main(void)
 {
     int key,result=0,i,j;
@@ -39,16 +41,22 @@ int main(void)
 		printf("%8s",name[j]);
 		for (i = 0; i < SIZE; ++i) {
         	printf("%4d", a[j][i]);
+        	
     	}
+    	printf("%4d",j+1);
     	printf("\n");
+    	
 	}
+	printf("%4d",a[0][3]);
+	printf("%4d",a[9][3]);
 
 }
 
 
 void sort(char *name[10],int a[][SIZE], int size)
 {
-    int hold,pass,i,ptr;
+    int hold,pass,i;
+    char *ptr;
     for (pass = 1; pass < size; ++pass) { 
         for (i = 0; i < size - pass; ++i) {         
             if (a[i][3] > a[i + 1][3]) {
