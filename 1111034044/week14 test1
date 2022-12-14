@@ -1,1 +1,107 @@
+題目 : 建立一個10*4陣列，將全班10人的學號，數學成績，計概成績放入陣列中(直接置於程式內)。
+根據每個學生的平均成績，由大到小排序，印出美觀、大方的全班成績表(包含學號、成績、平均、名次)，
+並印出最高平均成績與最低平均成績的同學和分數。
+需使用排序、報表、中位數、取平均副程式，
+資料交換需使用副程式p.322的swap( )副程式完成。#include <stdio.h>
 
+#include <stdlib.h>
+#include <stdio.h>
+#define SIZE 10
+int lost2(int x[], int key, int low, int high);
+void lost(int n[], int x[], int y[], int z[]);
+
+int main(void) {
+    int ava;
+    int total = 0;
+
+    int i;
+    int n[4][SIZE] = { { 1,2,3,4,5,6,7,8,9,10},{ 66,55,90,89,73,87,75,63,62,80}, {95,67,24,58,64,52,13,48,95,15} };
+    printf("排序前\n");
+    printf("座號 : ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d  ", n[0][i]);
+    printf("\n");
+    printf("成績1: ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[1][i]);
+    printf("\n");
+    printf("成績2: ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[2][i]);
+    printf("\n");
+    printf("平均 : ");
+    for (i = 0; i < SIZE; ++i) {
+        n[3][i] = (n[1][i] + n[2][i]) / 2;
+        printf("%d ", n[3][i]);
+    }
+    printf("\n");
+
+    lost(n[0], n[1], n[2], n[3]);
+
+
+
+    printf("排序後\n");
+    printf("座號 : ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d  ", n[0][i]);
+    printf("\n");
+    printf("成績1: ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[1][i]);
+    printf("\n");
+    printf("成績2: ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[2][i]);
+    printf("\n");
+    printf("平均 : ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d ", n[3][i]);
+    printf("\n");
+    printf("名次 : ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%d  ",i+1);
+    printf("\n");
+    printf("最高平均成績: ");
+    printf("%d分 ", n[3][0]);
+    printf("最低平均成績: ");
+    printf("%d分 ", n[3][SIZE-1]);
+    printf("中位數: ");
+    printf("%d分 ", n[3][SIZE/2]);
+}
+
+void lost(int n[], int x[], int y[], int z[]) {
+    int hold, pass, i;
+    void swap(int* r1ptr, int* r2ptr);
+    for (pass = 1; pass < SIZE; ++pass) {
+        for (i = 0; i < SIZE - pass; ++i) {
+            if (z[i] < z[i + 1]) {
+                swap(&x[i], &x[i + 1]);
+                swap(&n[i], &n[i + 1]);
+                swap(&y[i], &y[i + 1]);
+                swap(&z[i], &z[i + 1]);
+
+            }
+        }
+    }
+}
+int lost2(int x[], int key, int low, int high) {
+    int mid;
+    while (low <= high) {
+        mid = (low + high) / 2;
+        if (key == x[mid])
+            return mid;
+        else if (key < x[mid])
+            high = mid - 1;
+        else
+            low = mid + 1;
+    }
+    return -1;
+}
+
+void swap(int* r1ptr, int* r2ptr)
+{
+    int hold;
+    hold = *r1ptr;
+    *r1ptr = *r2ptr;
+    *r2ptr = hold;
+}
