@@ -1,73 +1,79 @@
 #include <stdio.h>
-#define SIZE 10 
+#define SIZE 4
+#define stu 10
 
-void test1(int a[],int b[],int size);
-int test2(int s[],int score,int low,int high);
-
-int main(void){
-	int a[SIZE]={2,6,4,8,10,12,89,68,45,37};
-    int s[SIZE]={0,66,67,66,70,73,74,75,62,32}; 
-	printf("氣泡排序前");
-	int i,score;
-	for(i = 0 ; i<SIZE ; ++i)
-	printf("%4d",a[i]);//印分數 
-	printf("\n");
-	printf("          ");
-	for(i=0 ; i<SIZE ; ++i)
-	printf("%4d",s[i]);//印結果 
-	
-	test1(a,s,SIZE);//呼叫副程式 
-	printf("\n氣泡排序後");
-	for(i=0;i<SIZE;++i)
-	printf("%4d",a[i]);//印分數
-	printf("\n");
-	printf("          ");
-    for(i=0 ; i<SIZE ; ++i)
-	printf("%4d",s[i]);//印結果 
-	
-	//下為十二周程式 
-	printf("\n");
-	test2(s,score,0,SIZE-1);//呼叫副程式
-	printf("輸入查詢成績:");
-	scanf("%d",&score);
-	if(test2(s,score,0,SIZE-1) == -1)
-	printf("查無此成績");	
-	
-	else
-	printf("成績為%d的同學學號為:%d",score,a[test2(s,score,0,SIZE-1)]);//注意 test2(s,score,0,SIZE-1)只是項數，故前面要加陣列 a 
+void sort(char *name[10],int a[][SIZE], int size);
+void swap(int *e1Ptr,int*e2Ptr);
+int main(void)
+{
+    int key,result=0,i,j;
+    int a[10][SIZE] = {{2,98,72,0},
+{3,76,32,0},
+{6,98,67,0},
+{7,89,32,0},
+{8,98,55,0},
+{9,89,32,0},
+{10,98,65,0},
+{11,99,32,0},
+{12,98,71,0},
+{13,76,91,0}};
+char *name[10] = {"ace","bce","cce","dce","ece","fce","gce","hce","ice","jce"};
+    puts("Data items in original order");
+    for(j=0;j<10;j++)
+    { for (i = 1; i < SIZE-1; ++i) {
+        a[j][3]+=a[j][i];
+    }
+}
+   
+    for(j=0;j<10;j++)
+    {
+    printf("%8s",name[j]);
+for (i = 0; i < SIZE; ++i) {
+        printf("%4d", a[j][i]);
+    }
+    printf("\n");
+}
+    sort(name,a, stu);
+    puts("\nData items in ascending order");
+    for(j=0;j<10;j++)
+    {
+printf("%8s",name[j]);
+for (i = 0; i < SIZE; ++i) {
+        printf("%4d", a[j][i]);
+       
+    }
+    printf("%4d",j+1);
+    printf("\n");
+   
 }
 
-void test1(int a[],int s[],int size){
-	int pass,hold,i;
-	for (pass=1 ; pass<SIZE ; ++pass){
-		//執行幾回合 
-		for(i=0 ; i<SIZE-pass ; ++i){//每回合裡面做幾次 
-			if(s[i]>s[i+1]){
-				hold = s[i];//定義hold用於暫存較大值 
-				s[i] = s[i + 1];
-				s[i + 1] = hold;
-				
-				hold = a[i];//定義hold用於暫存較大值 
-				a[i] = a[i + 1];
-				a[i + 1] = hold;
-			}
-		}
-	}
 }
 
-int test2(int s[],int score,int low,int high){
-	int mid;
-	while(low <= high){
-		mid = (low+high) / 2;
-		
-		if(score == s[mid])
-		return mid;
-		
-		else if(score < s[mid])
-		high = mid - 1;
-		
-		else
-		low = mid + 1;
-	}
-	return -1;
+
+void sort(char *name[10],int a[][SIZE], int size)
+{
+    int hold,pass,i;
+    char *ptr;
+    for (pass = 1; pass < size; ++pass) {
+        for (i = 0; i < size - pass; ++i) {        
+            if (a[i][3] > a[i + 1][3]) {
+            ptr = name[i];
+            name[i] = name[i+1];
+            name[i+1] = ptr;
+                swap(&a[i][0], &a[i+1][0]);
+                swap(&a[i][1], &a[i+1][1]);
+                swap(&a[i][2], &a[i+1][2]);
+                swap(&a[i][3], &a[i+1][3]);
+            }
+        }
+    }
+
+}
+
+void swap(int *e1Ptr,int*e2Ptr)
+{
+int hold;
+hold=*e1Ptr;
+*e1Ptr=*e2Ptr;
+*e2Ptr=hold;
 }
