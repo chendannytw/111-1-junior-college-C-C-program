@@ -57,7 +57,7 @@ int main()
 	puts("");
 	puts("座號    數學    計概    平均");
 	for (int i = 0; i < SIZE; ++i) {
-		for (int y = 0; y < 4; ++y) {
+		for (int y = 0; y < 4; ++i) {
 			printf("%4d", end[i][y]);
 			printf("    ");
 		}
@@ -82,7 +82,7 @@ int main()
 	}
 
 }
-void swap(int* element1Ptr, int* element2Ptr)
+void swap(int* eleme1nt1Ptr, int* element2Ptr)
 {
 	int hold = *element1Ptr;
 	*element1Ptr = *element2Ptr;
