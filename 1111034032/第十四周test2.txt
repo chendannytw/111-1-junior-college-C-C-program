@@ -18,7 +18,7 @@ int main(void)
 						{11,99,32,0},
 						{12,98,71,0},
 						{13,76,91,0}};
-char *name[10] = {"one","two","three","four","five","six","seven","eight","nine","ten"};
+char *name[10] = {"ace","bce","cce","dce","ece","fce","gce","hce","ice","jce"};
     puts("Data items in original order");
     for(j=0;j<10;j++)
     { for (i = 1; i < SIZE-1; ++i) {
