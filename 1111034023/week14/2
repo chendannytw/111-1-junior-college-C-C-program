@@ -1,0 +1,96 @@
+// ConsoleApplication2.cpp : 此檔案包含 'main' 函式。程式會於該處開始執行及結束執行。
+//
+#define SIZE 10
+#include <iostream>
+int id[SIZE] = { 5,7,3,4,10,6,2,8,9,1 };
+int math[SIZE] = { 85,67,32,94,100,56,26,87,92,11 };
+int notmath[SIZE] = { 99,28,54,63,78,16,54,90,57,32 };
+int arv[SIZE];
+const char *name[SIZE] = {"王其豐","江彥龍","沈世憲","王家恩","不打牌","蔡正洋","蔡政揚","蔡富陽","蔡負洋","乾麵包"};
+int end[10][4];
+
+
+
+void a(int x[], int y[], int z[], int w[]) {
+	void swap(int* element1Ptr, int* element2Ptr);
+	int pass;
+	for (pass = 1; pass < SIZE; ++pass) {
+		for (size_t i = 0; i < SIZE - 1; ++i) {
+			if (w[i] < w[i + 1]) {
+				swap(&x[i], &x[i + 1]);
+				swap(&y[i], &y[i + 1]);
+				swap(&z[i], &z[i + 1]);
+				swap(&w[i], &w[i + 1]);
+				const char *hold = name[i];
+				name[i] = name[i + 1];
+				name[i + 1] = hold;
+			}
+		}
+	}
+	for (int i = 0; i < SIZE; i++)
+	{
+		end[i][0] = x[i];
+		end[i][1] = y[i];
+	}
+}
+void setvar(int a[], int b[], int c[])
+{
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[i][0] = id[i];
+	}
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[i][1] = math[i];
+	}
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[i][2] = notmath[i];
+	}
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[i][3] = (end[i][1] + end[i][2]) / 2;
+		arv[i] = (end[i][1] + end[i][2]) / 2;
+	}
+
+}
+int main()
+{
+	setvar(id, math, notmath);
+	puts("排序前");
+	puts("");
+	puts("名子    座號    數學    計概    平均");
+	for (int i = 0; i < SIZE; ++i) {
+			printf("%5s", name[i]);
+		for (int y = 0; y < 4; ++y) {
+			printf("%4d", end[i][y]);
+			printf("    ");
+		}
+		puts("");
+
+	}
+	puts("");
+	puts("排序後");
+	puts("");
+	a(id, math, notmath, arv);
+	setvar(id, math, notmath);
+	puts("");
+	puts("名子    座號    數學    計概    平均    排名");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%5s", name[i]);
+		for (int y = 0; y < 4; ++y) {
+			printf("%4d", end[i][y]);
+			printf("    ");
+		}
+		printf("%4d", i+1);
+		puts("");
+
+	}
+
+}
+void swap(int* element1Ptr, int* element2Ptr)
+{
+	int hold = *element1Ptr;
+	*element1Ptr = *element2Ptr;
+	*element2Ptr = hold;
+}
