@@ -1,0 +1,18 @@
+//Function Declaration and Definition
+//You just learned from the previous chapters that you can create and call a function in the following way:
+
+----------------------------------------Ex1 down below------------------------------------------------------------
+
+#include <stdio.h>
+
+// Create a function
+void myFunction() {
+  printf("I just got executed!");
+}
+
+int main() {
+  myFunction(); // call the function
+  return 0;
+}
+
+//Output be like : I just got executed!
