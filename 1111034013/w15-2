@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+// prototypes
+void function1(int,int);
+void function2(int,int);
+void function3(int,int);
+void function4(int,int);
+int sum,difference,product,quotient=0,choice= 0;
+int main(void)
+{
+   // initialize array of 3 pointers to functions that each take an
+   // int argument and return void                              
+   void (*f[4])(int,int) = {function1, function2, function3,function4};    
+
+   //printf("%s", "Enter a number between 0 and 3, 4 to end: ");
+   //int choice; // variable to hold user's choice
+   //scanf("%u", &choice);
+
+   // process user's choice
+   for (choice= 0 ; choice < 4;choice++) {
+
+      // invoke function at location choice in array f and pass
+      // choice as an argument                              
+      (*f[choice])(10,2);                                
+
+      //printf("%s", "Enter a number between 0 and 2, 3 to end: ");
+      //scanf("%u", &choice);
+   } 
+
+   //puts("Program execution completed.");
+} 
+
+void function1(int a,int x)
+{
+   sum+=a+x;
+   printf("Sum:%d\n",sum);
+}
+
+void function2(int b,int y)
+{
+   difference+=b-y;
+   printf("difference:%d\n",difference);
+}
+
+void function3(int c,int z)
+{
+   product+=c*z;
+   printf("product:%d\n",product);  
+}
+void function4(int e,int f)
+{
+   quotient=e/f;
+   printf("quotient:%d\n",quotient);  
+}
