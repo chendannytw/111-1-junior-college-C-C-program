@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+void function1(int, int, int);
+void function2(int, int, int);
+void function3(int, int, int);
+void function4(int, int, int);
+
+int pp;
+int main(void) {
+	void (*f[4])(int,int,int) = { function1 ,function2 ,function3,function4 };
+	printf("%s", "enter a number between 0, 1, 2, 3to end");
+	int choice ;
+	scanf_s("%u", &choice);
+	while (choice >= 0 && choice < 4) {
+		(*f[choice])(choice,4,5);
+		printf("%s", "enter a number between 0 and 2 ,3 to end");
+		scanf_s("%u", &choice);
+	}
+	puts("program execution completed.");
+}
+
+void function1(int a ,int x,int ax) 
+{
+	pp = x + ax;
+	printf("you emtered %d so function1 was called \n\n", a,x,ax );
+	printf("%d+%d=%d\n\n", x, ax, pp);
+}
+
+void function2(int b, int y, int by)
+{
+	pp = y -by;
+	printf("you emtered %d so function2 was called \n\n", b, y, by);
+	printf("%d-%d=%d\n\n", y, by, pp);
+}
+
+void function3(int c, int z, int cz)
+{
+	pp = z * cz;
+	printf("you emtered %d so function3 was called \n\n", c, z, cz);
+	printf("%d*%d=%d\n\n", z, cz, pp);
+}
+
+void function4(int d, int u, int du)
+{
+	pp = u / du;
+	printf("you emtered %d so function4 was called \n\n", d, u, du);
+	printf("%d/%d=%d\n\n", u, du, pp);
