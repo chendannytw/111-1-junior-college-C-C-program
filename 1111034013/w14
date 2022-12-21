@@ -19,7 +19,7 @@ int main(void)
 						{11,99,32,0},
 						{12,98,71,0},
 						{13,76,91,0}};
-	const char *name[10]=
+	 char *name[10]=
 	{"MARTIN","ABBY","KAYLEIGH","MAURICE","JAZMINE"
 	,"IAN","JOSIE","BILLIE","ELSIE","ELYSE"};
 
@@ -57,9 +57,11 @@ int main(void)
 	    for (i = 0; i < SIZE; ++i) {	
 			printf("%4d", a[j][i]);
     	}
+    	printf("%4d",j+1);
     	printf("\n");
 	}
-
+        //printf("%4d",a[0][3]);
+	    //printf("%4d",a[9][3]);
 }
 
 
