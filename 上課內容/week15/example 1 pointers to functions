@@ -1,0 +1,48 @@
+// Fig. 7.28: fig07_28.c
+// Demonstrating an array of pointers to functions.
+#include <stdio.h>
+
+// prototypes
+void function1(int,int);
+void function2(int,int);
+void function3(int,int);
+
+int main(void)
+{
+   // initialize array of 3 pointers to functions that each take an
+   // int argument and return void                              
+   void (*f[3])(int,int) = {function1, function2, function3};    
+
+   printf("%s", "Enter a number between 0 and 2, 3 to end: ");
+   size_t choice; // variable to hold user's choice
+   scanf("%u", &choice);
+
+   // process user's choice
+   while (choice >= 0 && choice < 3) {
+
+      // invoke function at location choice in array f and pass
+      // choice as an argument                              
+      (*f[choice])(choice,777);                                
+
+      printf("%s", "Enter a number between 0 and 2, 3 to end: ");
+      scanf("%u", &choice);
+   } 
+
+   puts("Program execution completed.");
+} 
+
+void function1(int a,int x)
+{
+   printf("You entered %d so function1 was called %d\n\n", a,x);
+}
+
+void function2(int b,int y)
+{
+   printf("You entered %d so function2 was called%d\n\n", b,y);
+}
+
+void function3(int c,int z)
+{
+   printf("You entered %d so function3 was called%d\n\n", c,z);  
+}
+
