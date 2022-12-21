@@ -1,0 +1,75 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define SIZE 20
+void bubble_sort(int id[], int point[]);
+int binary_search(int x[], int searchkey, int high, int low, int y[]);
+int main() {
+	int a[SIZE] = { 2,6,4,8,10,12,89,68,45,37,48,65,78,20,54,23,74,26,14,21};
+	int score[SIZE] = { 65,69,68,96,78,25,30,0,2,5,96,78,52,46,20,34,45,12,32,19};
+	puts("Data  items  in original order");
+
+	for (size_t i = 0; i < SIZE; ++i) {
+		printf_s("%4d", a[i]);
+	}
+	puts("");
+	puts("With the following score is");
+
+	for (size_t i = 0; i < SIZE; ++i) {
+		printf_s("%4d", score[i]);
+	}
+	bubble_sort(a, score);
+
+}
+void bubble_sort(int id[], int point[]) {
+	int search_o, alfax;
+	for (int pass = 1; pass < SIZE; ++pass) {
+		for (size_t i = 0; i < SIZE - 1; ++i) {
+			if (point[i] > point[i + 1]) {
+				int hold = point[i];
+				point[i] = point[i + 1];
+				point[i + 1] = hold;
+
+				int hold_2 = id[i];
+				id[i] = id[i + 1];
+				id[i + 1] = hold_2;
+			}
+		}
+	}
+	puts("\nscore in order is");
+	for (size_t i = 0; i < SIZE; ++i) {
+		printf_s("%4d", point[i]);
+	}
+	puts("");
+	puts("Data  items  in  order");
+
+	for (size_t i = 0; i < SIZE; ++i) {
+		printf_s("%4d", id[i]);
+	}
+	puts("");
+	printf_s("Enter the code you want: ");
+	scanf_s("%d", &search_o);
+	alfax = binary_search(point,search_o,0,SIZE-1,id);
+	printf_s("%d\n", alfax);
+	if (alfax != -1) {
+		printf("the one with score : %d is num : %d ", search_o, id[alfax]);
+	}
+}
+
+
+int binary_search(int x[], int searchkey, int low, int high, int y[]) {
+	size_t middle;
+	while (low <= high) {
+		middle = (low + high) / 2;
+		if (searchkey == x[middle]) {
+			return middle;
+		}
+		else if (searchkey < x[middle]) {
+			high = middle + 1;
+		}
+		else {
+			low = middle + 1;
+		}
+		return middle = -1;
+	}
+}
