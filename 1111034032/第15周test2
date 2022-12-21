@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+// prototypes
+int function1(int a,int x);
+int function2(int b,int y);
+int function3(int c,int z);
+int function4(int d,int e);
+
+int main(void)
+{            
+   int (*f[4])(int,int) = {function1, function2, function3, function4};    
+   int n1 = 13;
+   int n2 = 7;
+   
+	printf("加 = ");
+	(*f[0])(n1,n2);
+	printf("\n");
+	printf("減 = ");
+	(*f[1])(n1,n2);
+	printf("\n");
+	printf("乘 = ");
+	(*f[2])(n1,n2);
+	printf("\n");
+	printf("除 = ");
+	(*f[3])(n1,n2);
+} 
+
+int function1(int a,int x)
+{
+  int value1= a + x;
+   printf("%d",value1);
+}
+
+int function2(int b,int y)
+{
+   int value2= b - y;
+   printf("%d",value2);
+}
+
+int function3(int c,int z)
+{
+	int value3= c * z;
+   printf("%d",value3);  
+}
+
+int function4(int d,int e)
+{
+   int value4= d / e;
+   printf("%d",value4);
+}
