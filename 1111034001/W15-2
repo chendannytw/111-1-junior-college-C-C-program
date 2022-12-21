@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+void function1(int,int);
+void function2(int,int);
+void function3(int,int);
+void function4(int,int);
+int sum,difference,product,quotient=0,choice= 0;
+int main(void)
+{                           
+   void (*f[4])(int,int) = {function1, function2, function3,function4};    
+   for (choice= 0 ; choice < 4;choice++) {          
+      (*f[choice])(10,2);                                
+   } 
+} 
+
+void function1(int a,int x)
+{
+   sum+=a+x;
+   printf("加:%d\n",sum);
+}
+
+void function2(int b,int y)
+{
+   difference+=b-y;
+   printf("減:%d\n",difference);
+}
+
+void function3(int c,int z)
+{
+   product+=c*z;
+   printf("乘:%d\n",product);  
+}
+void function4(int e,int f)
+{
+   quotient=e/f;
+   printf("除:%d\n",quotient);  
+}
