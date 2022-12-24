@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <ctype.h>
+int main()
+{
+	char s1[] = "abcDEF6";
+	char s2[] = "abcDEF6";
+	int i,j = 0;
+	int small = 0;
+	int big = 0;
+	int num = 0;
+
+	while (s2[i]!='\0'){
+		if(islower(s2[i])){
+			small += 1;
+			s1[i]=toupper(s2[i]);
+		} 
+		if(isupper(s2[i])){
+			big += 1;
+			s1[i]=tolower(s2[i]);
+		} 
+		if(isdigit(s2[i])){
+			num += 1;
+			s1[i]=s2[i];
+		}
+		i++;
+	
+	}	 
+		for(j=0;j<=7;j++){
+		printf("%c",s1[j]);
+	}
+		for(j=0;j<=7;j++){
+		printf("%c",s2[j]);
+	}
+	
+return 0;
+}
