@@ -24,13 +24,16 @@ int main()
 		}
 		i++;
 	
-	}	 
-		for(j=0;j<=7;j++){
-		printf("%c",s1[j]);
 	}
-		for(j=0;j<=7;j++){
-		printf("%c",s2[j]);
-	}
+	printf("小寫字母數量: %d",small);
+	printf("\n");
+	printf("大寫字母數量: %d",big);
+	printf("\n");
+	printf("數字數量: %d",num);
+	printf("\n");
+	printf("原先字串: %s",s1);
+	printf("\n");	 
+	printf("互換大小寫後: %s",s2);
 	
 return 0;
 }
