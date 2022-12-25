@@ -16,3 +16,45 @@ int main() {
 }
 
 //Output be like : I just got executed!
+
+//Another Example
+//If we use the example from the previous chapter regarding function parameters and return values:
+
+----------------------------------------Ex2 down below------------------------------------------------------------
+
+#include <stdio.h>
+
+int myFunction(int x, int y) {
+  return x + y;
+}
+
+int main() {  
+  int result = myFunction(5, 3); 
+  printf("Result is = %d", result);
+  return 0;
+}
+
+//Output be like: Result is: 8
+
+//It is considered good practice to write it like this instead:
+
+----------------------------------------Ex3 down below------------------------------------------------------------
+
+#include <stdio.h>
+
+// Function declaration
+int myFunction(int, int);
+
+// The main method
+int main() {  
+  int result = myFunction(5, 3);  // call the function
+  printf("Result is = %d", result);
+  return 0;
+}
+
+// Function definition
+int myFunction(int x, int y) {
+  return x + y;
+}
+
+//Output be like: Result is: 8
