@@ -13,3 +13,4 @@ int main()
  printf("%s在%s內出現%d次",s2,s1,result);
 return 0;
 }
+//聖誕快樂
