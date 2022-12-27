@@ -4,7 +4,6 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main() {
-	
 	int c,i=0;
 	char s1[13]="abCDabCDabCD";
 	char s2[13]="CD";
@@ -12,6 +11,6 @@ int main() {
 	    if (strncmp(s2,s1+i,2)==0)
 	        c+=1;		
 	}
-	printf("%S 在 %S 出現 %d 次",s2,s1,c );
+	printf("CD 在 abCDabCDabCD 出現 %d 次",c );
 	
 }
