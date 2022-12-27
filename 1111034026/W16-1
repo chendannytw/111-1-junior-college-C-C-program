@@ -9,15 +9,15 @@ int main(){
 	int cnt1= 0;//數字
 	while (s2[i]!='\0'){
 		if(islower(s2[i])){
-			cnta+= 1;
+			cnta+=1;
 			s1[i]=toupper(s2[i]);
 		} 
 		if(isupper(s2[i])){
-			cntA  += 1;
+			cntA+=1;
 			s1[i]=tolower(s2[i]);
 		} 
 		if(isdigit(s2[i])){
-			cnt1 += 1;
+			cnt1+=1;
 			s1[i]=s2[i];
 		}
 	}
