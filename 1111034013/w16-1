@@ -20,7 +20,7 @@ int main() {
 			cA += 1;
 			s1[i]=tolower(s2[i]);
 		} 
-		else if (isxdigit(s2[i])){
+		else if (isdigit(s2[i])){
 			c1 += 1;
 			s1[i]=s2[i];
 		} 
