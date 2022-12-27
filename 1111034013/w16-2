@@ -11,7 +11,8 @@ int main() {
 	    if (strncmp(s2,s1+i,2)==0)
 	        c+=1;		
 	}
-	printf("CD 在 abCDabCDabCD 出現 %d 次",c );
+	printf("%s 在 %s 出現 %d 次",s2,s1,c );
+	return 0;
 	
 }
 
