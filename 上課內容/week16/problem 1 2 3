@@ -1,0 +1,69 @@
+題目一
+給定一個字串，先計算且印出字串中的大、小寫與數字的數量，之後將字串中的大、小寫互換之後，再將互換後的字串印出。
+#include <stdio.h>
+#include <ctype.h>
+int main() {
+	char s1[] = "Hd4hTrh2b5";
+	char s2[] = "Hd4hTrh2b5";
+	int i=0;
+	int cnta = 0;//小寫
+	int cntA = 0;//大寫
+	int cnt1 = 0;//數字
+	while (s2[i]!='\0') {
+		if (islower(s2[i])) {
+			cnta += 1;
+			s1[i] = toupper(s2[i]);
+		}
+				
+		if (isupper(s2[i])) {
+			cntA += 1;
+			s1[i] = tolower(s2[i]);
+		}
+			
+		if (isdigit(s2[i])) {
+			cnt1 += 1;
+			s1[i] = s2[i];
+		}
+		i++;
+						}
+	
+	printf("小寫字母共%d個\n大寫字母共%d個\n數字共%d個\n", cnta, cntA, cnt1);
+	printf("原本字串%s互換大小寫=%s", s2,s1);
+	system("PAUSE");
+	return 0;
+
+
+題目二
+給定兩個字串s1與s2，找出s2在s1出現的次數並印出。(請使用strncmp、strstr函數)
+範例: 
+s1 = “abcdefababcdefgh”
+s2 = “def”
+
+印出2
+
+#include<stdio.h>
+#include<string.h>
+int main()
+{
+	int i,cnt = 0;
+	char s1[13] = "ABcdEfABCdeF";
+	char s2[13] = "AB";
+	for (i = 0; i < 12; i++) {
+		if (strncmp(s2, s1+i, 2) == 0) 
+			cnt += 1;
+			}
+	printf("%s在%s出現的次數:%d times",s2,s1,cnt);
+	system("pause");
+        return 0;
+}
+
+
+
+題目三
+寫一個程式，能將字串中一個或多個浮點數取出，並且分別印出。Hint: strtod()、strncat()
+範例: 
+s1 = “abc2.34ababc3.8gh4.4xyz”
+
+印出2.34
+		3.8
+		4.4
