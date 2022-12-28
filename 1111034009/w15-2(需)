@@ -1,54 +1,47 @@
+#include <iostream>
 #include <stdio.h>
+void function1(double, double);
+void function2(double, double);
+void function3(double, double);
+void function4(double, double);
 
-// prototypes
-void function1(int,int);
-void function2(int,int);
-void function3(int,int);
-void function4(int,int);
-int sum,difference,product,quotient=0,choice= 0;
 int main(void)
 {
-   // initialize array of 3 pointers to functions that each take an
-   // int argument and return void                              
-   void (*f[4])(int,int) = {function1, function2, function3,function4};    
+    // initialize array of 3 pointers to functions that each take an
+    // int argument and return void                              
+    void (*f[4])(double, double) = { function1, function2, function3,function4 };
 
-   //printf("%s", "Enter a number between 0 and 3, 4 to end: ");
-   //int choice; // variable to hold user's choice
-   //scanf("%u", &choice);
-
-   // process user's choice
-   for (choice= 0 ; choice < 4;choice++) {
-
-      // invoke function at location choice in array f and pass
-      // choice as an argument                              
-      (*f[choice])(10,2);                                
-
-      //printf("%s", "Enter a number between 0 and 2, 3 to end: ");
-      //scanf("%u", &choice);
-   } 
-
-   //puts("Program execution completed.");
-} 
-
-void function1(int a,int x)
-{
-   sum+=a+x;
-   printf("Sum:%d\n",sum);
+    printf("%s", "輸入 0:加 1:減 2:乘 3:除，再輸入兩數字運算");
+   int choice1,choice2,choice3; // variable to hold user's choice
+   scanf_s("%d", &choice3);
+    scanf_s("%d", &choice1);
+    scanf_s("%d", &choice2);                     
+    (*f[choice3])(choice1, choice2);
 }
 
-void function2(int b,int y)
+void function1(double a, double b)
 {
-   difference+=b-y;
-   printf("difference:%d\n",difference);
+    int plus;
+    plus= a + b;
+    printf("相加為%d", plus);
 }
 
-void function3(int c,int z)
+void function2(double a, double b)
 {
-   product+=c*z;
-   printf("product:%d\n",product);  
+    int mins;
+    mins = a - b;
+    printf("相減為%d", mins);
 }
-void function4(int e,int f)
+
+void function3(double a, double b)
 {
-   quotient=e/f;
-   printf("quotient:%d\n",quotient);  
+    int x;
+        x = a * b;
+        printf("相乘為%d",x);
+}
+void function4(double a, double b)
+{
+    float y;
+    y = a / b;
+    printf("相除為%lf", y);
 }
