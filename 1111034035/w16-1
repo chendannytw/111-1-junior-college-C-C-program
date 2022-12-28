@@ -1,0 +1,18 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+/* run this program using the console pauser or add your own getch, system("pause") or input loop */
+
+int main() {
+	char s1[] = "abc2.34ababc3.8gh4.4xyz";
+	char *s1ptr =s1;
+	while (*s1ptr!='\0') {
+		if (!isdigit (*s1ptr)) {
+			s1ptr++;
+		}
+		else{
+			double d = strtod(s1ptr,&s1ptr);
+			printf ("%.2f\n",d); 
+		}
+	} 
+}
