@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void)
+{
+	char s1[] = "Hd4hTr2b5";
+	char s2[] = "Hd4hTr2b5";
+	int i = 0;
+	int cnta = 0;
+	int cntA = 0;
+	int cnt1 = 0;
+	while (s2[i]!='\0'){
+		if(islower(s2[i])){
+			cnta += 1;
+			s1[i]=toupper(s2[i]);
+		} 
+		if(isupper(s2[i])){
+			cntA += 1;
+			s1[i]=tolower(s2[i]);
+		} 
+		if(isdigit(s2[i])){
+			cnt1 += 1;
+			s1[i]=s2[i];
+		}
+		i++;
+	
+	}
+	printf("小寫字母數量: %d",cnta);
+	printf("\n");
+	printf("大寫字母數量: %d",cntA);
+	printf("\n");
+	printf("數字數量: %d",cnt1);
+	printf("\n");
+	printf("原先字串: %s",s1);
+	printf("\n");	 
+	printf("互換大小寫後: %s",s2);
+	
+	return 0;
+}
