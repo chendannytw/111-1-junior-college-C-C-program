@@ -38,3 +38,4 @@ int main() {
 	printf("原本字串%s互換大小寫=%s", s2,s1);
 	system("PAUSE");
 	return 0;
+}
