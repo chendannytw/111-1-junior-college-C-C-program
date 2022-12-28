@@ -1,0 +1,47 @@
+#include <iostream>
+#include <stdio.h>
+void function1(double, double);
+void function2(double, double);
+void function3(double, double);
+void function4(double, double);
+
+int main(void)
+{
+    // initialize array of 3 pointers to functions that each take an
+    // int argument and return void                              
+    void (*f[4])(double, double) = { function1, function2, function3,function4 };
+
+    printf("%s", "輸入 0:加 1:減 2:乘 3:除，再輸入兩數字運算");
+   int choice1,choice2,choice3; // variable to hold user's choice
+   scanf_s("%d", &choice3);
+    scanf_s("%d", &choice1);
+    scanf_s("%d", &choice2);                     
+    (*f[choice3])(choice1, choice2);
+}
+
+void function1(double a, double b)
+{
+    int plus;
+    plus= a + b;
+    printf("相加為%d", plus);
+}
+
+void function2(double a, double b)
+{
+    int mins;
+    mins = a - b;
+    printf("相減為%d", mins);
+}
+
+void function3(double a, double b)
+{
+    int x;
+        x = a * b;
+        printf("相乘為%d",x);
+}
+void function4(double a, double b)
+{
+    float y;
+    y = a / b;
+    printf("相除為%lf", y);
+}
