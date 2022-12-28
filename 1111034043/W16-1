@@ -1,1 +1,27 @@
-
+#include <stdio.h>
+#include <ctype.h>
+int main() {
+	char s1[] = "AbcD10526";
+	char s2[] = "AbcD10526";
+	int cnta = 0; //小寫
+	int cntA = 0; //大寫
+	int cnt1 = 0;//數字
+	for (int i = 0; s2[i] != '\0'; i++) {
+		if (islower(s2[i])) {
+			cnta += 1;
+			s1[i] = toupper(s2[i]);
+		}
+		else if (isupper(s2[i])) {
+			cntA += 1;
+			s1[i] = tolower(s2[i]);
+		}
+		else if (isdigit(s2[i])) {
+			cnt1 += 1;
+			s1[i] = s2[i];
+		}
+	}
+	printf("小寫,大寫,數字: %d,%d,%d", cnta, cntA, cnt1);
+	printf("\n");
+	printf("互換: %s", s1);
+	return 0;
+}
