@@ -1,0 +1,51 @@
+#include <iostream>
+#include <stdio.h>
+void upper(char* str);
+void lower(char* str);
+void num(char* str);
+int main(void)
+{
+    char s1[] = "abcDEFG123";
+    int choice;
+    void (*f[4])(char*) = {upper,lower,num};
+    printf("輸入0:大寫 1:小寫 2:數字");
+    scanf_s("%d", &choice);
+    (*f[choice])(s1);
+}
+
+void upper(char* str)
+{
+    int lg = strlen(str);
+    int plus=0;
+    for (int i = 0;i<lg; i++) {
+        if (isupper(str[i])) {
+            ++plus;
+        }
+    }
+    printf("大寫數量為%d", plus);
+}
+
+void lower(char* str)
+{
+    int lg = strlen(str);
+    int min = 0;
+    for (int i = 0; i < lg; i++) {
+        if (islower(str[i])) {
+            ++min;
+        }
+       
+    }
+    printf("小寫數量為%d", min);
+}
+
+void num(char* str) {
+    int lg = strlen(str);
+    int ha = 0;
+    for (int i = 0; i < lg; i++) {
+        if (isdigit(str[i])) {
+            ++ha;
+        }
+       
+    }
+    printf("數字數量為%d", ha);
+}
