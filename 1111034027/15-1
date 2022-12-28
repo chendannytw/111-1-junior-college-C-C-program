@@ -36,5 +36,5 @@ int main()
 	printf("\n");
 	printf("互換大小寫後: %s", s2);
 
-	return 0;
+	
 }
