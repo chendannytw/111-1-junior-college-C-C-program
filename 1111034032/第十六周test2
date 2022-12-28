@@ -6,9 +6,9 @@ int main()
  int i,result = 0;
  char s1[13] = "ABcdEfABCdeF";
  char s2[13] = "AB";
- for(i=0;i<12;i++){
+ for(i=0;i<=6;i++){
  	if(strncmp(s2,s1+i,2)==0)
- 	result+=1;
+ 	result+=1;  
  }
  printf("%s在%s內出現%d次",s2,s1,result);
 return 0;
