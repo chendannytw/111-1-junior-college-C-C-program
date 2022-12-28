@@ -1,19 +1,26 @@
+
 #include <stdio.h>
+#include <ctype.h>
+#include <string.h>
 #include <stdlib.h>
 
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main() {
-	//int c,i=0;
-	const char *string="3.14 abc ";
-	char *stringPtr =NULL;
-	//char s2[13]="CD";
-	
-	double d= strtod(string,&stringPtr);
-	double d= strtod(string,&stringPtr);
-	printf(" %s\n",string);
-	printf(" %.2f string %s\n",d,stringPtr );
-	
-}//printf("The string \"%s\"is converted to the \n",string);
-//	printf("double value %.2f and the string\"%s\"\n",d,stringPtr );
-//51.25% are admitted
+	char s1[]="aBc3.14D2.17eH59.7";
+	char *s1Ptr= s1;
+	/*int i=0;
+	int ca=0;
+	int cA=0;
+	int c1=0;*/
+	while(*s1Ptr !='\0')
+	{
+		if (!isdigit(*s1Ptr)){
+			s1Ptr++;
+		} 
+		else {
+			double d =strtod(s1Ptr,&s1Ptr);
+			printf("%.2f\n",d);
+		} 
+	}  
+}
