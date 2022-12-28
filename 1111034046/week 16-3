@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<string.h>
+#include <iostream>
 int main()
 {
 	char s1[] = "abc2.34ababc3.8gh4.4xyz";
