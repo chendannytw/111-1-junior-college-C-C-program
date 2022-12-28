@@ -1,1 +1,16 @@
-
+#include <stdio.h>
+#include <ctype.h>
+#include<iostream>
+int main() {
+	char s1[] = "AbcD1.8sasdc2.3";
+	char* s1Ptr = s1;
+	while (*s1Ptr != '\0') {
+		if (!isdigit(*s1Ptr)) {
+			s1Ptr++;
+		}
+		else {
+			double d = strtod(s1Ptr, &s1Ptr);
+			printf("%.1f\n", d);
+		}
+	}
+}
