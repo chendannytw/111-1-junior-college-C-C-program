@@ -1,13 +1,11 @@
 #include <stdio.h>
 #define SIZE 5
 #define stu 13
-//int binarySearch(int b[], int searchKey, int low, int high);
 void sort(const char** name, int a[][SIZE], int size);
-// function main begins program execution
 int main(void)
 {
     int key, result = 0, i, j;
-    // initialize a
+   
     int a[stu][SIZE] = { {2,98,72,0,0},
                         {3,76,32,0,0},
                         {6,98,67,0,0},
@@ -35,9 +33,7 @@ int main(void)
      "Jenny",
      "Bob",
      "Tim" };
-
     puts("排序前:\n    姓名  座號  國文  數學  總成績  平均 ");
-    // output original array
     for (j = 0; j < stu; j++)
     {
         for (i = 1; i < SIZE - 2; ++i) {
@@ -50,7 +46,6 @@ int main(void)
             a[j][4] = (a[j][3]) / 2;
         }
     }
-
     for (j = 0; j < stu; j++) {
         printf("%8s", name[j]);
         for (i = 0; i < SIZE; ++i) {
@@ -58,14 +53,6 @@ int main(void)
         }
         printf("\n");
     }
-    /*    printf("\n");
-        for (i = 0; i < SIZE; ++i) {
-            printf("%4d", a[1][i]);
-        }
-    */
-    // bubble sort                                         
-    // loop to control number of passes                    
-
     sort(name, a, stu);
     puts("\n排序後:\n    姓名  座號  國文  數學  總成績  平均 ");
 
@@ -81,8 +68,6 @@ int main(void)
     printf("\n平均最大為:%d", a[stu - 13][4]);
     printf("\n平均最小為:%d", a[stu - 1][4]);
 }
-
-
 void sort(const char** name, int a[][SIZE], int size)
 {
     const char* ptr;
@@ -90,11 +75,10 @@ void sort(const char** name, int a[][SIZE], int size)
     int hold, pass, i;
     for (pass = 1; pass < size; ++pass) {
 
-        // loop to control number of comparisons per pass   
+   
         for (i = 0; i < size - pass; ++i) {
 
-            // compare adjacent elements and swap them if first 
-            // element is greater than second element           
+          
             if (a[i][3] < a[i + 1][3]) {
                 ptr = name[i];
                 name[i] = name[i + 1];
