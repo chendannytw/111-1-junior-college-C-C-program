@@ -1,62 +1,95 @@
-// Fig. 7.28: fig07_28.c
-// Demonstrating an array of pointers to functions.
-#include <stdio.h>
+#define SIZE 10
+#include <iostream>
+int id[SIZE] = { 5,7,3,4,10,6,2,8,9,1 };
+int math[SIZE] = { 85,67,32,94,100,56,26,87,92,11 };
+int notmath[SIZE] = { 99,28,54,63,78,16,54,90,57,32 };
+const char* name[SIZE] = { "a","b","c","d","e","f","g","h","i","j" };
+int arv[SIZE];
+int end[10][4];
 
-// prototypes
-void function1(int,int,int);
-void function2(int,int,int);
-void function3(int,int,int);
-void function4(int,int,int);
 
-int pp;
-int main(void)
-{
-   // initialize array of 3 pointers to functions that each take an
-   // int argument and return void                              
-   void (*f[4])(int,int,int) = {function1, function2, function3, function4};    
-
-   printf("%s", "Enter a number0, 1, 2, 3to end: ");
-   size_t choice; // variable to hold user's choice
-   scanf("%u", &choice);
-
-   // process user's choice
-   while (choice >= 0 && choice < 4) {
-
-      // invoke function at location choice in array f and pass
-      // choice as an argument                              
-      (*f[choice])(choice,6,2);                                
-
-      printf("%s", "Enter a number0, 1, 2, 3to end: ");
-      scanf("%u", &choice);
-   } 
-
-   puts("Program execution completed.");
-} 
-
-void function1(int a,int x,int ax)
-{
- pp = x+ax;
-   printf("You entered %d so function1 was called %d and %d\n\n", a,x,ax);
-   printf("%d+%d=%d\n\n",x,ax,pp);
+void a(int x[], int y[], int z[], int w[]) {
+	void swap(int* element1Ptr, int* element2Ptr);
+	int pass;
+	for (pass = 1; pass < SIZE; ++pass) {
+		for (size_t i = 0; i < SIZE ; ++i) {
+			if (w[i] < w[i + 1]) {
+				swap(&x[i], &x[i + 1]);
+				swap(&y[i], &y[i + 1]);
+				swap(&z[i], &z[i + 1]);
+				swap(&w[i], &w[i + 1]);
+				const char *hold = name[i];
+				name[i] = name[i + 1];
+				name[i + 1] = hold;
+			}
+		}
+	}
+	for (int i = 0; i < SIZE; i++)
+	{
+		end[i][0] = x[i];
+		end[i][1] = y[i];
+	}
 }
-
-void function2(int b,int y,int by)
+void setvar(int a[], int b[], int c[])
 {
-	pp=y-by;
-   printf("You entered %d so function2 was called%d\n\n", b,y,by);
-   printf("%d-%d=%d\n\n",y,by,pp);
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[i][0] = id[i];
+	}
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[i][1] = math[i];
+	}
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[i][2] = notmath[i];
+	}
+	for (size_t i = 0; i < SIZE; i++)
+	{
+		end[i][3] = (end[i][1] + end[i][2]) / 2;
+		arv[i] = (end[i][1] + end[i][2]) / 2;
+	}
+
+
 }
-
-void function3(int c,int z ,int cz)
+int main()
 {
-	pp=z*cz;
-   printf("You entered %d so function3 was called%d\n\n", c,z,cz);  
-   printf("%d*%d=%d\n\n",z,cz,pp);
+	setvar(id, math, notmath);
+	puts("排序前");
+	puts("");
+		puts("姓名:    座號:    數學:    計概:    平均:");
+		for (int i = 0; i < SIZE; ++i) {
+			printf("%4s", name[i]);
+			printf("     ");
+			for (int y = 0; y < 4; ++y) {
+				printf("%4d", end[i][y]);
+				printf("     ");
+			}
+			puts("");
+
+		}
+
+		puts("");
+		puts("排序後");
+		puts("");
+		a(id, math, notmath, arv);
+		setvar(id, math, notmath);
+		puts("姓名:    座號:    數學:    計概:    平均:    排名:");
+		for (int i = 0; i < SIZE; ++i) {
+			printf("%4s", name[i]);
+			printf("     ");
+			for (int y = 0; y < 4; ++y) {
+				printf("%4d", end[i][y]);
+				printf("     ");
+			}
+			printf(" %4d", i + 1);
+			puts("");
+		}
+		printf("\n平均中位數為:%d", arv[SIZE / 2]);
 }
-
-void function4(int d,int u ,int du)
+void swap(int* element1Ptr, int* element2Ptr)
 {
-	pp=u/du;
-   printf("You entered %d so function4 was called%d\n\n", d,u,du);  
-   printf("%d/%d=%d\n\n",u,du,pp);
+	int hold = *element1Ptr;
+	*element1Ptr = *element2Ptr;
+	*element2Ptr = hold;
 }
