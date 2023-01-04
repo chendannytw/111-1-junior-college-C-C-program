@@ -132,6 +132,6 @@ void average(int a[][SIZE]){
 	int i,result=0,avg;
 	for(i=0;i<SIZE;i++)
 	result += a[i][3];
-	avg=result/5;	
+	avg=result/10;	
 	printf("平均數為%d",avg);
 }
