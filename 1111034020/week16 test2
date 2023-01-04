@@ -1,0 +1,14 @@
+#include <iostream>
+#include <stdio.h>
+int main()
+{
+	int a = 0;
+	char s1[13] = "ABCDEFGHIJA";
+	char s2[13] = "AB";
+	for (int i = 0; i < 10; i++) {
+		if (strncmp(s2, s1 + i, 1) == 0)
+			a += 1;
+	}
+	printf("在%s中出現%s的次數:%d", s1, s2, a);
+	system("pause");
+}
