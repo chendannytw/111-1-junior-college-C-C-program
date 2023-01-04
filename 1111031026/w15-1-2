@@ -12,13 +12,13 @@ void a(int x[], int y[], int z[], int w[]) {
 	void swap(int* element1Ptr, int* element2Ptr);
 	int pass;
 	for (pass = 1; pass < SIZE; ++pass) {
-		for (size_t i = 0; i < SIZE ; ++i) {
+		for (size_t i = 0; i < SIZE; ++i) {
 			if (w[i] < w[i + 1]) {
 				swap(&x[i], &x[i + 1]);
 				swap(&y[i], &y[i + 1]);
 				swap(&z[i], &z[i + 1]);
 				swap(&w[i], &w[i + 1]);
-				const char *hold = name[i];
+				const char* hold = name[i];
 				name[i] = name[i + 1];
 				name[i + 1] = hold;
 			}
@@ -47,7 +47,6 @@ void setvar(int a[], int b[], int c[])
 	for (size_t i = 0; i < SIZE; i++)
 	{
 		end[i][3] = (end[i][1] + end[i][2]) / 2;
-		arv[i] = (end[i][1] + end[i][2]) / 2;
 	}
 
 
@@ -57,35 +56,35 @@ int main()
 	setvar(id, math, notmath);
 	puts("排序前");
 	puts("");
-		puts("姓名:    座號:    數學:    計概:    平均:");
-		for (int i = 0; i < SIZE; ++i) {
-			printf("%4s", name[i]);
+	puts("姓名:    座號:    數學:    計概:    平均:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4s", name[i]);
+		printf("     ");
+		for (int y = 0; y < 4; ++y) {
+			printf("%4d", end[i][y]);
 			printf("     ");
-			for (int y = 0; y < 4; ++y) {
-				printf("%4d", end[i][y]);
-				printf("     ");
-			}
-			puts("");
-
 		}
+		puts("");
 
-		puts("");
-		puts("排序後");
-		puts("");
-		a(id, math, notmath, arv);
-		setvar(id, math, notmath);
-		puts("姓名:    座號:    數學:    計概:    平均:    排名:");
-		for (int i = 0; i < SIZE; ++i) {
-			printf("%4s", name[i]);
+	}
+
+	puts("");
+	puts("排序後");
+	puts("");
+	a(id, math, notmath, arv);
+	setvar(id, math, notmath);
+	puts("姓名:    座號:    數學:    計概:    平均:    排名:");
+	for (int i = 0; i < SIZE; ++i) {
+		printf("%4s", name[i]);
+		printf("     ");
+		for (int y = 0; y < 4; ++y) {
+			printf("%4d", end[i][y]);
 			printf("     ");
-			for (int y = 0; y < 4; ++y) {
-				printf("%4d", end[i][y]);
-				printf("     ");
-			}
-			printf(" %4d", i + 1);
-			puts("");
 		}
-		printf("\n平均中位數為:%d", arv[SIZE / 2]);
+		printf(" %4d", i + 1);
+		puts("");
+	}
+	printf("\n平均的中位數為:%d", end[SIZE/2][3]);
 }
 void swap(int* element1Ptr, int* element2Ptr)
 {
