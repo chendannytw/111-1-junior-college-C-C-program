@@ -5,7 +5,6 @@ void sort(const char** name, int a[][SIZE], int size);
 int main(void)
 {
     int key, result = 0, i, j;
-   
     int a[stu][SIZE] = { {2,98,72,0,0},
                         {3,76,32,0,0},
                         {6,98,67,0,0},
