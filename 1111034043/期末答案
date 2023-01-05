@@ -45,7 +45,8 @@ int main(void)
             a[j][4] = (a[j][3]) / 2;
         }
     }
-    for (j = 0; j < stu; j++) {
+    for (j = 0; j < stu; j++)
+    {
         printf("%8s", name[j]);
         for (i = 0; i < SIZE; ++i) {
             printf("%6d", a[j][i]);
