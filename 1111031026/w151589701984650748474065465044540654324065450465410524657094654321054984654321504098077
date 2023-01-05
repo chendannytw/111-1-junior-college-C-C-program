@@ -3,6 +3,7 @@
 #define stu 13
 //int binarySearch(int b[], int searchKey, int low, int high);
 void sort(const char** name, int a[][SIZE], int size);
+void lol(int a[][SIZE]);
 // function main begins program execution
 int main(void)
 {
@@ -44,13 +45,7 @@ int main(void)
             a[j][3] += a[j][i];
         }
     }
-    for (j = 0; j < stu; j++)
-    {
-        for (i = 1; i < SIZE - 1; ++i) {
-            a[j][4] = (a[j][3]) / 2;
-        }
-    }
-
+    lol(a);
     for (j = 0; j < stu; j++) {
         printf("%8s", name[j]);
         for (i = 0; i < SIZE; ++i) {
@@ -77,16 +72,16 @@ int main(void)
         }
         printf("\n");
     }
-    printf("\n平均中位數為:%d",a[stu/2][4]);
-    printf("\n平均最大為:%d", a[stu-13][4]);
-    printf("\n平均最小為:%d", a[stu -1][4]);
+    printf("\n平均中位數為:%d", a[stu / 2][4]);
+    printf("\n平均最大為:%d", a[stu - 13][4]);
+    printf("\n平均最小為:%d", a[stu - 1][4]);
 }
 
 
 void sort(const char** name, int a[][SIZE], int size)
 {
-   const char* ptr;
-   void swap(int* element1Ptr, int* element2Ptr);
+    const char* ptr;
+    void swap(int* element1Ptr, int* element2Ptr);
     int hold, pass, i;
     for (pass = 1; pass < size; ++pass) {
 
@@ -116,4 +111,12 @@ void swap(int* e1Ptr, int* e2Ptr)
     hold = *e1Ptr;
     *e1Ptr = *e2Ptr;
     *e2Ptr = hold;
+}
+void lol(int a[][SIZE]) {
+    for (int j = 0; j < stu; j++)
+    {
+        for (int i = 1; i < SIZE - 1; ++i) {
+            a[j][4] = (a[j][3]) / 2;
+        }
+    }
 }
