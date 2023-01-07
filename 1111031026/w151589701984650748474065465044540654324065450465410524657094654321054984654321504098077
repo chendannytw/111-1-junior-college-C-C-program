@@ -69,8 +69,10 @@ int main(void)
         printf("%8s", name[j]);
         for (i = 0; i < SIZE; ++i) {
             printf("%4d", a[j][i]);
+            printf(" ");
         }
-        printf("\n");
+        printf(" %4d", j + 1);
+        puts("");
     }
     printf("\n平均中位數為:%d", a[stu / 2][4]);
     printf("\n平均最大為:%d", a[stu - 13][4]);
