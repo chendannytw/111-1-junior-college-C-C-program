@@ -5,19 +5,21 @@ void sort(const char** name, int a[][SIZE], int size);
 void aapp(int a[][SIZE]);
 void bbpp(int a[][SIZE]);
 void ccpp(int a[][SIZE]);
+void eepp(int a[][SIZE]);
+void ddpp(int a[][SIZE], const char** name);
 int main(void)
 {
     int  result = 0, i, j;
     int a[stu][SIZE] = { {2,98,72,0,0,0},
                         {3,76,32,0,0,0},
                         {6,98,67,0,0,0},
-                        {7,89,32,0,0,0},
+                        {7,89,55,0,0,0},
                         {8,98,55,0,0,0},
                         {9,89,32,0,0,0},
                         {10,98,65,0,0,0},
                         {11,99,32,0,0,0},
-                        {12,98,71,0,0,0},
-                        {13,76,91,0,0,0}, };
+                        {12,98,81,0,0,0},
+                        {13,77,91,0,0,0}, };
     const char* name[stu] =
     { "Alice",
      "Danny",
@@ -32,28 +34,12 @@ int main(void)
     puts("排序前:\n    姓名  座號  國文  數學  總成績 平均  排名 ");
     ccpp(a);
     aapp(a);
-    for (j = 0; j < stu; j++)
-    {
-        printf("%8s", name[j]);
-        for (i = 0; i < SIZE; ++i) {
-            printf("%6d", a[j][i]);
-        }
-        printf("\n");
-    }
+    ddpp(a, name);
     sort(name, a, stu);
     puts("\n排序後:\n    姓名  座號  國文  數學  總成績 平均  排名 ");
     bbpp(a);
-    for (j = 0; j < stu; j++)
-    {
-        printf("%8s", name[j]);
-        for (i = 0; i < SIZE; ++i) {
-            printf("%6d", a[j][i]);
-        }
-        printf("\n");
-    }
-    printf("\n平均中位數為:%d", a[stu / 2][4]);
-    printf("\n平均最大為:%d", a[stu - 10][4]);
-    printf("\n平均最小為:%d", a[stu - 1][4]);
+    ddpp(a, name);
+    eepp(a);
 }
 void sort(const char** name, int a[][SIZE], int size)
 {
@@ -117,4 +103,22 @@ void ccpp(int a[][SIZE])
             a[j][3] += a[j][i];
         }
     }
+}
+void ddpp(int a[][SIZE], const char** name)
+{
+    int i, j;
+    for (j = 0; j < stu; j++)
+    {
+        printf("%8s", name[j]);
+        for (i = 0; i < SIZE; ++i) {
+            printf("%6d", a[j][i]);
+        }
+        printf("\n");
+    }
+}
+void eepp(int a[][SIZE])
+{
+    printf("\n平均中位數為:%d", a[stu / 2][4]);
+    printf("\n平均最大為:%d", a[stu - 10][4]);
+    printf("\n平均最小為:%d", a[stu - 1][4]);
 }
