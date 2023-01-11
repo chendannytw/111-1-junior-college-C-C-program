@@ -74,14 +74,16 @@ int main(void)
 	
 	
     puts("\nName ID score sum avg");
-
+    int y;
     for(j=0;j<10;j++)
     {	printf("%10s", name[j]);
 	    for (i = 0; i < SIZE; ++i) {	
 			printf("%4d", a[j][i]);
-    	}
-    	
-    	printf("\n");
+		 int y;	 
+    	}	
+    
+	 	printf("  %d",j+1);
+		printf("\n");
 	}
    max+=a[0][4];
    printf("max:%d\n",max);
@@ -89,9 +91,9 @@ int main(void)
    printf("min:%d\n",min);  
     mld+=(max+min)/2;
    printf("mld:%.2f",mld);  
+
+   
 }
-
-
 void sort(char *name[10],int a[][SIZE], int size, int (*compare)(int a, int b))
 {char *ptr;
     int hold,pass,i;
