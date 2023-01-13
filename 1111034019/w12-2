@@ -1,0 +1,79 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define SIZE 10
+
+void a(int x[], int y[]);
+int b(int x[], int ID, int low, int high);
+void c(int x[], int low, int high);
+int main(void)
+{
+	int i, ID, x, mid,size;
+	int id[SIZE] = { 3,7,43,18,70,82,92,68,85,97 };
+	int score[SIZE] = { 65,78,16,75,73,84,45,92,42,50 }; 
+	int two[2][10] = { {3,7,43,18,70,82,92,68,85,97},{ 21,63,4,8,1,2,3,78,4,71 } };
+	float y;
+	a(score, id);
+	puts("id:");
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", id[i]);
+
+	}
+	puts("");
+	puts("score:");
+	for (i = 0; i < SIZE; ++i) {
+		printf("%4d", score[i]);
+	}
+	
+	c(score,0,SIZE-1);
+	printf("\nmiddle number:%d", score[SIZE/ 2]);
+	puts("");
+	printf("search:");
+	scanf_s("%d", &ID);
+	b(score, ID, 0, SIZE - 1);
+	x = b(score, ID, 0, SIZE - 1);
+	if ( b(score, ID, 0, SIZE - 1) == -1)
+		printf("wrong score");
+	else
+		printf("score%dstudent id%d,No.%d", ID, id[x],SIZE-x);
+
+}
+void a(int x[], int y[]) {
+	int pass;
+	for (pass = 1; pass < SIZE; ++pass) {
+		for (size_t i = 0; i < SIZE - 1; ++i) {
+			if (x[i] > x[i + 1]) {
+				int hold = x[i];
+				x[i] = x[i + 1];
+				x[i + 1] = hold;
+				hold = y[i];
+				y[i] = y[i + 1];
+				y[i + 1] = hold;
+			}
+		}
+	}
+}
+
+int b(int x[], int score, int low, int high) {
+	int mid;
+	while (low <= high) {
+		mid = (low + high) / 2;
+		if (score == x[mid])
+			return mid;
+		else if (score < x[mid])
+			high = mid - 1;
+		else
+			low = mid + 1;
+	}
+	return -1;
+}
+void c(int x[],int low,int high) {
+	int avg = 0;
+	int i;
+	int result;
+	for ( i = 0; i < SIZE; ++i) {
+		avg+=x[i];
+	}
+	result = avg / 10;
+	printf("\naverage:%d", result);
+
+}
