@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <ctype.h>
+int main() {
+	char a[] = "Hd4hTrh2b5";
+	char b[] = "Hd4hTrh2b5";
+	int i=0;
+	int c = 0;
+	int d = 0;
+	int e = 0;
+	while (b[i]!='\0') {
+		if (islower(b[i])) {
+			c += 1;
+			a[i] = toupper(b[i]);
+		}
+				
+		if (isupper(b[i])) {
+			d += 1;
+			a[i] = tolower(b[i]);
+		}
+			
+		if (isdigit(b[i])) {
+			e += 1;
+			a[i] = b[i];
+		}
+		i++;
+						}
+	
+	printf("小寫字母%d個\n大寫字母%d個\n數字%d個\n", c, d, e);
+	printf("原本字串%s互換大小寫=%s", b,a);
+}
