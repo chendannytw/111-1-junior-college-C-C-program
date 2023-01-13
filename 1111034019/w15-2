@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include <stdio.h>
+
+// prototypes
+void q(int,int,int);
+void w(int,int,int);
+void e(int,int,int);
+void r(int,int,int);
+
+int ans;
+int main(void)
+{
+   // initialize array of 3 pointers to functions that each take an
+   // int argument and return void                              
+   void (*f[4])(int,int,int) = {q, w, e, r};    
+
+   printf("%s", "Enter a number0, 1, 2, 3to end: ");
+   size_t choice; // variable to hold user's choice
+   scanf("%u", &choice);
+
+   // process user's choice
+   while (choice >= 0 && choice < 4) {
+
+      // invoke function at location choice in array f and pass
+      // choice as an argument                              
+      (*f[choice])(choice,6,2);                                
+
+      printf("%s", "Enter a number0, 1, 2, 3to end: ");
+      scanf("%u", &choice);
+   } 
+
+   puts("Program execution completed.");
+} 
+
+void q(int a,int x,int ay)
+{
+ ans = x+ay;
+   printf("You entered %d so function1 was called %d and %d\n\n", a,x,ay);
+   printf("%d+%d=%d\n\n",x,ay,ans);
+}
+
+void w(int b,int y,int by)
+{
+	ans=y-by;
+   printf("You entered %d so function2 was called%d\n\n", b,y,by);
+   printf("%d-%d=%d\n\n",y,by,ans);
+}
+
+void e(int c,int z ,int cy)
+{
+	ans=z*cy;
+   printf("You entered %d so function3 was called%d\n\n", c,z,cy);  
+   printf("%d*%d=%d\n\n",z,cy,ans);
+}
+
+void r(int d,int u ,int dy)
+{
+	ans=u/dy;
+   printf("You entered %d so function4 was called%d\n\n", d,u,dy);  
+   printf("%d/%d=%d\n\n",u,dy,ans);
+}
