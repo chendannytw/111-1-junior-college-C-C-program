@@ -1,1 +1,63 @@
+#include <stdio.h>
+#define SIZE 10 
 
+void t1(int a[], int b[], int size);
+void test2(int a[], int c[], int ID,int size);
+int n;
+
+int main(void) {
+    int a[SIZE] = { 1,2,3,4,5,6,7,8,9,10 }, ID, i;
+    int c[SIZE] = { 86,45,96,19,23,40,55,62,68,90 };
+    printf("front");
+
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", a[i]);
+    printf("\n");
+    printf("  ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", c[i]);
+
+    t1(a, c, SIZE);
+    printf("\nback");
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", a[i]);
+    printf("\n");
+    printf("  ");
+    for (i = 0; i < SIZE; ++i)
+        printf("%4d", c[i]);
+    printf("\n");
+
+    printf("your id");
+    scanf_s("%d", &ID);
+    test2(a, c, ID, SIZE);
+
+}
+void t1(int a[], int c[], int size) {
+    int as, ad, i;
+    for (as = 1; as < SIZE; ++as) {
+
+        for (i = 0; i < SIZE - as; ++i) {
+            if (c[i] > c[i + 1]) {
+                ad = c[i];
+                c[i] = c[i + 1];
+                c[i + 1] = ad;
+
+                ad = a[i];
+                a[i] = a[i + 1];
+                a[i + 1] = ad;
+            }
+        }
+    }
+}
+void test2(int a[], int c[],  int ID,int size) {
+    int i;
+    for (i = 0; i < size; ++i) {
+        if (ID == a[i]) {
+            printf("id%dgot%dpoint", a[i], c[i]);
+            break;
+        }
+        else
+        if (i >= 9)
+            printf("id%dwrong", ID);
+    }
+}
