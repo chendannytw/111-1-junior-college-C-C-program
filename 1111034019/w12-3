@@ -1,0 +1,96 @@
+#include <stdio.h>
+#define SIZE 10
+void sort(int id[], int sc[]);
+int binarySearch(int b[], int searchKey, int low, int high);
+int main(void)
+{
+    int     a[SIZE] = { 3, 2, 7, 31, 70,42,82,68,55,17 }, i, key, temp;
+    int score[SIZE] = { 85,22,73,14,94,99,89,58,69,81 };
+
+    puts("Data items in original order");
+
+    for (i = 0; i < SIZE; ++i) {
+        printf("\n%4d", a[i]);
+        printf("%4d", score[i]);
+    }
+    puts("");
+    sort(a, score);
+    puts("\nData items in ascending order");
+    for (i = 0; i < SIZE; ++i) {
+        printf("\n%4d", a[i]);
+        printf("%4d", score[i]);
+    }
+    printf("\nscore: ");
+    scanf_s("%d", &key);
+
+    temp = binarySearch(score, key, 0, SIZE - 1);
+    if (temp < 0)
+        printf("\nscore %d not found", key);
+    else
+        printf("id %d get score %d", a[temp], score[temp]);
+
+
+    puts("");
+}
+
+
+int binarySearch(int b[], int searchKey, int low, int high)
+{
+    while (low <= high) {
+        int middle = (low + high) / 2; 
+        if (searchKey == b[middle]) {  
+            return middle;
+        }
+        else if (searchKey < b[middle]) {  
+            high = middle - 1; 
+        }
+
+        else {
+            low = middle + 1;      
+        }
+    } 
+
+    return -1; 
+}
+
+
+void sort(int id[], int sc[])
+{
+    int i, pass;
+    for (pass = 1; pass < SIZE; ++pass) {
+
+        for (i = 0; i < SIZE - 1; ++i) {
+
+            if (sc[i] > sc[i + 1]) {
+                int hold = sc[i];
+                sc[i] = sc[i + 1];
+                sc[i + 1] = hold;
+
+                hold = id[i];
+                id[i] = id[i + 1];
+                id[i + 1] = hold;
+            }
+        }
+    }
+
+}
+
+
+void printRow(const int b[], size_t low, size_t middle, size_t high)
+{
+    int i;
+    for (i = 0; i < SIZE; ++i) {
+
+        if (i < low || i > high) {
+            printf("%s", "    ");
+        }
+        else if (i == middle) { 
+            printf("%3d*", b[i]); 
+        }
+        else { 
+            printf("%3d ", b[i]);
+        }
+    }
+
+    puts(""); 
+}
