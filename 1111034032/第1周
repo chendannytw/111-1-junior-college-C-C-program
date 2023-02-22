@@ -20,7 +20,7 @@ int main(void)
     	int computer;
     	float avg;    	
 	};
-	//struct student stud[stu];
+	
 	typedef struct student stud;
 	stud my_stu[STU]={{"Alice",2,98,72,0},
 						{"Danny",3,76,32,0},
