@@ -36,8 +36,8 @@ void swap(stud* a, stud* b) {
 }
 
 void sort(stud my_stu[], int n) {
-    for (int i = 0; i < n - 1; i++) {
-        for (int j = 0; j < n - i - 1; j++) {
+    for (int i = 1; i < n - 1; i++) {
+        for (int j = 0; j < n - i ; j++) {
             if (my_stu[j].avg > my_stu[j + 1].avg) {
                 swap(&my_stu[j], &my_stu[j + 1]);
             }
