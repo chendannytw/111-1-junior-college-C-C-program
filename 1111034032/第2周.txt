@@ -1,0 +1,81 @@
+#include <stdio.h>
+#include <string.h>
+
+#define STU 13
+
+struct student{
+    char name[20];
+    int stu_id;
+    int math;
+    int computer;
+    float avg;
+};
+
+typedef struct student stud;
+
+stud my_stu[STU] = {
+    {"Alice",1,98,72,0},
+    {"Danny",2,76,32,0},
+    {"Tom",3,98,67,0},
+    {"Nina",4,89,32,0},
+    {"May",5,98,55,0},
+    {"Sindy",6,89,32,0},
+    {"Steven",7,98,65,0},
+    {"Ellen",8,99,32,0},
+    {"Nicole",9,98,71,0},
+    {"Tan",10,76,91,0},
+    {"Jenny",11,93,49,0},
+    {"Bob",12,67,82,0},
+    {"Tim",13,66,98,0}
+};
+
+void swap(stud* a, stud* b) {
+    stud temp = *a;
+    *a = *b;
+    *b = temp;
+}
+
+void sort(stud my_stu[], int n) {
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (my_stu[j].avg > my_stu[j + 1].avg) {
+                swap(&my_stu[j], &my_stu[j + 1]);
+            }
+        }
+    }
+}
+
+int main() {
+    int j;
+    
+    printf("			排序前\n");
+    
+    for(j=0;j<STU;j++){	
+    my_stu[j].avg=(my_stu[j].math+my_stu[j].computer)/2;
+	}//計算平均 
+	
+    for(j=0;j<STU;j++){	// 輸出排序後的結果
+		printf("%28s", my_stu[j].name);
+		printf("%4d", my_stu[j].stu_id);
+		printf("%6d", my_stu[j].math);
+		printf("%6d", my_stu[j].computer);
+		printf("	%6.2f", my_stu[j].avg);
+    	printf("\n");
+	}
+	
+	printf("			排序後\n");
+	printf("抄我程式的屁眼會爆開\n");
+	
+    sort(my_stu, STU);// 使用氣泡排序按照 avg 由小到大排序
+    
+    for(j=0;j<STU;j++){	
+		printf("%28s", my_stu[j].name);
+		printf("%4d", my_stu[j].stu_id);
+		printf("%6d", my_stu[j].math);
+		printf("%6d", my_stu[j].computer);
+		printf("	%6.2f", my_stu[j].avg);
+    	printf("\n");
+	}
+
+    return 0;
+}
