@@ -49,11 +49,22 @@ int main(void)
 		printf("%6d", my_stu[j].math);
 		printf("%6d", my_stu[j].computer);
 		printf("   %.2f", my_stu[j].avg);
-		    	if(my_stu[j].avg<60)
-		{
-    		printf("%10s",my_stu[j].name);
-		}
     	printf("\n");
     
+	}
+		printf("\n");
+	printf("不及格的");
+	printf("\n\n");
+	   for(j=0;j<STU;j++){
+	   
+			    	if(my_stu[j].avg<60)
+		{
+    		printf("%28s", my_stu[j].name);
+		printf("%4d", my_stu[j].stu_id);
+		printf("%6d", my_stu[j].math);
+		printf("%6d", my_stu[j].computer);
+		printf("    %.2f", my_stu[j].avg);
+    	printf("\n");
+		}
 	}
 }
