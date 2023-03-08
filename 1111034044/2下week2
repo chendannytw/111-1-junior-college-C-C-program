@@ -10,6 +10,7 @@ struct student {
 };
 typedef struct student STUDENT;
 void sort(STUDENT mystu[STU]);
+void swap(STUDENT* e1Ptr, STUDENT* e2Ptr);
 int main(void)
 {
     int key, result = 0, i, j;
@@ -32,7 +33,7 @@ int main(void)
     puts("Name ID items in original order");
     // output original array
     for (j = 0; j < STU; j++)
-        stu_class[j].avg =(float) (stu_class[j].math + stu_class[j].computer) / 2;
+        stu_class[j].avg = (float)(stu_class[j].math + stu_class[j].computer) / 2;
 
     for (j = 0; j < STU; j++)
     {
@@ -68,7 +69,6 @@ int main(void)
 
 void sort(STUDENT mystu[STU])
 {
-    STUDENT temp_stu;
     int hold, pass, i;
     for (pass = 1; pass < STU; ++pass) {
 
@@ -78,10 +78,7 @@ void sort(STUDENT mystu[STU])
             // compare adjacent elements and swap them if first
             // element is greater than second element
             if (mystu[i].avg > mystu[i + 1].avg) {
-                swap(mystu[i].avg, mystu[i + 1].avg);
-                swap(mystu[i].stu_id, mystu[i + 1].stu_id);
-                swap(mystu[i].math, mystu[i + 1].math);
-                swap(mystu[i].computer, mystu[i + 1].computer);
+                swap(&mystu[i], &mystu[i + 1]);
             }
         }
     }
