@@ -1,0 +1,42 @@
+#include <stdio.h>
+void displaybits(unsigned int value, int dir, int num);
+int main(void)
+{
+	unsigned int x,num1, num2;;
+
+	printf("%s", "Enter a nonnegative int:");
+	scanf_s("%u", &x);
+	printf("0 left or 1 right:");
+	scanf_s("%u", &num1);
+	printf("num");
+	scanf_s("%u", &num2);
+	displaybits(x, num1, num2);
+}
+void displaybits(unsigned int value, int dir, int num) {
+	unsigned int temp, display = 1 << 31;
+	printf("%10u=", value);
+	temp = value;
+	for (unsigned int c = 1; c <= 32; ++c) {
+		putchar(temp & display ? '1' : '0');
+		temp <<= 1;
+		if (c % 8 == 0) {
+			putchar('   ');
+		}
+	}
+	if (dir == 0)
+		value = value << num;
+	else
+		value = value >> num;
+
+
+	printf("\n");
+	for (unsigned int c = 1; c <= 32; ++c) {
+		putchar(value & display ? '1' : '0');
+		value <<= 1;
+		if (c % 8 == 0) {
+			putchar('   ');
+		}
+	}
+
+	putchar('\n');
+}
